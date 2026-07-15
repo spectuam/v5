@@ -1,0 +1,9 @@
+artifact_location: file:///home/soso/v5/mlruns/959651581755719522
+creation_time: 1784088111646
+effective_trace_archival_retention: null
+experiment_id: '959651581755719522'
+last_update_time: 1784088111646
+lifecycle_stage: active
+name: Experiment
+trace_location: null
+workspace: default

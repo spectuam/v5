@@ -1,0 +1,14 @@
+artifact_uri: file:///home/soso/v5/mlruns/959651581755719522/5aefc093e44a48fba19d0dc3436abe0c/artifacts
+end_time: 1784088423012
+entry_point_name: ''
+experiment_id: '959651581755719522'
+lifecycle_stage: active
+run_id: 5aefc093e44a48fba19d0dc3436abe0c
+run_name: mlflow_recorder
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1784088422253
+status: 4
+tags: []
+user_id: soso
