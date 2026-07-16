@@ -38,14 +38,28 @@ def build_daily_panel(lookback_days: int = 250, db_path: str = None) -> Dict[str
         (f'-{lookback_days}',)
     ).fetchone()[0]
 
-    df = pd.read_sql("""
-        SELECT code, date, open, high, low, close, volume, amount
-        FROM daily_kline
-        WHERE date >= ? AND close > 0 AND open > 0
-          AND code NOT LIKE 'sz.399%%'
-          AND code NOT IN (SELECT code FROM stock_info WHERE name LIKE '%%ST%%')
-        ORDER BY code, date
-    """, db, params=(min_date,))
+    # 检查是否有 stock_info 表 (baostock有, tdx没有)
+    has_stock_info = db.execute(
+        "SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name='stock_info'"
+    ).fetchone()[0] > 0
+
+    if has_stock_info:
+        df = pd.read_sql("""
+            SELECT code, date, open, high, low, close, volume, amount
+            FROM daily_kline
+            WHERE date >= ? AND close > 0 AND open > 0
+              AND code NOT LIKE 'sz.399%%'
+              AND code NOT IN (SELECT code FROM stock_info WHERE name LIKE '%%ST%%')
+            ORDER BY code, date
+        """, db, params=(min_date,))
+    else:
+        df = pd.read_sql("""
+            SELECT code, date, open, high, low, close, volume, amount
+            FROM daily_kline
+            WHERE date >= ? AND close > 0 AND open > 0
+              AND code NOT LIKE 'sz.399%%'
+            ORDER BY code, date
+        """, db, params=(min_date,))
     db.close()
 
     df['date'] = pd.to_datetime(df['date'])
