@@ -30,6 +30,16 @@ from factor_decay_utils import (
 )
 
 OUT_PATH = os.path.expanduser("~/ading/data/reports/factor_decay_results.json")
+OUT_PATH_TDX = os.path.expanduser("~/ading/data/reports/factor_decay_results_tdx.json")
+
+# --tdx 命令行开关
+USE_TDX = '--tdx' in sys.argv
+DB_PATH = 'tdx' if USE_TDX else None
+OUT_PATH = OUT_PATH_TDX if USE_TDX else OUT_PATH
+if USE_TDX:
+    # 额外清理: 之前可能有旧的因子 pickle
+    STACK_DIR = os.path.expanduser("~/ading/cache/factor_stacked_tdx")
+    os.makedirs(STACK_DIR, exist_ok=True)
 
 LOOKBACK_DAYS = 9999  # 用全部可用数据，目前~610天
 HORIZONS = [1, 3, 5, 10, 20]
@@ -47,7 +57,7 @@ def log(msg):
 # ═══════════════════════════════════
 log(f"Step 1/7: Building panel ({LOOKBACK_DAYS}d lookback)...")
 t0 = time.time()
-panel = build_daily_panel(lookback_days=LOOKBACK_DAYS)
+panel = build_daily_panel(lookback_days=LOOKBACK_DAYS, db_path=DB_PATH)
 date_start, date_end = panel_date_range(panel)
 n_dates = len(panel['close'].index)
 n_codes = len(panel['close'].columns)

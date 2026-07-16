@@ -13,6 +13,7 @@ from datetime import datetime, date
 from typing import Dict, List, Tuple, Optional
 
 DB = os.path.expanduser("~/ading/db/stock_data.db")
+TDX_DB = os.path.expanduser("~/ading/db/tdx_stock_data.db")
 _MIN_VALID_PER_DATE = 30  # 每天至少多少有效对才算
 _MIN_VALID_DAYS = 20       # 至少多少天有效 IC 才保留
 
@@ -20,9 +21,18 @@ _MIN_VALID_DAYS = 20       # 至少多少天有效 IC 才保留
 # 1. 面板构建
 # ─────────────────────────────────────────────
 
-def build_daily_panel(lookback_days: int = 250) -> Dict[str, pd.DataFrame]:
-    """从 daily_kline (后复权) 构建 panel, 返回 {close/open/high/low/volume}"""
-    db = sqlite3.connect(DB)
+def build_daily_panel(lookback_days: int = 250, db_path: str = None) -> Dict[str, pd.DataFrame]:
+    """从 daily_kline (后复权) 构建 panel, 返回 {close/open/high/low/volume}
+
+    Args:
+        lookback_days: 回看天数
+        db_path: 数据库路径, None=默认baostock, 'tdx'=通达信
+    """
+    if db_path is None:
+        db_path = DB
+    elif db_path == 'tdx':
+        db_path = TDX_DB
+    db = sqlite3.connect(db_path)
     min_date = db.execute(
         "SELECT date(MAX(date), ? || ' days') FROM daily_kline",
         (f'-{lookback_days}',)
