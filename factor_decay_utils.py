@@ -45,12 +45,14 @@ def build_daily_panel(lookback_days: int = 250, db_path: str = None) -> Dict[str
 
     if has_stock_info:
         df = pd.read_sql("""
-            SELECT code, date, open, high, low, close, volume, amount
-            FROM daily_kline
-            WHERE date >= ? AND close > 0 AND open > 0
-              AND code NOT LIKE 'sz.399%%'
-              AND code NOT IN (SELECT code FROM stock_info WHERE name LIKE '%%ST%%')
-            ORDER BY code, date
+            SELECT d.code, d.date, d.open, d.high, d.low, d.close, d.volume, d.amount
+            FROM daily_kline d
+            JOIN stock_info s ON d.code = s.symbol
+            WHERE d.date >= ? AND d.close > 0 AND d.open > 0
+              AND s.class = 'stock'
+              AND s.name NOT LIKE '%%ST%%'
+              AND d.code NOT LIKE 'bj.%%'
+            ORDER BY d.code, d.date
         """, db, params=(min_date,))
     else:
         df = pd.read_sql("""

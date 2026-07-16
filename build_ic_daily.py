@@ -45,11 +45,14 @@ def build_month_panel(ym, db):
     panel_end = (month_end + timedelta(days=30)).strftime('%Y-%m-%d')
 
     df = pd.read_sql("""
-        SELECT code, date, open, high, low, close, volume, amount
-        FROM daily_kline
-        WHERE date >= ? AND date <= ? AND close > 0 AND open > 0
-          AND code NOT LIKE 'sz.399%%'
-        ORDER BY code, date
+        SELECT d.code, d.date, d.open, d.high, d.low, d.close, d.volume, d.amount
+        FROM daily_kline d
+        JOIN stock_info s ON d.code = s.symbol
+        WHERE d.date >= ? AND d.date <= ? AND d.close > 0 AND d.open > 0
+          AND s.class = 'stock'
+          AND s.name NOT LIKE '%%ST%%'
+          AND d.code NOT LIKE 'bj.%%'
+        ORDER BY d.code, d.date
     """, db, params=(panel_start, panel_end))
     df['date'] = pd.to_datetime(df['date'])
     df['vwap'] = df['amount'] / df['volume']
