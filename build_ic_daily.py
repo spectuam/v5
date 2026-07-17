@@ -51,7 +51,7 @@ def build_month_panel(ym, db):
         WHERE d.date >= ? AND d.date <= ? AND d.close > 0 AND d.open > 0
           AND s.class = 'stock'
           AND s.name NOT LIKE '%%ST%%'
-          AND d.code NOT LIKE 'bj.%%'
+          AND d.code NOT LIKE 'bj%%'
         ORDER BY d.code, d.date
     """, db, params=(panel_start, panel_end))
     df['date'] = pd.to_datetime(df['date'])

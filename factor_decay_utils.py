@@ -51,7 +51,7 @@ def build_daily_panel(lookback_days: int = 250, db_path: str = None) -> Dict[str
             WHERE d.date >= ? AND d.close > 0 AND d.open > 0
               AND s.class = 'stock'
               AND s.name NOT LIKE '%%ST%%'
-              AND d.code NOT LIKE 'bj.%%'
+              AND d.code NOT LIKE 'bj%%'
             ORDER BY d.code, d.date
         """, db, params=(min_date,))
     else:
