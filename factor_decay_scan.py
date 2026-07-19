@@ -10,6 +10,10 @@
 
 内存: 全程只存 panel(~200MB) + 最多1个因子 DataFrame(~3MB) + 已入选因子暂存。
 峰值 < 500MB。
+
+用法:
+  ~/v5/.venv/bin/python3 ~/v5/factor_decay_scan.py --tdx                    # 全量扫描
+  ~/v5/.venv/bin/python3 ~/v5/factor_decay_scan.py --tdx --date-end 2015-12-31  # 只看Train期
 """
 import sys, os, time, json, gc, warnings
 warnings.filterwarnings('ignore')
@@ -20,6 +24,7 @@ sys.path.insert(0, '/home/soso/v5')
 
 import numpy as np
 import pandas as pd
+import sqlite3
 from datetime import datetime, date
 
 from factor_decay_utils import (
@@ -28,6 +33,8 @@ from factor_decay_utils import (
     _shuffle_within_rows, compute_random_ic_series, alpha_series_paired,
     t_stat, fit_decay_curve, categorize_factor,
 )
+
+TDX_DB = os.path.expanduser("~/ading/db/tdx_stock_data.db")
 
 OUT_PATH = os.path.expanduser("~/ading/data/reports/factor_decay_results.json")
 OUT_PATH_TDX = os.path.expanduser("~/ading/data/reports/factor_decay_results_tdx.json")
@@ -41,7 +48,14 @@ if USE_TDX:
     STACK_DIR = os.path.expanduser("~/ading/cache/factor_stacked_tdx")
     os.makedirs(STACK_DIR, exist_ok=True)
 
-LOOKBACK_DAYS = 9999  # 用全部可用数据，目前~610天
+# --date-end 命令行: 限制面板截止日期 (用于时间分离, 如 '2015-12-31')
+DATE_END = None
+for i, arg in enumerate(sys.argv):
+    if arg == '--date-end' and i + 1 < len(sys.argv):
+        DATE_END = sys.argv[i + 1]
+        break
+
+LOOKBACK_DAYS = 9999  # 用全部可用数据
 HORIZONS = [1, 3, 5, 10, 20]
 RANDOM_SEEDS = 5
 CORR_THRESHOLD = 0.7
@@ -55,23 +69,37 @@ def log(msg):
 # ═══════════════════════════════════
 # Step 1: 面板
 # ═══════════════════════════════════
-log(f"Step 1/7: Building panel ({LOOKBACK_DAYS}d lookback)...")
+log(f"Step 1/7: Building panel ({LOOKBACK_DAYS}d lookback, date_end={DATE_END or 'all'})...")
 t0 = time.time()
-panel = build_daily_panel(lookback_days=LOOKBACK_DAYS, db_path=DB_PATH)
+panel = build_daily_panel(lookback_days=LOOKBACK_DAYS, db_path=DB_PATH, date_end=DATE_END)
 date_start, date_end = panel_date_range(panel)
 n_dates = len(panel['close'].index)
 n_codes = len(panel['close'].columns)
 log(f"  {n_dates}d × {n_codes}c, {date_start} ~ {date_end} ({time.time()-t0:.0f}s)")
 
 # ═══════════════════════════════════
-# Step 2: 460 因子 + T+1 IC（存 IC_mean + stacked Series 到文件）
+# Step 2: IC 查表预筛选 → 只算通过筛选的因子值（存到文件给 Step 3）
 # ═══════════════════════════════════
-log("Step 2/7: Computing 460 factors + T+1 IC (save stacked to disk)...")
+log("Step 2/7: IC table lookup + factor compute (filtered)...")
 t0 = time.time()
 
 from factor_zoo_adapter import list_alpha_factors, compute_alpha
 all_factors = list_alpha_factors()
-log(f"  {len(all_factors)} factors")
+log(f"  {len(all_factors)} factors in zoo")
+
+# 2a. 从 IC 表查 Train 期 IC 和 IR (防前视)
+ic_db = sqlite3.connect(TDX_DB)
+ic_rows = {}
+date_filter = f"date <= '{DATE_END}'" if DATE_END else "1=1"
+for r in ic_db.execute(f"""
+    SELECT factor_id, AVG(T1_IC), AVG(T1_IC)/NULLIF(SQRT(AVG(T1_IC*T1_IC)-AVG(T1_IC)*AVG(T1_IC)),0)
+    FROM factor_ic_daily
+    WHERE {date_filter}
+    GROUP BY factor_id
+"""):
+    ic_rows[r[0]] = (r[1] or 0, r[2] or 0)
+ic_db.close()
+log(f"  {len(ic_rows)} factors in IC table for Train period")
 
 fwd_all = compute_forward_returns(panel, horizons=HORIZONS)
 fwd_T1 = fwd_all[1]
@@ -80,14 +108,26 @@ STACK_DIR = os.path.expanduser("~/ading/cache/factor_stacked")
 os.makedirs(STACK_DIR, exist_ok=True)
 
 factor_ic = {}       # {aid: IC_mean}
-factor_files = {}    # {aid: file_path} — 只存路径，不存数据
-n_ok = 0
-n_skip = 0
+factor_files = {}    # {aid: file_path}
+n_ok, n_skip, n_filtered = 0, 0, 0
 
 for i, fac in enumerate(all_factors):
     zoo, fid = fac['zoo'], fac['id']
     aid = f'{zoo}/{fid}'
 
+    # 2b. 查表: IC是否过门槛
+    ic_mean, ir_val = ic_rows.get(aid, (0, 0))
+    if ic_mean == 0:
+        n_skip += 1
+        continue
+
+    factor_ic[aid] = ic_mean
+
+    if not (ic_mean >= THRESHOLDS['ic_min'] and ir_val >= THRESHOLDS['ir_min']):
+        n_filtered += 1
+        continue
+
+    # 2c. 通过筛选 → 算因子值存盘 (给 Step 3 正交去重用)
     try:
         result = compute_alpha(zoo, fid + '.py', panel)
         if result is None or result.empty:
@@ -95,38 +135,22 @@ for i, fac in enumerate(all_factors):
             del result
             continue
 
-        ic_series = compute_ic_series(result, fwd_T1)
-        summary = compute_ic_summary(ic_series)
-        if np.isnan(summary['IC_mean']):
-            n_skip += 1
-            del result
-            continue
-
-        ic_mean = summary['IC_mean']
-        ir_val = summary['IR']
-        factor_ic[aid] = ic_mean
-
-        # IC+IR 预筛选: 类似 v4.2 factor_cluster，省内存省计算
-        if ic_mean >= THRESHOLDS['ic_min'] and ir_val >= THRESHOLDS['ir_min']:
-            s = result.stack().dropna()
-            if len(s) > 1000:
-                fpath = os.path.join(STACK_DIR, aid.replace('/', '_') + '.pkl')
-                s.to_pickle(fpath)
-                factor_files[aid] = fpath
-            del s
-
-        del result
+        s = result.stack().dropna()
+        if len(s) > 1000:
+            fpath = os.path.join(STACK_DIR, aid.replace('/', '_') + '.pkl')
+            s.to_pickle(fpath)
+            factor_files[aid] = fpath
+        del s, result
         n_ok += 1
-
     except Exception:
         n_skip += 1
 
-    if (i + 1) % 50 == 0:
-        log(f"    [{i+1}/{len(all_factors)}] ok={n_ok} skip={n_skip}")
+    if (i + 1) % 100 == 0:
+        log(f"    [{i+1}/{len(all_factors)}] ok={n_ok} skip={n_skip} filtered={n_filtered}")
         gc.collect()
 
 gc.collect()
-log(f"  {n_ok} valid, {n_skip} skipped ({time.time()-t0:.0f}s)")
+log(f"  {n_ok} computed, {n_skip} skipped, {n_filtered} IC-filtered out ({time.time()-t0:.0f}s)")
 
 # ═══════════════════════════════════
 # Step 3: 流式贪婪正交去重（从文件读，不重算）
@@ -186,14 +210,41 @@ gc.collect()
 # ═══════════════════════════════════
 # Step 4: 正交池 × 衰减 + 随机对照（一次 compute 全用完）
 # ═══════════════════════════════════
-log(f"Step 4/7: Multi-horizon IC + decay + random control ({len(ortho_pool)})...")
+log(f"Step 4/7: Multi-horizon IC from table + decay + random control ({len(ortho_pool)})...")
 t0 = time.time()
 
-decay_data = {}
+# 4a. 从 IC 表查多周期 IC (Train 期)
+ic_db = sqlite3.connect(TDX_DB)
+placeholders = ','.join(['?' for _ in ortho_pool])
+date_filter = f"date <= '{DATE_END}'" if DATE_END else "1=1"
+multi_ic_rows = ic_db.execute(f"""
+    SELECT factor_id,
+           AVG(T1_IC), AVG(T3_IC), AVG(T5_IC), AVG(T10_IC), AVG(T20_IC)
+    FROM factor_ic_daily
+    WHERE {date_filter} AND factor_id IN ({placeholders})
+    GROUP BY factor_id
+""", ortho_pool).fetchall()
+ic_db.close()
+
+# {aid: {1: IC_mean, 3: IC_mean, ...}}
+ic_by_factor = {}
+for r in multi_ic_rows:
+    ic_by_factor[r[0]] = {1: r[1], 3: r[2], 5: r[3], 10: r[4], 20: r[5]}
+
 fit_results = {}
 random_results = {}
 
 for idx, aid in enumerate(ortho_pool):
+    # 4b. 衰减拟合 (直接用 IC 表)
+    ic_vals = [ic_by_factor.get(aid, {}).get(H, np.nan) for H in HORIZONS]
+    hl, r2, detail = fit_decay_curve(HORIZONS, ic_vals)
+    fit_results[aid] = {
+        'half_life': hl, 'r2': r2,
+        'ic_by_horizon': {f'T+{H}': ic_by_factor.get(aid, {}).get(H, np.nan) for H in HORIZONS},
+        'fit_detail': detail,
+    }
+
+    # 4c. 随机对照 (还需要因子值，只算正交池的38个因子)
     zoo, fid = aid.split('/')
     try:
         vals = compute_alpha(zoo, fid + '.py', panel)
@@ -202,23 +253,6 @@ for idx, aid in enumerate(ortho_pool):
     except Exception:
         continue
 
-    # 多周期 IC
-    h_data = {}
-    for H in HORIZONS:
-        ic_s = compute_ic_series(vals, fwd_all[H])
-        h_data[H] = compute_ic_summary(ic_s)
-    decay_data[aid] = h_data
-
-    # 衰减拟合
-    ic_vals_list = [h_data[H].get('IC_mean', np.nan) for H in HORIZONS]
-    hl, r2, detail = fit_decay_curve(HORIZONS, ic_vals_list)
-    fit_results[aid] = {
-        'half_life': hl, 'r2': r2,
-        'ic_by_horizon': {f'T+{H}': h_data[H]['IC_mean'] for H in HORIZONS},
-        'fit_detail': detail,
-    }
-
-    # 随机对照
     ic_signal = compute_ic_series(vals, fwd_T1)
     ic_random = compute_random_ic_series(vals, fwd_T1, n_seeds=RANDOM_SEEDS)
     alpha_s = alpha_series_paired(ic_signal, ic_random)

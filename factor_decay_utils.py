@@ -21,12 +21,14 @@ _MIN_VALID_DAYS = 20       # 至少多少天有效 IC 才保留
 # 1. 面板构建
 # ─────────────────────────────────────────────
 
-def build_daily_panel(lookback_days: int = 250, db_path: str = None) -> Dict[str, pd.DataFrame]:
+def build_daily_panel(lookback_days: int = 250, db_path: str = None,
+                      date_end: str = None) -> Dict[str, pd.DataFrame]:
     """从 daily_kline (后复权) 构建 panel, 返回 {close/open/high/low/volume}
 
     Args:
         lookback_days: 回看天数
         db_path: 数据库路径, None=默认baostock, 'tdx'=通达信
+        date_end: 截止日期 (YYYY-MM-DD), None=全部数据
     """
     if db_path is None:
         db_path = DB
@@ -38,30 +40,51 @@ def build_daily_panel(lookback_days: int = 250, db_path: str = None) -> Dict[str
         (f'-{lookback_days}',)
     ).fetchone()[0]
 
-    # 检查是否有 stock_info 表 (baostock有, tdx没有)
+    # 检查是否有 stock_info 表 (baostock有, tdx也有)
     has_stock_info = db.execute(
         "SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name='stock_info'"
     ).fetchone()[0] > 0
 
     if has_stock_info:
-        df = pd.read_sql("""
-            SELECT d.code, d.date, d.open, d.high, d.low, d.close, d.volume, d.amount
-            FROM daily_kline d
-            JOIN stock_info s ON d.code = s.symbol
-            WHERE d.date >= ? AND d.close > 0 AND d.open > 0
-              AND s.class = 'stock'
-              AND s.name NOT LIKE '%%ST%%'
-              AND d.code NOT LIKE 'bj%%'
-            ORDER BY d.code, d.date
-        """, db, params=(min_date,))
+        if date_end:
+            df = pd.read_sql("""
+                SELECT d.code, d.date, d.open, d.high, d.low, d.close, d.volume, d.amount
+                FROM daily_kline d
+                JOIN stock_info s ON d.code = s.symbol
+                WHERE d.date >= ? AND date(d.date) <= ? AND d.close > 0 AND d.open > 0
+                  AND s.class = 'stock'
+                  AND s.name NOT LIKE '%%ST%%'
+                  AND d.code NOT LIKE 'bj%%'
+                ORDER BY d.code, d.date
+            """, db, params=(min_date, date_end))
+        else:
+            df = pd.read_sql("""
+                SELECT d.code, d.date, d.open, d.high, d.low, d.close, d.volume, d.amount
+                FROM daily_kline d
+                JOIN stock_info s ON d.code = s.symbol
+                WHERE d.date >= ? AND d.close > 0 AND d.open > 0
+                  AND s.class = 'stock'
+                  AND s.name NOT LIKE '%%ST%%'
+                  AND d.code NOT LIKE 'bj%%'
+                ORDER BY d.code, d.date
+            """, db, params=(min_date,))
     else:
-        df = pd.read_sql("""
-            SELECT code, date, open, high, low, close, volume, amount
-            FROM daily_kline
-            WHERE date >= ? AND close > 0 AND open > 0
-              AND code NOT LIKE 'sz.399%%'
-            ORDER BY code, date
-        """, db, params=(min_date,))
+        if date_end:
+            df = pd.read_sql("""
+                SELECT code, date, open, high, low, close, volume, amount
+                FROM daily_kline
+                WHERE date >= ? AND date(date) <= ? AND close > 0 AND open > 0
+                  AND code NOT LIKE 'sz.399%%'
+                ORDER BY code, date
+            """, db, params=(min_date, date_end))
+        else:
+            df = pd.read_sql("""
+                SELECT code, date, open, high, low, close, volume, amount
+                FROM daily_kline
+                WHERE date >= ? AND close > 0 AND open > 0
+                  AND code NOT LIKE 'sz.399%%'
+                ORDER BY code, date
+            """, db, params=(min_date,))
     db.close()
 
     df['date'] = pd.to_datetime(df['date'])
