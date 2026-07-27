@@ -137,11 +137,10 @@ def process_month(ym, db, factors):
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: build_ic_daily.py <start_ym> [end_ym]")
-        print("Example: build_ic_daily.py 2020-01 2020-12")
-        sys.exit(1)
-
-    start_ym, end_ym = sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else sys.argv[1]
+        start_ym = datetime.now().strftime('%Y-%m')
+        end_ym = start_ym
+    else:
+        start_ym, end_ym = sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else sys.argv[1]
     months = month_range(start_ym, end_ym)
     log(f"{len(months)} months: {months[0]} ~ {months[-1]}")
 
