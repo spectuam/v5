@@ -1,0 +1,4215 @@
+{
+  "week": {
+    "n_periods": 130,
+    "best_counts": {
+      "lowvol": 59,
+      "reversal": 40,
+      "momentum": 31
+    },
+    "periods": {
+      "2024-W01": {
+        "momentum": {
+          "win_rate": 0.2,
+          "sharpe": -6.8971,
+          "avg_ret": -0.067106,
+          "pnl_ratio": 1.4093,
+          "n": 40
+        },
+        "reversal": {
+          "win_rate": 0.075,
+          "sharpe": -24.3354,
+          "avg_ret": -0.093369,
+          "pnl_ratio": 0.4533,
+          "n": 40
+        },
+        "lowvol": {
+          "win_rate": 0.4,
+          "sharpe": -1.4872,
+          "avg_ret": -0.004088,
+          "pnl_ratio": 1.1633,
+          "n": 40
+        }
+      },
+      "2024-W02": {
+        "momentum": {
+          "win_rate": 0.18,
+          "sharpe": -6.7327,
+          "avg_ret": -0.095327,
+          "pnl_ratio": 1.5008,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.08,
+          "sharpe": -16.5442,
+          "avg_ret": -0.087335,
+          "pnl_ratio": 1.3475,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.58,
+          "sharpe": -0.6916,
+          "avg_ret": -0.001915,
+          "pnl_ratio": 0.6524,
+          "n": 50
+        }
+      },
+      "2024-W03": {
+        "momentum": {
+          "win_rate": 0.08,
+          "sharpe": -15.036,
+          "avg_ret": -0.221568,
+          "pnl_ratio": 1.685,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.1,
+          "sharpe": -21.397,
+          "avg_ret": -0.131398,
+          "pnl_ratio": 0.7313,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.66,
+          "sharpe": 2.7013,
+          "avg_ret": 0.007728,
+          "pnl_ratio": 0.7812,
+          "n": 50
+        }
+      },
+      "2024-W04": {
+        "momentum": {
+          "win_rate": 0.06,
+          "sharpe": -30.6615,
+          "avg_ret": -0.307578,
+          "pnl_ratio": 0.2298,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.08,
+          "sharpe": -25.4421,
+          "avg_ret": -0.196733,
+          "pnl_ratio": 0.1869,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.76,
+          "sharpe": 1.3595,
+          "avg_ret": 0.006176,
+          "pnl_ratio": 0.3937,
+          "n": 50
+        }
+      },
+      "2024-W05": {
+        "momentum": {
+          "win_rate": 0.24,
+          "sharpe": -6.8569,
+          "avg_ret": -0.075459,
+          "pnl_ratio": 1.0167,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.56,
+          "sharpe": 2.9633,
+          "avg_ret": 0.025105,
+          "pnl_ratio": 1.2272,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.94,
+          "sharpe": 22.8296,
+          "avg_ret": 0.04613,
+          "pnl_ratio": 1.1411,
+          "n": 50
+        }
+      },
+      "2024-W06": {
+        "momentum": {
+          "win_rate": 0.75,
+          "sharpe": 9.0877,
+          "avg_ret": 0.147201,
+          "pnl_ratio": 2.9195,
+          "n": 40
+        },
+        "reversal": {
+          "win_rate": 1.0,
+          "sharpe": 39.6223,
+          "avg_ret": 0.428689,
+          "pnl_ratio": 0,
+          "n": 40
+        },
+        "lowvol": {
+          "win_rate": 0.975,
+          "sharpe": 25.908,
+          "avg_ret": 0.032211,
+          "pnl_ratio": 3.7113,
+          "n": 40
+        }
+      },
+      "2024-W08": {
+        "momentum": {
+          "win_rate": 0.72,
+          "sharpe": 5.8841,
+          "avg_ret": 0.065536,
+          "pnl_ratio": 1.1357,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.9,
+          "sharpe": 20.7064,
+          "avg_ret": 0.177737,
+          "pnl_ratio": 8.4059,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.42,
+          "sharpe": 0.8806,
+          "avg_ret": 0.001138,
+          "pnl_ratio": 1.5926,
+          "n": 50
+        }
+      },
+      "2024-W09": {
+        "momentum": {
+          "win_rate": 0.26,
+          "sharpe": -5.308,
+          "avg_ret": -0.039031,
+          "pnl_ratio": 1.2473,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.92,
+          "sharpe": 15.314,
+          "avg_ret": 0.093744,
+          "pnl_ratio": 6.2155,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.4,
+          "sharpe": 0.5515,
+          "avg_ret": 0.000853,
+          "pnl_ratio": 1.6733,
+          "n": 50
+        }
+      },
+      "2024-W10": {
+        "momentum": {
+          "win_rate": 0.48,
+          "sharpe": 2.9054,
+          "avg_ret": 0.017631,
+          "pnl_ratio": 1.6617,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.98,
+          "sharpe": 22.8205,
+          "avg_ret": 0.111631,
+          "pnl_ratio": 2.1339,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.32,
+          "sharpe": -4.6575,
+          "avg_ret": -0.0076,
+          "pnl_ratio": 1.0091,
+          "n": 50
+        }
+      },
+      "2024-W11": {
+        "momentum": {
+          "win_rate": 0.36,
+          "sharpe": 0.5475,
+          "avg_ret": 0.007098,
+          "pnl_ratio": 1.9571,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.24,
+          "sharpe": -8.4268,
+          "avg_ret": -0.038997,
+          "pnl_ratio": 0.8714,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.24,
+          "sharpe": -4.6914,
+          "avg_ret": -0.010173,
+          "pnl_ratio": 1.4316,
+          "n": 50
+        }
+      },
+      "2024-W12": {
+        "momentum": {
+          "win_rate": 0.24,
+          "sharpe": -8.9313,
+          "avg_ret": -0.090349,
+          "pnl_ratio": 0.7348,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.44,
+          "sharpe": -7.109,
+          "avg_ret": -0.028164,
+          "pnl_ratio": 0.4106,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.58,
+          "sharpe": 2.3163,
+          "avg_ret": 0.003229,
+          "pnl_ratio": 1.0101,
+          "n": 50
+        }
+      },
+      "2024-W13": {
+        "momentum": {
+          "win_rate": 0.18,
+          "sharpe": -18.1388,
+          "avg_ret": -0.167176,
+          "pnl_ratio": 0.2435,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.28,
+          "sharpe": -4.7803,
+          "avg_ret": -0.0273,
+          "pnl_ratio": 1.2402,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.74,
+          "sharpe": 7.0519,
+          "avg_ret": 0.0167,
+          "pnl_ratio": 1.1314,
+          "n": 50
+        }
+      },
+      "2024-W14": {
+        "momentum": {
+          "win_rate": 0.2333,
+          "sharpe": -10.4459,
+          "avg_ret": -0.126517,
+          "pnl_ratio": 0.6509,
+          "n": 30
+        },
+        "reversal": {
+          "win_rate": 0.3333,
+          "sharpe": -7.5255,
+          "avg_ret": -0.061263,
+          "pnl_ratio": 0.7267,
+          "n": 30
+        },
+        "lowvol": {
+          "win_rate": 0.9333,
+          "sharpe": 20.5681,
+          "avg_ret": 0.023337,
+          "pnl_ratio": 1.803,
+          "n": 30
+        }
+      },
+      "2024-W15": {
+        "momentum": {
+          "win_rate": 0.3,
+          "sharpe": -5.2941,
+          "avg_ret": -0.07371,
+          "pnl_ratio": 1.0062,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.22,
+          "sharpe": -11.4861,
+          "avg_ret": -0.066277,
+          "pnl_ratio": 0.5393,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.8,
+          "sharpe": 11.5356,
+          "avg_ret": 0.013294,
+          "pnl_ratio": 1.6054,
+          "n": 50
+        }
+      },
+      "2024-W16": {
+        "momentum": {
+          "win_rate": 0.56,
+          "sharpe": 6.2334,
+          "avg_ret": 0.148436,
+          "pnl_ratio": 2.7223,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.66,
+          "sharpe": 3.6426,
+          "avg_ret": 0.048593,
+          "pnl_ratio": 0.9625,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.52,
+          "sharpe": 1.0594,
+          "avg_ret": 0.003079,
+          "pnl_ratio": 1.0988,
+          "n": 50
+        }
+      },
+      "2024-W17": {
+        "momentum": {
+          "win_rate": 0.52,
+          "sharpe": 5.4595,
+          "avg_ret": 0.115413,
+          "pnl_ratio": 2.9651,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.5,
+          "sharpe": -1.0349,
+          "avg_ret": -0.011224,
+          "pnl_ratio": 0.8534,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.5,
+          "sharpe": 5.6301,
+          "avg_ret": 0.025942,
+          "pnl_ratio": 3.3637,
+          "n": 50
+        }
+      },
+      "2024-W18": {
+        "momentum": {
+          "win_rate": 0.5,
+          "sharpe": 7.5297,
+          "avg_ret": 0.109089,
+          "pnl_ratio": 3.6325,
+          "n": 20
+        },
+        "reversal": {
+          "win_rate": 0.65,
+          "sharpe": 4.7272,
+          "avg_ret": 0.06261,
+          "pnl_ratio": 1.1781,
+          "n": 20
+        },
+        "lowvol": {
+          "win_rate": 0.8,
+          "sharpe": 7.6666,
+          "avg_ret": 0.029989,
+          "pnl_ratio": 1.3169,
+          "n": 20
+        }
+      },
+      "2024-W19": {
+        "momentum": {
+          "win_rate": 0.38,
+          "sharpe": -0.8569,
+          "avg_ret": -0.009185,
+          "pnl_ratio": 1.4282,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.6,
+          "sharpe": 5.3094,
+          "avg_ret": 0.089724,
+          "pnl_ratio": 1.5172,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.76,
+          "sharpe": 9.8348,
+          "avg_ret": 0.018475,
+          "pnl_ratio": 1.4313,
+          "n": 50
+        }
+      },
+      "2024-W20": {
+        "momentum": {
+          "win_rate": 0.26,
+          "sharpe": -9.7584,
+          "avg_ret": -0.077748,
+          "pnl_ratio": 0.7445,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.3,
+          "sharpe": -5.478,
+          "avg_ret": -0.071626,
+          "pnl_ratio": 1.0445,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.68,
+          "sharpe": 6.7748,
+          "avg_ret": 0.0117,
+          "pnl_ratio": 1.3343,
+          "n": 50
+        }
+      },
+      "2024-W21": {
+        "momentum": {
+          "win_rate": 0.04,
+          "sharpe": -25.3087,
+          "avg_ret": -0.194239,
+          "pnl_ratio": 0.5371,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.04,
+          "sharpe": -30.8303,
+          "avg_ret": -0.216888,
+          "pnl_ratio": 0.0576,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.3,
+          "sharpe": 0.3868,
+          "avg_ret": 0.001291,
+          "pnl_ratio": 2.4845,
+          "n": 50
+        }
+      },
+      "2024-W22": {
+        "momentum": {
+          "win_rate": 0.28,
+          "sharpe": -8.2235,
+          "avg_ret": -0.077254,
+          "pnl_ratio": 0.737,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.3,
+          "sharpe": -9.6783,
+          "avg_ret": -0.097738,
+          "pnl_ratio": 0.4472,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.4,
+          "sharpe": -4.4756,
+          "avg_ret": -0.025364,
+          "pnl_ratio": 0.5265,
+          "n": 50
+        }
+      },
+      "2024-W23": {
+        "momentum": {
+          "win_rate": 0.52,
+          "sharpe": 2.3311,
+          "avg_ret": 0.025217,
+          "pnl_ratio": 1.3478,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.58,
+          "sharpe": 3.2688,
+          "avg_ret": 0.029413,
+          "pnl_ratio": 1.2085,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.38,
+          "sharpe": -7.0683,
+          "avg_ret": -0.030769,
+          "pnl_ratio": 0.1867,
+          "n": 50
+        }
+      },
+      "2024-W24": {
+        "momentum": {
+          "win_rate": 0.15,
+          "sharpe": -14.9769,
+          "avg_ret": -0.10269,
+          "pnl_ratio": 0.6532,
+          "n": 40
+        },
+        "reversal": {
+          "win_rate": 0.3,
+          "sharpe": -4.3111,
+          "avg_ret": -0.025237,
+          "pnl_ratio": 1.2148,
+          "n": 40
+        },
+        "lowvol": {
+          "win_rate": 0.35,
+          "sharpe": -4.7016,
+          "avg_ret": -0.012196,
+          "pnl_ratio": 0.8627,
+          "n": 40
+        }
+      },
+      "2024-W25": {
+        "momentum": {
+          "win_rate": 0.04,
+          "sharpe": -33.7153,
+          "avg_ret": -0.206403,
+          "pnl_ratio": 0.4093,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.3,
+          "sharpe": -6.1372,
+          "avg_ret": -0.048919,
+          "pnl_ratio": 0.8396,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.48,
+          "sharpe": -0.6373,
+          "avg_ret": -0.002062,
+          "pnl_ratio": 0.9885,
+          "n": 50
+        }
+      },
+      "2024-W26": {
+        "momentum": {
+          "win_rate": 0.12,
+          "sharpe": -19.436,
+          "avg_ret": -0.137882,
+          "pnl_ratio": 0.301,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.5,
+          "sharpe": 4.7179,
+          "avg_ret": 0.039252,
+          "pnl_ratio": 2.1365,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.48,
+          "sharpe": 1.1314,
+          "avg_ret": 0.002908,
+          "pnl_ratio": 1.2847,
+          "n": 50
+        }
+      },
+      "2024-W27": {
+        "momentum": {
+          "win_rate": 0.18,
+          "sharpe": -14.1879,
+          "avg_ret": -0.108292,
+          "pnl_ratio": 0.4217,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.36,
+          "sharpe": 3.3992,
+          "avg_ret": 0.051807,
+          "pnl_ratio": 3.5302,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.76,
+          "sharpe": 10.6576,
+          "avg_ret": 0.021078,
+          "pnl_ratio": 1.798,
+          "n": 50
+        }
+      },
+      "2024-W28": {
+        "momentum": {
+          "win_rate": 0.26,
+          "sharpe": -5.3245,
+          "avg_ret": -0.064886,
+          "pnl_ratio": 1.0697,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.32,
+          "sharpe": -3.2989,
+          "avg_ret": -0.026007,
+          "pnl_ratio": 1.1345,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.72,
+          "sharpe": 6.4282,
+          "avg_ret": 0.012719,
+          "pnl_ratio": 1.0477,
+          "n": 50
+        }
+      },
+      "2024-W29": {
+        "momentum": {
+          "win_rate": 0.36,
+          "sharpe": 2.2341,
+          "avg_ret": 0.046932,
+          "pnl_ratio": 2.8866,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.62,
+          "sharpe": 5.0674,
+          "avg_ret": 0.030493,
+          "pnl_ratio": 1.4103,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.66,
+          "sharpe": 4.1031,
+          "avg_ret": 0.0084,
+          "pnl_ratio": 0.9626,
+          "n": 50
+        }
+      },
+      "2024-W30": {
+        "momentum": {
+          "win_rate": 0.36,
+          "sharpe": 0.4466,
+          "avg_ret": 0.008985,
+          "pnl_ratio": 1.9072,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.76,
+          "sharpe": 9.1314,
+          "avg_ret": 0.063877,
+          "pnl_ratio": 2.4643,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.7,
+          "sharpe": 6.3293,
+          "avg_ret": 0.012749,
+          "pnl_ratio": 1.1849,
+          "n": 50
+        }
+      },
+      "2024-W31": {
+        "momentum": {
+          "win_rate": 0.3,
+          "sharpe": -6.4621,
+          "avg_ret": -0.069783,
+          "pnl_ratio": 0.8827,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.46,
+          "sharpe": -3.188,
+          "avg_ret": -0.015217,
+          "pnl_ratio": 0.6939,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.48,
+          "sharpe": 4.2636,
+          "avg_ret": 0.016232,
+          "pnl_ratio": 3.9515,
+          "n": 50
+        }
+      },
+      "2024-W32": {
+        "momentum": {
+          "win_rate": 0.24,
+          "sharpe": -9.5387,
+          "avg_ret": -0.113653,
+          "pnl_ratio": 0.7468,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.4,
+          "sharpe": -4.0659,
+          "avg_ret": -0.019013,
+          "pnl_ratio": 0.768,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.52,
+          "sharpe": 4.4014,
+          "avg_ret": 0.016385,
+          "pnl_ratio": 3.3502,
+          "n": 50
+        }
+      },
+      "2024-W33": {
+        "momentum": {
+          "win_rate": 0.24,
+          "sharpe": -4.7998,
+          "avg_ret": -0.083585,
+          "pnl_ratio": 1.5112,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.28,
+          "sharpe": -3.2805,
+          "avg_ret": -0.014474,
+          "pnl_ratio": 1.5253,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.26,
+          "sharpe": -12.4045,
+          "avg_ret": -0.026053,
+          "pnl_ratio": 0.2842,
+          "n": 50
+        }
+      },
+      "2024-W34": {
+        "momentum": {
+          "win_rate": 0.34,
+          "sharpe": 2.5698,
+          "avg_ret": 0.074363,
+          "pnl_ratio": 3.3113,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.6,
+          "sharpe": 3.2572,
+          "avg_ret": 0.017474,
+          "pnl_ratio": 1.2189,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.2,
+          "sharpe": -11.2176,
+          "avg_ret": -0.046013,
+          "pnl_ratio": 0.57,
+          "n": 50
+        }
+      },
+      "2024-W35": {
+        "momentum": {
+          "win_rate": 0.36,
+          "sharpe": -1.1421,
+          "avg_ret": -0.018537,
+          "pnl_ratio": 1.4648,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.34,
+          "sharpe": -1.4146,
+          "avg_ret": -0.005278,
+          "pnl_ratio": 1.5331,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.34,
+          "sharpe": -5.5559,
+          "avg_ret": -0.025748,
+          "pnl_ratio": 0.7202,
+          "n": 50
+        }
+      },
+      "2024-W36": {
+        "momentum": {
+          "win_rate": 0.04,
+          "sharpe": -25.0205,
+          "avg_ret": -0.174584,
+          "pnl_ratio": 0.3352,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.38,
+          "sharpe": -0.7484,
+          "avg_ret": -0.005023,
+          "pnl_ratio": 1.4137,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.5,
+          "sharpe": 2.863,
+          "avg_ret": 0.016739,
+          "pnl_ratio": 1.823,
+          "n": 50
+        }
+      },
+      "2024-W37": {
+        "momentum": {
+          "win_rate": 0.4,
+          "sharpe": 0.8527,
+          "avg_ret": 0.019033,
+          "pnl_ratio": 1.7781,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.96,
+          "sharpe": 19.6045,
+          "avg_ret": 0.235839,
+          "pnl_ratio": 13.0873,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.96,
+          "sharpe": 20.4006,
+          "avg_ret": 0.135277,
+          "pnl_ratio": 3.9974,
+          "n": 50
+        }
+      },
+      "2024-W38": {
+        "momentum": {
+          "win_rate": 0.5,
+          "sharpe": 8.3933,
+          "avg_ret": 0.237499,
+          "pnl_ratio": 5.8447,
+          "n": 30
+        },
+        "reversal": {
+          "win_rate": 1.0,
+          "sharpe": 24.5458,
+          "avg_ret": 0.339255,
+          "pnl_ratio": 0,
+          "n": 30
+        },
+        "lowvol": {
+          "win_rate": 0.9667,
+          "sharpe": 30.7879,
+          "avg_ret": 0.152991,
+          "pnl_ratio": 4.7152,
+          "n": 30
+        }
+      },
+      "2024-W39": {
+        "momentum": {
+          "win_rate": 0.76,
+          "sharpe": 14.0446,
+          "avg_ret": 0.363256,
+          "pnl_ratio": 6.1962,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.9,
+          "sharpe": 16.3801,
+          "avg_ret": 0.255322,
+          "pnl_ratio": 8.2244,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.88,
+          "sharpe": 14.1788,
+          "avg_ret": 0.065179,
+          "pnl_ratio": 5.3095,
+          "n": 50
+        }
+      },
+      "2024-W40": {
+        "momentum": {
+          "win_rate": 0.7,
+          "sharpe": 12.0893,
+          "avg_ret": 0.192529,
+          "pnl_ratio": 3.4103,
+          "n": 10
+        },
+        "reversal": {
+          "win_rate": 0.6,
+          "sharpe": 9.0111,
+          "avg_ret": 0.111822,
+          "pnl_ratio": 4.7895,
+          "n": 10
+        },
+        "lowvol": {
+          "win_rate": 0.2,
+          "sharpe": -6.1984,
+          "avg_ret": -0.035706,
+          "pnl_ratio": 1.5704,
+          "n": 10
+        }
+      },
+      "2024-W41": {
+        "momentum": {
+          "win_rate": 0.625,
+          "sharpe": 7.1814,
+          "avg_ret": 0.127481,
+          "pnl_ratio": 2.6844,
+          "n": 40
+        },
+        "reversal": {
+          "win_rate": 0.8,
+          "sharpe": 10.7721,
+          "avg_ret": 0.107654,
+          "pnl_ratio": 3.7781,
+          "n": 40
+        },
+        "lowvol": {
+          "win_rate": 0.425,
+          "sharpe": 3.0076,
+          "avg_ret": 0.01955,
+          "pnl_ratio": 2.3297,
+          "n": 40
+        }
+      },
+      "2024-W42": {
+        "momentum": {
+          "win_rate": 0.78,
+          "sharpe": 11.8857,
+          "avg_ret": 0.327579,
+          "pnl_ratio": 5.0889,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.96,
+          "sharpe": 20.4221,
+          "avg_ret": 0.149893,
+          "pnl_ratio": 2.9429,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.62,
+          "sharpe": 9.0639,
+          "avg_ret": 0.060054,
+          "pnl_ratio": 3.2315,
+          "n": 50
+        }
+      },
+      "2024-W43": {
+        "momentum": {
+          "win_rate": 0.56,
+          "sharpe": 4.7576,
+          "avg_ret": 0.064915,
+          "pnl_ratio": 1.8156,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.78,
+          "sharpe": 16.3221,
+          "avg_ret": 0.113625,
+          "pnl_ratio": 4.261,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.58,
+          "sharpe": 8.0077,
+          "avg_ret": 0.049446,
+          "pnl_ratio": 5.9947,
+          "n": 50
+        }
+      },
+      "2024-W44": {
+        "momentum": {
+          "win_rate": 0.18,
+          "sharpe": -18.4111,
+          "avg_ret": -0.146717,
+          "pnl_ratio": 0.242,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.62,
+          "sharpe": 7.4714,
+          "avg_ret": 0.056525,
+          "pnl_ratio": 3.5295,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.52,
+          "sharpe": 6.435,
+          "avg_ret": 0.033614,
+          "pnl_ratio": 5.3421,
+          "n": 50
+        }
+      },
+      "2024-W45": {
+        "momentum": {
+          "win_rate": 0.26,
+          "sharpe": -3.2926,
+          "avg_ret": -0.053501,
+          "pnl_ratio": 1.584,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.48,
+          "sharpe": -0.9195,
+          "avg_ret": -0.003433,
+          "pnl_ratio": 0.9344,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.54,
+          "sharpe": 0.1457,
+          "avg_ret": 0.000334,
+          "pnl_ratio": 0.8755,
+          "n": 50
+        }
+      },
+      "2024-W46": {
+        "momentum": {
+          "win_rate": 0.28,
+          "sharpe": -1.5669,
+          "avg_ret": -0.029949,
+          "pnl_ratio": 1.9026,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.12,
+          "sharpe": -11.7715,
+          "avg_ret": -0.054394,
+          "pnl_ratio": 1.3491,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.72,
+          "sharpe": 2.0005,
+          "avg_ret": 0.006409,
+          "pnl_ratio": 0.6002,
+          "n": 50
+        }
+      },
+      "2024-W47": {
+        "momentum": {
+          "win_rate": 0.5,
+          "sharpe": 2.8196,
+          "avg_ret": 0.045522,
+          "pnl_ratio": 1.563,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.66,
+          "sharpe": 8.664,
+          "avg_ret": 0.034003,
+          "pnl_ratio": 1.9284,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.8,
+          "sharpe": 14.8139,
+          "avg_ret": 0.017226,
+          "pnl_ratio": 2.4478,
+          "n": 50
+        }
+      },
+      "2024-W48": {
+        "momentum": {
+          "win_rate": 0.2,
+          "sharpe": -7.5012,
+          "avg_ret": -0.087234,
+          "pnl_ratio": 1.3028,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.52,
+          "sharpe": 5.5012,
+          "avg_ret": 0.027072,
+          "pnl_ratio": 2.5875,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.9,
+          "sharpe": 24.4582,
+          "avg_ret": 0.027497,
+          "pnl_ratio": 4.7256,
+          "n": 50
+        }
+      },
+      "2024-W49": {
+        "momentum": {
+          "win_rate": 0.16,
+          "sharpe": -15.895,
+          "avg_ret": -0.146954,
+          "pnl_ratio": 0.648,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.18,
+          "sharpe": -11.7721,
+          "avg_ret": -0.052484,
+          "pnl_ratio": 0.6854,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.6,
+          "sharpe": 8.0336,
+          "avg_ret": 0.014709,
+          "pnl_ratio": 2.2098,
+          "n": 50
+        }
+      },
+      "2024-W50": {
+        "momentum": {
+          "win_rate": 0.04,
+          "sharpe": -27.7777,
+          "avg_ret": -0.214506,
+          "pnl_ratio": 0.809,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.06,
+          "sharpe": -27.9453,
+          "avg_ret": -0.109167,
+          "pnl_ratio": 0.1031,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.54,
+          "sharpe": 4.2073,
+          "avg_ret": 0.008847,
+          "pnl_ratio": 1.585,
+          "n": 50
+        }
+      },
+      "2024-W51": {
+        "momentum": {
+          "win_rate": 0.16,
+          "sharpe": -7.388,
+          "avg_ret": -0.116538,
+          "pnl_ratio": 1.7157,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.12,
+          "sharpe": -20.24,
+          "avg_ret": -0.094692,
+          "pnl_ratio": 0.4832,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.3,
+          "sharpe": -7.179,
+          "avg_ret": -0.014023,
+          "pnl_ratio": 0.842,
+          "n": 50
+        }
+      },
+      "2024-W52": {
+        "momentum": {
+          "win_rate": 0.36,
+          "sharpe": -4.0975,
+          "avg_ret": -0.051292,
+          "pnl_ratio": 0.9843,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.08,
+          "sharpe": -25.3858,
+          "avg_ret": -0.074081,
+          "pnl_ratio": 0.3522,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.02,
+          "sharpe": -34.107,
+          "avg_ret": -0.046914,
+          "pnl_ratio": 0.5551,
+          "n": 50
+        }
+      },
+      "2025-W01": {
+        "momentum": {
+          "win_rate": 0.375,
+          "sharpe": -2.2739,
+          "avg_ret": -0.024692,
+          "pnl_ratio": 1.1837,
+          "n": 40
+        },
+        "reversal": {
+          "win_rate": 0.55,
+          "sharpe": 7.645,
+          "avg_ret": 0.047089,
+          "pnl_ratio": 3.8601,
+          "n": 40
+        },
+        "lowvol": {
+          "win_rate": 0.175,
+          "sharpe": -17.0025,
+          "avg_ret": -0.02717,
+          "pnl_ratio": 0.4167,
+          "n": 40
+        }
+      },
+      "2025-W02": {
+        "momentum": {
+          "win_rate": 0.56,
+          "sharpe": 5.0483,
+          "avg_ret": 0.079066,
+          "pnl_ratio": 1.9553,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.76,
+          "sharpe": 10.308,
+          "avg_ret": 0.064338,
+          "pnl_ratio": 1.8782,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.52,
+          "sharpe": 4.3626,
+          "avg_ret": 0.006848,
+          "pnl_ratio": 1.8614,
+          "n": 50
+        }
+      },
+      "2025-W03": {
+        "momentum": {
+          "win_rate": 0.42,
+          "sharpe": 1.0913,
+          "avg_ret": 0.020691,
+          "pnl_ratio": 1.6523,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.64,
+          "sharpe": 4.5599,
+          "avg_ret": 0.02281,
+          "pnl_ratio": 1.2355,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.74,
+          "sharpe": 6.8804,
+          "avg_ret": 0.009747,
+          "pnl_ratio": 1.0209,
+          "n": 50
+        }
+      },
+      "2025-W04": {
+        "momentum": {
+          "win_rate": 0.32,
+          "sharpe": -3.1638,
+          "avg_ret": -0.036897,
+          "pnl_ratio": 1.3138,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.92,
+          "sharpe": 18.473,
+          "avg_ret": 0.111707,
+          "pnl_ratio": 2.7522,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.66,
+          "sharpe": 4.4651,
+          "avg_ret": 0.009692,
+          "pnl_ratio": 1.1948,
+          "n": 50
+        }
+      },
+      "2025-W05": {
+        "momentum": {
+          "win_rate": 0.4,
+          "sharpe": 2.4243,
+          "avg_ret": 0.036659,
+          "pnl_ratio": 2.2063,
+          "n": 10
+        },
+        "reversal": {
+          "win_rate": 1.0,
+          "sharpe": 25.4299,
+          "avg_ret": 0.149678,
+          "pnl_ratio": 0,
+          "n": 10
+        },
+        "lowvol": {
+          "win_rate": 0.3,
+          "sharpe": -7.0892,
+          "avg_ret": -0.009295,
+          "pnl_ratio": 0.6296,
+          "n": 10
+        }
+      },
+      "2025-W06": {
+        "momentum": {
+          "win_rate": 0.6667,
+          "sharpe": 11.1556,
+          "avg_ret": 0.249947,
+          "pnl_ratio": 7.9127,
+          "n": 30
+        },
+        "reversal": {
+          "win_rate": 0.9333,
+          "sharpe": 24.2114,
+          "avg_ret": 0.079004,
+          "pnl_ratio": 4.7488,
+          "n": 30
+        },
+        "lowvol": {
+          "win_rate": 0.3667,
+          "sharpe": -0.2957,
+          "avg_ret": -0.000443,
+          "pnl_ratio": 1.6484,
+          "n": 30
+        }
+      },
+      "2025-W07": {
+        "momentum": {
+          "win_rate": 0.48,
+          "sharpe": 2.7455,
+          "avg_ret": 0.038847,
+          "pnl_ratio": 1.6824,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.5,
+          "sharpe": -1.1202,
+          "avg_ret": -0.005569,
+          "pnl_ratio": 0.8321,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.28,
+          "sharpe": -1.5168,
+          "avg_ret": -0.003557,
+          "pnl_ratio": 1.9754,
+          "n": 50
+        }
+      },
+      "2025-W08": {
+        "momentum": {
+          "win_rate": 0.24,
+          "sharpe": -10.6966,
+          "avg_ret": -0.094259,
+          "pnl_ratio": 0.7404,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.44,
+          "sharpe": -3.8552,
+          "avg_ret": -0.025772,
+          "pnl_ratio": 0.6618,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.26,
+          "sharpe": -1.38,
+          "avg_ret": -0.001689,
+          "pnl_ratio": 2.2335,
+          "n": 50
+        }
+      },
+      "2025-W09": {
+        "momentum": {
+          "win_rate": 0.14,
+          "sharpe": -13.7614,
+          "avg_ret": -0.068765,
+          "pnl_ratio": 0.5739,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.7,
+          "sharpe": 8.413,
+          "avg_ret": 0.0609,
+          "pnl_ratio": 1.9906,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.54,
+          "sharpe": 4.4149,
+          "avg_ret": 0.00451,
+          "pnl_ratio": 1.7098,
+          "n": 50
+        }
+      },
+      "2025-W10": {
+        "momentum": {
+          "win_rate": 0.3,
+          "sharpe": -3.8139,
+          "avg_ret": -0.027254,
+          "pnl_ratio": 1.2304,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.68,
+          "sharpe": 7.4221,
+          "avg_ret": 0.081897,
+          "pnl_ratio": 2.5916,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.98,
+          "sharpe": 31.5739,
+          "avg_ret": 0.021729,
+          "pnl_ratio": 0,
+          "n": 50
+        }
+      },
+      "2025-W11": {
+        "momentum": {
+          "win_rate": 0.24,
+          "sharpe": -10.7464,
+          "avg_ret": -0.101042,
+          "pnl_ratio": 0.7185,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.2,
+          "sharpe": -15.8274,
+          "avg_ret": -0.073679,
+          "pnl_ratio": 0.4363,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.94,
+          "sharpe": 26.9369,
+          "avg_ret": 0.027374,
+          "pnl_ratio": 9.3085,
+          "n": 50
+        }
+      },
+      "2025-W12": {
+        "momentum": {
+          "win_rate": 0.04,
+          "sharpe": -30.239,
+          "avg_ret": -0.217854,
+          "pnl_ratio": 0.1847,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.02,
+          "sharpe": -28.9444,
+          "avg_ret": -0.134904,
+          "pnl_ratio": 0.1861,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.42,
+          "sharpe": -4.6231,
+          "avg_ret": -0.008868,
+          "pnl_ratio": 0.5484,
+          "n": 50
+        }
+      },
+      "2025-W13": {
+        "momentum": {
+          "win_rate": 0.1,
+          "sharpe": -21.0056,
+          "avg_ret": -0.204518,
+          "pnl_ratio": 0.5781,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.08,
+          "sharpe": -20.7208,
+          "avg_ret": -0.117178,
+          "pnl_ratio": 0.5848,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.1,
+          "sharpe": -13.1957,
+          "avg_ret": -0.028239,
+          "pnl_ratio": 1.4623,
+          "n": 50
+        }
+      },
+      "2025-W14": {
+        "momentum": {
+          "win_rate": 0.275,
+          "sharpe": -7.1086,
+          "avg_ret": -0.079054,
+          "pnl_ratio": 0.8964,
+          "n": 40
+        },
+        "reversal": {
+          "win_rate": 0.175,
+          "sharpe": -3.9605,
+          "avg_ret": -0.039542,
+          "pnl_ratio": 2.389,
+          "n": 40
+        },
+        "lowvol": {
+          "win_rate": 0.3,
+          "sharpe": -11.5879,
+          "avg_ret": -0.016352,
+          "pnl_ratio": 0.329,
+          "n": 40
+        }
+      },
+      "2025-W15": {
+        "momentum": {
+          "win_rate": 0.22,
+          "sharpe": -8.7852,
+          "avg_ret": -0.109472,
+          "pnl_ratio": 1.0274,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.72,
+          "sharpe": 7.0286,
+          "avg_ret": 0.079014,
+          "pnl_ratio": 1.3633,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.8,
+          "sharpe": 13.7288,
+          "avg_ret": 0.021833,
+          "pnl_ratio": 1.9711,
+          "n": 50
+        }
+      },
+      "2025-W16": {
+        "momentum": {
+          "win_rate": 0.46,
+          "sharpe": -0.4974,
+          "avg_ret": -0.005312,
+          "pnl_ratio": 1.0858,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.64,
+          "sharpe": 3.864,
+          "avg_ret": 0.051715,
+          "pnl_ratio": 1.0849,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.42,
+          "sharpe": -0.9302,
+          "avg_ret": -0.001885,
+          "pnl_ratio": 1.1809,
+          "n": 50
+        }
+      },
+      "2025-W17": {
+        "momentum": {
+          "win_rate": 0.24,
+          "sharpe": -5.0031,
+          "avg_ret": -0.055777,
+          "pnl_ratio": 1.3918,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.86,
+          "sharpe": 10.63,
+          "avg_ret": 0.081976,
+          "pnl_ratio": 0.8024,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.74,
+          "sharpe": 1.279,
+          "avg_ret": 0.00234,
+          "pnl_ratio": 0.4297,
+          "n": 50
+        }
+      },
+      "2025-W18": {
+        "momentum": {
+          "win_rate": 0.5333,
+          "sharpe": 4.6504,
+          "avg_ret": 0.060121,
+          "pnl_ratio": 1.8791,
+          "n": 30
+        },
+        "reversal": {
+          "win_rate": 0.8333,
+          "sharpe": 19.4846,
+          "avg_ret": 0.122367,
+          "pnl_ratio": 4.4092,
+          "n": 30
+        },
+        "lowvol": {
+          "win_rate": 0.8,
+          "sharpe": 3.9841,
+          "avg_ret": 0.005519,
+          "pnl_ratio": 0.4718,
+          "n": 30
+        }
+      },
+      "2025-W19": {
+        "momentum": {
+          "win_rate": 0.675,
+          "sharpe": 7.6031,
+          "avg_ret": 0.099925,
+          "pnl_ratio": 1.9866,
+          "n": 40
+        },
+        "reversal": {
+          "win_rate": 0.875,
+          "sharpe": 19.2072,
+          "avg_ret": 0.107979,
+          "pnl_ratio": 3.2176,
+          "n": 40
+        },
+        "lowvol": {
+          "win_rate": 0.625,
+          "sharpe": 8.9541,
+          "avg_ret": 0.013295,
+          "pnl_ratio": 2.5491,
+          "n": 40
+        }
+      },
+      "2025-W20": {
+        "momentum": {
+          "win_rate": 0.46,
+          "sharpe": -1.9553,
+          "avg_ret": -0.019469,
+          "pnl_ratio": 0.8661,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.54,
+          "sharpe": 5.5582,
+          "avg_ret": 0.033563,
+          "pnl_ratio": 2.3411,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.48,
+          "sharpe": 1.365,
+          "avg_ret": 0.001701,
+          "pnl_ratio": 1.4392,
+          "n": 50
+        }
+      },
+      "2025-W21": {
+        "momentum": {
+          "win_rate": 0.2,
+          "sharpe": -15.3008,
+          "avg_ret": -0.097048,
+          "pnl_ratio": 0.3803,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.52,
+          "sharpe": 2.471,
+          "avg_ret": 0.012105,
+          "pnl_ratio": 1.3797,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.7,
+          "sharpe": 10.9845,
+          "avg_ret": 0.010301,
+          "pnl_ratio": 2.6373,
+          "n": 50
+        }
+      },
+      "2025-W22": {
+        "momentum": {
+          "win_rate": 0.22,
+          "sharpe": -5.2092,
+          "avg_ret": -0.050236,
+          "pnl_ratio": 1.4283,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.44,
+          "sharpe": 1.4414,
+          "avg_ret": 0.006788,
+          "pnl_ratio": 1.6737,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.6,
+          "sharpe": 8.4492,
+          "avg_ret": 0.009275,
+          "pnl_ratio": 3.0768,
+          "n": 50
+        }
+      },
+      "2025-W23": {
+        "momentum": {
+          "win_rate": 0.45,
+          "sharpe": -2.3958,
+          "avg_ret": -0.019332,
+          "pnl_ratio": 0.8567,
+          "n": 40
+        },
+        "reversal": {
+          "win_rate": 0.2,
+          "sharpe": -3.3418,
+          "avg_ret": -0.026776,
+          "pnl_ratio": 1.8201,
+          "n": 40
+        },
+        "lowvol": {
+          "win_rate": 0.3,
+          "sharpe": -8.3914,
+          "avg_ret": -0.01159,
+          "pnl_ratio": 0.6029,
+          "n": 40
+        }
+      },
+      "2025-W24": {
+        "momentum": {
+          "win_rate": 0.28,
+          "sharpe": -6.0847,
+          "avg_ret": -0.05667,
+          "pnl_ratio": 1.038,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.62,
+          "sharpe": 4.8856,
+          "avg_ret": 0.021553,
+          "pnl_ratio": 1.4594,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.58,
+          "sharpe": 5.8309,
+          "avg_ret": 0.008871,
+          "pnl_ratio": 2.2508,
+          "n": 50
+        }
+      },
+      "2025-W25": {
+        "momentum": {
+          "win_rate": 0.36,
+          "sharpe": 2.2142,
+          "avg_ret": 0.031101,
+          "pnl_ratio": 2.4942,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.72,
+          "sharpe": 9.9017,
+          "avg_ret": 0.031348,
+          "pnl_ratio": 2.3403,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.78,
+          "sharpe": 11.7135,
+          "avg_ret": 0.013294,
+          "pnl_ratio": 4.4678,
+          "n": 50
+        }
+      },
+      "2025-W26": {
+        "momentum": {
+          "win_rate": 0.44,
+          "sharpe": 0.8675,
+          "avg_ret": 0.008566,
+          "pnl_ratio": 1.4499,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.78,
+          "sharpe": 9.6393,
+          "avg_ret": 0.051883,
+          "pnl_ratio": 3.7244,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.9,
+          "sharpe": 15.1966,
+          "avg_ret": 0.01984,
+          "pnl_ratio": 1.8717,
+          "n": 50
+        }
+      },
+      "2025-W27": {
+        "momentum": {
+          "win_rate": 0.42,
+          "sharpe": -4.9513,
+          "avg_ret": -0.040272,
+          "pnl_ratio": 0.6488,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.38,
+          "sharpe": -0.2663,
+          "avg_ret": -0.00103,
+          "pnl_ratio": 1.5587,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.78,
+          "sharpe": 12.7883,
+          "avg_ret": 0.013169,
+          "pnl_ratio": 3.0302,
+          "n": 50
+        }
+      },
+      "2025-W28": {
+        "momentum": {
+          "win_rate": 0.4,
+          "sharpe": 1.3073,
+          "avg_ret": 0.046606,
+          "pnl_ratio": 2.5346,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.42,
+          "sharpe": 1.7457,
+          "avg_ret": 0.008794,
+          "pnl_ratio": 1.9128,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.96,
+          "sharpe": 14.749,
+          "avg_ret": 0.029004,
+          "pnl_ratio": 6.4895,
+          "n": 50
+        }
+      },
+      "2025-W29": {
+        "momentum": {
+          "win_rate": 0.52,
+          "sharpe": 5.3369,
+          "avg_ret": 0.314615,
+          "pnl_ratio": 5.3682,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.58,
+          "sharpe": 8.4174,
+          "avg_ret": 0.043081,
+          "pnl_ratio": 3.2488,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.8,
+          "sharpe": 15.3253,
+          "avg_ret": 0.015082,
+          "pnl_ratio": 3.8333,
+          "n": 50
+        }
+      },
+      "2025-W30": {
+        "momentum": {
+          "win_rate": 0.46,
+          "sharpe": 5.1504,
+          "avg_ret": 0.104877,
+          "pnl_ratio": 3.2026,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.52,
+          "sharpe": 4.2862,
+          "avg_ret": 0.021639,
+          "pnl_ratio": 2.0651,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.26,
+          "sharpe": -4.5522,
+          "avg_ret": -0.003478,
+          "pnl_ratio": 1.3477,
+          "n": 50
+        }
+      },
+      "2025-W31": {
+        "momentum": {
+          "win_rate": 0.42,
+          "sharpe": 2.4981,
+          "avg_ret": 0.032396,
+          "pnl_ratio": 2.0967,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.82,
+          "sharpe": 11.9161,
+          "avg_ret": 0.04265,
+          "pnl_ratio": 3.131,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.5,
+          "sharpe": 1.4461,
+          "avg_ret": 0.001073,
+          "pnl_ratio": 1.2787,
+          "n": 50
+        }
+      },
+      "2025-W32": {
+        "momentum": {
+          "win_rate": 0.5,
+          "sharpe": 6.4731,
+          "avg_ret": 0.082019,
+          "pnl_ratio": 2.8964,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.92,
+          "sharpe": 11.0396,
+          "avg_ret": 0.093509,
+          "pnl_ratio": 5.0375,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.76,
+          "sharpe": 9.0934,
+          "avg_ret": 0.011346,
+          "pnl_ratio": 1.7789,
+          "n": 50
+        }
+      },
+      "2025-W33": {
+        "momentum": {
+          "win_rate": 0.44,
+          "sharpe": 1.1513,
+          "avg_ret": 0.012207,
+          "pnl_ratio": 1.5036,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.52,
+          "sharpe": 3.7224,
+          "avg_ret": 0.00983,
+          "pnl_ratio": 1.6568,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.6,
+          "sharpe": 7.9167,
+          "avg_ret": 0.008304,
+          "pnl_ratio": 2.758,
+          "n": 50
+        }
+      },
+      "2025-W34": {
+        "momentum": {
+          "win_rate": 0.4,
+          "sharpe": -5.2654,
+          "avg_ret": -0.044837,
+          "pnl_ratio": 0.6771,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.28,
+          "sharpe": -8.6808,
+          "avg_ret": -0.03307,
+          "pnl_ratio": 0.7031,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.24,
+          "sharpe": -8.6947,
+          "avg_ret": -0.010291,
+          "pnl_ratio": 0.862,
+          "n": 50
+        }
+      },
+      "2025-W35": {
+        "momentum": {
+          "win_rate": 0.34,
+          "sharpe": -3.8771,
+          "avg_ret": -0.039421,
+          "pnl_ratio": 1.0505,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.56,
+          "sharpe": 4.3123,
+          "avg_ret": 0.039923,
+          "pnl_ratio": 2.3504,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.26,
+          "sharpe": -4.4264,
+          "avg_ret": -0.00735,
+          "pnl_ratio": 1.3636,
+          "n": 50
+        }
+      },
+      "2025-W36": {
+        "momentum": {
+          "win_rate": 0.46,
+          "sharpe": 3.5947,
+          "avg_ret": 0.045198,
+          "pnl_ratio": 2.1968,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.68,
+          "sharpe": 9.5533,
+          "avg_ret": 0.053304,
+          "pnl_ratio": 3.3285,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.38,
+          "sharpe": -2.0718,
+          "avg_ret": -0.001766,
+          "pnl_ratio": 1.1833,
+          "n": 50
+        }
+      },
+      "2025-W37": {
+        "momentum": {
+          "win_rate": 0.62,
+          "sharpe": 6.9655,
+          "avg_ret": 0.109354,
+          "pnl_ratio": 1.9783,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.22,
+          "sharpe": -4.9472,
+          "avg_ret": -0.025811,
+          "pnl_ratio": 1.5008,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.16,
+          "sharpe": -12.9684,
+          "avg_ret": -0.016026,
+          "pnl_ratio": 0.7292,
+          "n": 50
+        }
+      },
+      "2025-W38": {
+        "momentum": {
+          "win_rate": 0.5,
+          "sharpe": 1.0441,
+          "avg_ret": 0.013753,
+          "pnl_ratio": 1.1695,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.18,
+          "sharpe": -9.017,
+          "avg_ret": -0.042693,
+          "pnl_ratio": 1.1788,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.42,
+          "sharpe": 0.3415,
+          "avg_ret": 0.000709,
+          "pnl_ratio": 1.4794,
+          "n": 50
+        }
+      },
+      "2025-W39": {
+        "momentum": {
+          "win_rate": 0.36,
+          "sharpe": -5.6651,
+          "avg_ret": -0.066385,
+          "pnl_ratio": 0.7697,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.58,
+          "sharpe": 1.8947,
+          "avg_ret": 0.015065,
+          "pnl_ratio": 0.9798,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.82,
+          "sharpe": 12.0033,
+          "avg_ret": 0.014158,
+          "pnl_ratio": 2.5026,
+          "n": 50
+        }
+      },
+      "2025-W40": {
+        "momentum": {
+          "win_rate": 0.45,
+          "sharpe": 2.4536,
+          "avg_ret": 0.037388,
+          "pnl_ratio": 1.8155,
+          "n": 20
+        },
+        "reversal": {
+          "win_rate": 0.85,
+          "sharpe": 11.8716,
+          "avg_ret": 0.068496,
+          "pnl_ratio": 1.1668,
+          "n": 20
+        },
+        "lowvol": {
+          "win_rate": 1.0,
+          "sharpe": 24.0295,
+          "avg_ret": 0.022611,
+          "pnl_ratio": 0,
+          "n": 20
+        }
+      },
+      "2025-W41": {
+        "momentum": {
+          "win_rate": 0.65,
+          "sharpe": 4.8119,
+          "avg_ret": 0.055969,
+          "pnl_ratio": 1.1134,
+          "n": 20
+        },
+        "reversal": {
+          "win_rate": 0.55,
+          "sharpe": 3.7695,
+          "avg_ret": 0.022902,
+          "pnl_ratio": 1.6706,
+          "n": 20
+        },
+        "lowvol": {
+          "win_rate": 0.7,
+          "sharpe": 4.0928,
+          "avg_ret": 0.006538,
+          "pnl_ratio": 0.9719,
+          "n": 20
+        }
+      },
+      "2025-W42": {
+        "momentum": {
+          "win_rate": 0.54,
+          "sharpe": 4.0077,
+          "avg_ret": 0.054674,
+          "pnl_ratio": 1.5951,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.46,
+          "sharpe": 2.8398,
+          "avg_ret": 0.012163,
+          "pnl_ratio": 1.9989,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.64,
+          "sharpe": -1.4077,
+          "avg_ret": -0.002878,
+          "pnl_ratio": 0.4289,
+          "n": 50
+        }
+      },
+      "2025-W43": {
+        "momentum": {
+          "win_rate": 0.44,
+          "sharpe": 0.6831,
+          "avg_ret": 0.010979,
+          "pnl_ratio": 1.443,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.62,
+          "sharpe": 9.3485,
+          "avg_ret": 0.064889,
+          "pnl_ratio": 3.7978,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.56,
+          "sharpe": 1.7695,
+          "avg_ret": 0.002362,
+          "pnl_ratio": 1.0532,
+          "n": 50
+        }
+      },
+      "2025-W44": {
+        "momentum": {
+          "win_rate": 0.68,
+          "sharpe": 7.2392,
+          "avg_ret": 0.107366,
+          "pnl_ratio": 1.8572,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.42,
+          "sharpe": -3.0948,
+          "avg_ret": -0.013113,
+          "pnl_ratio": 0.8438,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.98,
+          "sharpe": 20.2849,
+          "avg_ret": 0.027528,
+          "pnl_ratio": 27.4056,
+          "n": 50
+        }
+      },
+      "2025-W45": {
+        "momentum": {
+          "win_rate": 0.62,
+          "sharpe": 5.2021,
+          "avg_ret": 0.088898,
+          "pnl_ratio": 1.4846,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.3,
+          "sharpe": -6.7943,
+          "avg_ret": -0.029718,
+          "pnl_ratio": 0.7627,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.64,
+          "sharpe": 4.4822,
+          "avg_ret": 0.00543,
+          "pnl_ratio": 1.0937,
+          "n": 50
+        }
+      },
+      "2025-W46": {
+        "momentum": {
+          "win_rate": 0.5,
+          "sharpe": -0.9297,
+          "avg_ret": -0.011555,
+          "pnl_ratio": 0.8699,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.2,
+          "sharpe": -6.0023,
+          "avg_ret": -0.024622,
+          "pnl_ratio": 1.5098,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.08,
+          "sharpe": -24.7719,
+          "avg_ret": -0.030321,
+          "pnl_ratio": 0.6414,
+          "n": 50
+        }
+      },
+      "2025-W47": {
+        "momentum": {
+          "win_rate": 0.24,
+          "sharpe": -8.4389,
+          "avg_ret": -0.083511,
+          "pnl_ratio": 0.9441,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.24,
+          "sharpe": -7.2007,
+          "avg_ret": -0.016903,
+          "pnl_ratio": 1.0541,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.2,
+          "sharpe": -13.1964,
+          "avg_ret": -0.01658,
+          "pnl_ratio": 0.4863,
+          "n": 50
+        }
+      },
+      "2025-W48": {
+        "momentum": {
+          "win_rate": 0.6,
+          "sharpe": 4.7826,
+          "avg_ret": 0.064858,
+          "pnl_ratio": 1.3594,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.56,
+          "sharpe": 4.6246,
+          "avg_ret": 0.018761,
+          "pnl_ratio": 1.8854,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.3,
+          "sharpe": -3.8431,
+          "avg_ret": -0.006456,
+          "pnl_ratio": 1.2122,
+          "n": 50
+        }
+      },
+      "2025-W49": {
+        "momentum": {
+          "win_rate": 0.44,
+          "sharpe": -1.7353,
+          "avg_ret": -0.018556,
+          "pnl_ratio": 0.9855,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.24,
+          "sharpe": -5.3847,
+          "avg_ret": -0.022928,
+          "pnl_ratio": 1.3169,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.1,
+          "sharpe": -19.5754,
+          "avg_ret": -0.019134,
+          "pnl_ratio": 0.1825,
+          "n": 50
+        }
+      },
+      "2025-W50": {
+        "momentum": {
+          "win_rate": 0.56,
+          "sharpe": 4.5804,
+          "avg_ret": 0.044761,
+          "pnl_ratio": 1.5595,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.42,
+          "sharpe": -0.6675,
+          "avg_ret": -0.00365,
+          "pnl_ratio": 1.2175,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.5,
+          "sharpe": 1.1249,
+          "avg_ret": 0.00185,
+          "pnl_ratio": 1.2756,
+          "n": 50
+        }
+      },
+      "2025-W51": {
+        "momentum": {
+          "win_rate": 0.8,
+          "sharpe": 15.1249,
+          "avg_ret": 0.220191,
+          "pnl_ratio": 3.7439,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.78,
+          "sharpe": 10.6383,
+          "avg_ret": 0.080559,
+          "pnl_ratio": 3.0349,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.44,
+          "sharpe": -1.4954,
+          "avg_ret": -0.001765,
+          "pnl_ratio": 1.0078,
+          "n": 50
+        }
+      },
+      "2025-W52": {
+        "momentum": {
+          "win_rate": 0.7,
+          "sharpe": 12.242,
+          "avg_ret": 0.294315,
+          "pnl_ratio": 5.3102,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.78,
+          "sharpe": 12.2245,
+          "avg_ret": 0.104809,
+          "pnl_ratio": 2.7539,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.72,
+          "sharpe": 9.9776,
+          "avg_ret": 0.006943,
+          "pnl_ratio": 2.0564,
+          "n": 50
+        }
+      },
+      "2026-W01": {
+        "momentum": {
+          "win_rate": 0.5667,
+          "sharpe": 7.8676,
+          "avg_ret": 0.104434,
+          "pnl_ratio": 3.4239,
+          "n": 30
+        },
+        "reversal": {
+          "win_rate": 0.9667,
+          "sharpe": 15.1652,
+          "avg_ret": 0.124794,
+          "pnl_ratio": 2.1017,
+          "n": 30
+        },
+        "lowvol": {
+          "win_rate": 0.4667,
+          "sharpe": 2.228,
+          "avg_ret": 0.002456,
+          "pnl_ratio": 1.7144,
+          "n": 30
+        }
+      },
+      "2026-W02": {
+        "momentum": {
+          "win_rate": 0.48,
+          "sharpe": 3.0416,
+          "avg_ret": 0.066967,
+          "pnl_ratio": 1.8624,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.72,
+          "sharpe": 10.3805,
+          "avg_ret": 0.063852,
+          "pnl_ratio": 1.9549,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.56,
+          "sharpe": 4.3346,
+          "avg_ret": 0.007582,
+          "pnl_ratio": 1.7499,
+          "n": 50
+        }
+      },
+      "2026-W03": {
+        "momentum": {
+          "win_rate": 0.48,
+          "sharpe": 1.5997,
+          "avg_ret": 0.03008,
+          "pnl_ratio": 1.4242,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.36,
+          "sharpe": -3.8344,
+          "avg_ret": -0.016108,
+          "pnl_ratio": 1.0276,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.68,
+          "sharpe": 5.6584,
+          "avg_ret": 0.032335,
+          "pnl_ratio": 3.1486,
+          "n": 50
+        }
+      },
+      "2026-W04": {
+        "momentum": {
+          "win_rate": 0.56,
+          "sharpe": 6.8386,
+          "avg_ret": 0.097413,
+          "pnl_ratio": 2.5921,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.48,
+          "sharpe": 2.1458,
+          "avg_ret": 0.011609,
+          "pnl_ratio": 1.5661,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.38,
+          "sharpe": 1.168,
+          "avg_ret": 0.001558,
+          "pnl_ratio": 2.0142,
+          "n": 50
+        }
+      },
+      "2026-W05": {
+        "momentum": {
+          "win_rate": 0.06,
+          "sharpe": -25.0835,
+          "avg_ret": -0.167454,
+          "pnl_ratio": 0.346,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.54,
+          "sharpe": 3.36,
+          "avg_ret": 0.013066,
+          "pnl_ratio": 1.5194,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.44,
+          "sharpe": 3.9066,
+          "avg_ret": 0.004396,
+          "pnl_ratio": 2.4578,
+          "n": 50
+        }
+      },
+      "2026-W06": {
+        "momentum": {
+          "win_rate": 0.3,
+          "sharpe": -4.5147,
+          "avg_ret": -0.057768,
+          "pnl_ratio": 1.1844,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.48,
+          "sharpe": -1.6298,
+          "avg_ret": -0.007973,
+          "pnl_ratio": 0.8286,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.82,
+          "sharpe": 7.6934,
+          "avg_ret": 0.018033,
+          "pnl_ratio": 3.6051,
+          "n": 50
+        }
+      },
+      "2026-W07": {
+        "momentum": {
+          "win_rate": 0.4,
+          "sharpe": -1.602,
+          "avg_ret": -0.024413,
+          "pnl_ratio": 1.1768,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.18,
+          "sharpe": -8.1622,
+          "avg_ret": -0.044919,
+          "pnl_ratio": 1.2797,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.48,
+          "sharpe": 2.2316,
+          "avg_ret": 0.004186,
+          "pnl_ratio": 1.533,
+          "n": 50
+        }
+      },
+      "2026-W09": {
+        "momentum": {
+          "win_rate": 0.475,
+          "sharpe": -0.4547,
+          "avg_ret": -0.004421,
+          "pnl_ratio": 1.0306,
+          "n": 40
+        },
+        "reversal": {
+          "win_rate": 0.25,
+          "sharpe": -9.0954,
+          "avg_ret": -0.040958,
+          "pnl_ratio": 0.7934,
+          "n": 40
+        },
+        "lowvol": {
+          "win_rate": 0.5,
+          "sharpe": 7.1933,
+          "avg_ret": 0.018798,
+          "pnl_ratio": 3.8079,
+          "n": 40
+        }
+      },
+      "2026-W10": {
+        "momentum": {
+          "win_rate": 0.24,
+          "sharpe": -8.8431,
+          "avg_ret": -0.0792,
+          "pnl_ratio": 0.7464,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.4,
+          "sharpe": -4.2498,
+          "avg_ret": -0.019598,
+          "pnl_ratio": 0.768,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.78,
+          "sharpe": 8.7564,
+          "avg_ret": 0.01919,
+          "pnl_ratio": 3.2815,
+          "n": 50
+        }
+      },
+      "2026-W11": {
+        "momentum": {
+          "win_rate": 0.26,
+          "sharpe": -10.9863,
+          "avg_ret": -0.095952,
+          "pnl_ratio": 0.5713,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.16,
+          "sharpe": -3.8745,
+          "avg_ret": -0.03755,
+          "pnl_ratio": 2.6,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.2,
+          "sharpe": -15.4553,
+          "avg_ret": -0.030964,
+          "pnl_ratio": 0.3139,
+          "n": 50
+        }
+      },
+      "2026-W12": {
+        "momentum": {
+          "win_rate": 0.26,
+          "sharpe": -6.8829,
+          "avg_ret": -0.068206,
+          "pnl_ratio": 1.0611,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.06,
+          "sharpe": -21.8909,
+          "avg_ret": -0.051132,
+          "pnl_ratio": 0.595,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.28,
+          "sharpe": -10.4581,
+          "avg_ret": -0.023535,
+          "pnl_ratio": 0.4683,
+          "n": 50
+        }
+      },
+      "2026-W13": {
+        "momentum": {
+          "win_rate": 0.32,
+          "sharpe": -5.2228,
+          "avg_ret": -0.06942,
+          "pnl_ratio": 1.0399,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.8,
+          "sharpe": 12.3755,
+          "avg_ret": 0.050982,
+          "pnl_ratio": 2.6124,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.58,
+          "sharpe": 4.7585,
+          "avg_ret": 0.007812,
+          "pnl_ratio": 1.524,
+          "n": 50
+        }
+      },
+      "2026-W14": {
+        "momentum": {
+          "win_rate": 0.42,
+          "sharpe": 3.0948,
+          "avg_ret": 0.045416,
+          "pnl_ratio": 2.3703,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.78,
+          "sharpe": 13.7828,
+          "avg_ret": 0.088754,
+          "pnl_ratio": 3.5497,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.4,
+          "sharpe": -3.9465,
+          "avg_ret": -0.003312,
+          "pnl_ratio": 0.7967,
+          "n": 50
+        }
+      },
+      "2026-W15": {
+        "momentum": {
+          "win_rate": 0.575,
+          "sharpe": 6.4239,
+          "avg_ret": 0.072872,
+          "pnl_ratio": 2.0252,
+          "n": 40
+        },
+        "reversal": {
+          "win_rate": 0.725,
+          "sharpe": 13.4747,
+          "avg_ret": 0.08557,
+          "pnl_ratio": 4.4427,
+          "n": 40
+        },
+        "lowvol": {
+          "win_rate": 0.65,
+          "sharpe": 3.2411,
+          "avg_ret": 0.005747,
+          "pnl_ratio": 0.8535,
+          "n": 40
+        }
+      },
+      "2026-W16": {
+        "momentum": {
+          "win_rate": 0.62,
+          "sharpe": 8.8508,
+          "avg_ret": 0.109612,
+          "pnl_ratio": 3.2982,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.58,
+          "sharpe": 5.9022,
+          "avg_ret": 0.030312,
+          "pnl_ratio": 1.8363,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.66,
+          "sharpe": 3.5525,
+          "avg_ret": 0.009741,
+          "pnl_ratio": 0.9025,
+          "n": 50
+        }
+      },
+      "2026-W17": {
+        "momentum": {
+          "win_rate": 0.7,
+          "sharpe": 9.5857,
+          "avg_ret": 0.103732,
+          "pnl_ratio": 2.1454,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.68,
+          "sharpe": 9.583,
+          "avg_ret": 0.056342,
+          "pnl_ratio": 2.7534,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.48,
+          "sharpe": 4.0108,
+          "avg_ret": 0.011106,
+          "pnl_ratio": 2.2536,
+          "n": 50
+        }
+      },
+      "2026-W18": {
+        "momentum": {
+          "win_rate": 0.575,
+          "sharpe": 4.5528,
+          "avg_ret": 0.047209,
+          "pnl_ratio": 1.5701,
+          "n": 40
+        },
+        "reversal": {
+          "win_rate": 0.425,
+          "sharpe": -2.2657,
+          "avg_ret": -0.024291,
+          "pnl_ratio": 0.737,
+          "n": 40
+        },
+        "lowvol": {
+          "win_rate": 0.25,
+          "sharpe": -3.826,
+          "avg_ret": -0.008178,
+          "pnl_ratio": 1.6176,
+          "n": 40
+        }
+      },
+      "2026-W19": {
+        "momentum": {
+          "win_rate": 0.7667,
+          "sharpe": 10.1076,
+          "avg_ret": 0.113148,
+          "pnl_ratio": 1.4134,
+          "n": 30
+        },
+        "reversal": {
+          "win_rate": 0.0667,
+          "sharpe": -24.0398,
+          "avg_ret": -0.108795,
+          "pnl_ratio": 0.0477,
+          "n": 30
+        },
+        "lowvol": {
+          "win_rate": 0.0667,
+          "sharpe": -25.7141,
+          "avg_ret": -0.029537,
+          "pnl_ratio": 0.1718,
+          "n": 30
+        }
+      },
+      "2026-W20": {
+        "momentum": {
+          "win_rate": 0.54,
+          "sharpe": 2.1816,
+          "avg_ret": 0.025953,
+          "pnl_ratio": 1.1781,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.14,
+          "sharpe": -8.6255,
+          "avg_ret": -0.059011,
+          "pnl_ratio": 1.7246,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.08,
+          "sharpe": -20.4227,
+          "avg_ret": -0.039727,
+          "pnl_ratio": 0.3895,
+          "n": 50
+        }
+      },
+      "2026-W21": {
+        "momentum": {
+          "win_rate": 0.46,
+          "sharpe": 1.4501,
+          "avg_ret": 0.017793,
+          "pnl_ratio": 1.4785,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.12,
+          "sharpe": -14.63,
+          "avg_ret": -0.064235,
+          "pnl_ratio": 0.9755,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.42,
+          "sharpe": 1.1414,
+          "avg_ret": 0.002085,
+          "pnl_ratio": 1.6498,
+          "n": 50
+        }
+      },
+      "2026-W22": {
+        "momentum": {
+          "win_rate": 0.36,
+          "sharpe": -2.5056,
+          "avg_ret": -0.039889,
+          "pnl_ratio": 1.162,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.24,
+          "sharpe": -6.6983,
+          "avg_ret": -0.038742,
+          "pnl_ratio": 1.2186,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.7,
+          "sharpe": 3.0101,
+          "avg_ret": 0.006751,
+          "pnl_ratio": 0.6707,
+          "n": 50
+        }
+      },
+      "2026-W23": {
+        "momentum": {
+          "win_rate": 0.68,
+          "sharpe": 8.8896,
+          "avg_ret": 0.157574,
+          "pnl_ratio": 1.8792,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.36,
+          "sharpe": -4.8932,
+          "avg_ret": -0.02523,
+          "pnl_ratio": 0.8765,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.3,
+          "sharpe": -6.5538,
+          "avg_ret": -0.008369,
+          "pnl_ratio": 0.7483,
+          "n": 50
+        }
+      },
+      "2026-W24": {
+        "momentum": {
+          "win_rate": 0.8,
+          "sharpe": 13.3242,
+          "avg_ret": 0.156491,
+          "pnl_ratio": 2.0426,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.48,
+          "sharpe": 2.5054,
+          "avg_ret": 0.027413,
+          "pnl_ratio": 1.843,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.16,
+          "sharpe": -13.5493,
+          "avg_ret": -0.030056,
+          "pnl_ratio": 0.7785,
+          "n": 50
+        }
+      },
+      "2026-W25": {
+        "momentum": {
+          "win_rate": 0.5,
+          "sharpe": -0.1206,
+          "avg_ret": -0.001075,
+          "pnl_ratio": 0.9823,
+          "n": 40
+        },
+        "reversal": {
+          "win_rate": 0.375,
+          "sharpe": -3.4343,
+          "avg_ret": -0.020663,
+          "pnl_ratio": 0.9551,
+          "n": 40
+        },
+        "lowvol": {
+          "win_rate": 0.15,
+          "sharpe": -18.6186,
+          "avg_ret": -0.042164,
+          "pnl_ratio": 0.3582,
+          "n": 40
+        }
+      },
+      "2026-W26": {
+        "momentum": {
+          "win_rate": 0.2,
+          "sharpe": -14.469,
+          "avg_ret": -0.158153,
+          "pnl_ratio": 0.5191,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.28,
+          "sharpe": -6.1622,
+          "avg_ret": -0.041193,
+          "pnl_ratio": 0.9361,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.72,
+          "sharpe": 7.124,
+          "avg_ret": 0.013051,
+          "pnl_ratio": 1.1272,
+          "n": 50
+        }
+      },
+      "2026-W27": {
+        "momentum": {
+          "win_rate": 0.14,
+          "sharpe": -19.6954,
+          "avg_ret": -0.204675,
+          "pnl_ratio": 0.5039,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.24,
+          "sharpe": -6.8157,
+          "avg_ret": -0.054628,
+          "pnl_ratio": 1.1653,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.92,
+          "sharpe": 11.1558,
+          "avg_ret": 0.070863,
+          "pnl_ratio": 3.7532,
+          "n": 50
+        }
+      },
+      "2026-W28": {
+        "momentum": {
+          "win_rate": 0.15,
+          "sharpe": -24.7273,
+          "avg_ret": -0.268853,
+          "pnl_ratio": 0.3098,
+          "n": 20
+        },
+        "reversal": {
+          "win_rate": 0.15,
+          "sharpe": -26.3113,
+          "avg_ret": -0.16015,
+          "pnl_ratio": 0.1015,
+          "n": 20
+        },
+        "lowvol": {
+          "win_rate": 0.95,
+          "sharpe": 25.2858,
+          "avg_ret": 0.04946,
+          "pnl_ratio": 8.2749,
+          "n": 20
+        }
+      }
+    }
+  },
+  "month": {
+    "n_periods": 31,
+    "best_counts": {
+      "lowvol": 14,
+      "reversal": 11,
+      "momentum": 6
+    },
+    "periods": {
+      "2024-01": {
+        "momentum": {
+          "win_rate": 0.1273,
+          "sharpe": -12.7903,
+          "avg_ret": -0.172355,
+          "pnl_ratio": 1.0025,
+          "n": 220
+        },
+        "reversal": {
+          "win_rate": 0.1182,
+          "sharpe": -16.6821,
+          "avg_ret": -0.117048,
+          "pnl_ratio": 0.6382,
+          "n": 220
+        },
+        "lowvol": {
+          "win_rate": 0.65,
+          "sharpe": 2.2383,
+          "avg_ret": 0.007486,
+          "pnl_ratio": 0.7699,
+          "n": 220
+        }
+      },
+      "2024-02": {
+        "momentum": {
+          "win_rate": 0.5533,
+          "sharpe": 3.78,
+          "avg_ret": 0.047646,
+          "pnl_ratio": 1.686,
+          "n": 150
+        },
+        "reversal": {
+          "win_rate": 0.9267,
+          "sharpe": 17.8964,
+          "avg_ret": 0.213304,
+          "pnl_ratio": 10.8916,
+          "n": 150
+        },
+        "lowvol": {
+          "win_rate": 0.6333,
+          "sharpe": 9.0661,
+          "avg_ret": 0.016796,
+          "pnl_ratio": 2.8172,
+          "n": 150
+        }
+      },
+      "2024-03": {
+        "momentum": {
+          "win_rate": 0.319,
+          "sharpe": -4.9221,
+          "avg_ret": -0.053981,
+          "pnl_ratio": 0.9391,
+          "n": 210
+        },
+        "reversal": {
+          "win_rate": 0.5095,
+          "sharpe": 1.5591,
+          "avg_ret": 0.009916,
+          "pnl_ratio": 1.2313,
+          "n": 210
+        },
+        "lowvol": {
+          "win_rate": 0.4714,
+          "sharpe": 0.1702,
+          "avg_ret": 0.000342,
+          "pnl_ratio": 1.153,
+          "n": 210
+        }
+      },
+      "2024-04": {
+        "momentum": {
+          "win_rate": 0.43,
+          "sharpe": 1.9896,
+          "avg_ret": 0.039466,
+          "pnl_ratio": 1.918,
+          "n": 200
+        },
+        "reversal": {
+          "win_rate": 0.46,
+          "sharpe": -0.9274,
+          "avg_ret": -0.010155,
+          "pnl_ratio": 1.0092,
+          "n": 200
+        },
+        "lowvol": {
+          "win_rate": 0.675,
+          "sharpe": 5.4413,
+          "avg_ret": 0.017078,
+          "pnl_ratio": 1.4785,
+          "n": 200
+        }
+      },
+      "2024-05": {
+        "momentum": {
+          "win_rate": 0.24,
+          "sharpe": -9.0079,
+          "avg_ret": -0.089607,
+          "pnl_ratio": 0.831,
+          "n": 200
+        },
+        "reversal": {
+          "win_rate": 0.31,
+          "sharpe": -5.2496,
+          "avg_ret": -0.074132,
+          "pnl_ratio": 0.9998,
+          "n": 200
+        },
+        "lowvol": {
+          "win_rate": 0.535,
+          "sharpe": 0.4144,
+          "avg_ret": 0.001525,
+          "pnl_ratio": 0.9443,
+          "n": 200
+        }
+      },
+      "2024-06": {
+        "momentum": {
+          "win_rate": 0.2105,
+          "sharpe": -10.9265,
+          "avg_ret": -0.105584,
+          "pnl_ratio": 0.7494,
+          "n": 190
+        },
+        "reversal": {
+          "win_rate": 0.4263,
+          "sharpe": -0.0141,
+          "avg_ret": -0.000117,
+          "pnl_ratio": 1.3426,
+          "n": 190
+        },
+        "lowvol": {
+          "win_rate": 0.4263,
+          "sharpe": -3.0673,
+          "avg_ret": -0.010442,
+          "pnl_ratio": 0.7663,
+          "n": 190
+        }
+      },
+      "2024-07": {
+        "momentum": {
+          "win_rate": 0.287,
+          "sharpe": -2.2312,
+          "avg_ret": -0.035895,
+          "pnl_ratio": 1.6536,
+          "n": 230
+        },
+        "reversal": {
+          "win_rate": 0.5174,
+          "sharpe": 2.7924,
+          "avg_ret": 0.026521,
+          "pnl_ratio": 1.6536,
+          "n": 230
+        },
+        "lowvol": {
+          "win_rate": 0.6783,
+          "sharpe": 6.0794,
+          "avg_ret": 0.013898,
+          "pnl_ratio": 1.4019,
+          "n": 230
+        }
+      },
+      "2024-08": {
+        "momentum": {
+          "win_rate": 0.3,
+          "sharpe": -1.9047,
+          "avg_ret": -0.037122,
+          "pnl_ratio": 1.6526,
+          "n": 220
+        },
+        "reversal": {
+          "win_rate": 0.4,
+          "sharpe": -1.8752,
+          "avg_ret": -0.008713,
+          "pnl_ratio": 1.0929,
+          "n": 220
+        },
+        "lowvol": {
+          "win_rate": 0.3455,
+          "sharpe": -4.1173,
+          "avg_ret": -0.01686,
+          "pnl_ratio": 0.8307,
+          "n": 220
+        }
+      },
+      "2024-09": {
+        "momentum": {
+          "win_rate": 0.4316,
+          "sharpe": 4.0712,
+          "avg_ret": 0.102292,
+          "pnl_ratio": 2.8491,
+          "n": 190
+        },
+        "reversal": {
+          "win_rate": 0.7789,
+          "sharpe": 12.8176,
+          "avg_ret": 0.187383,
+          "pnl_ratio": 4.7271,
+          "n": 190
+        },
+        "lowvol": {
+          "win_rate": 0.7789,
+          "sharpe": 11.7753,
+          "avg_ret": 0.079434,
+          "pnl_ratio": 2.6689,
+          "n": 190
+        }
+      },
+      "2024-10": {
+        "momentum": {
+          "win_rate": 0.55,
+          "sharpe": 5.0107,
+          "avg_ret": 0.106838,
+          "pnl_ratio": 2.275,
+          "n": 180
+        },
+        "reversal": {
+          "win_rate": 0.7944,
+          "sharpe": 13.286,
+          "avg_ret": 0.109009,
+          "pnl_ratio": 4.2417,
+          "n": 180
+        },
+        "lowvol": {
+          "win_rate": 0.5556,
+          "sharpe": 6.9124,
+          "avg_ret": 0.04365,
+          "pnl_ratio": 3.4645,
+          "n": 180
+        }
+      },
+      "2024-11": {
+        "momentum": {
+          "win_rate": 0.3048,
+          "sharpe": -2.3891,
+          "avg_ret": -0.038576,
+          "pnl_ratio": 1.5161,
+          "n": 210
+        },
+        "reversal": {
+          "win_rate": 0.4571,
+          "sharpe": 0.786,
+          "avg_ret": 0.004044,
+          "pnl_ratio": 1.3532,
+          "n": 210
+        },
+        "lowvol": {
+          "win_rate": 0.719,
+          "sharpe": 5.5393,
+          "avg_ret": 0.012638,
+          "pnl_ratio": 1.1111,
+          "n": 210
+        }
+      },
+      "2024-12": {
+        "momentum": {
+          "win_rate": 0.1909,
+          "sharpe": -9.7432,
+          "avg_ret": -0.121407,
+          "pnl_ratio": 1.0575,
+          "n": 220
+        },
+        "reversal": {
+          "win_rate": 0.1318,
+          "sharpe": -16.8843,
+          "avg_ret": -0.075019,
+          "pnl_ratio": 0.4996,
+          "n": 220
+        },
+        "lowvol": {
+          "win_rate": 0.3318,
+          "sharpe": -5.2323,
+          "avg_ret": -0.012422,
+          "pnl_ratio": 0.9483,
+          "n": 220
+        }
+      },
+      "2025-01": {
+        "momentum": {
+          "win_rate": 0.4333,
+          "sharpe": 0.9974,
+          "avg_ret": 0.015372,
+          "pnl_ratio": 1.5452,
+          "n": 180
+        },
+        "reversal": {
+          "win_rate": 0.7833,
+          "sharpe": 11.5064,
+          "avg_ret": 0.073923,
+          "pnl_ratio": 2.2071,
+          "n": 180
+        },
+        "lowvol": {
+          "win_rate": 0.5889,
+          "sharpe": 3.1517,
+          "avg_ret": 0.005547,
+          "pnl_ratio": 1.1905,
+          "n": 180
+        }
+      },
+      "2025-02": {
+        "momentum": {
+          "win_rate": 0.35,
+          "sharpe": 0.477,
+          "avg_ret": 0.007165,
+          "pnl_ratio": 2.0287,
+          "n": 180
+        },
+        "reversal": {
+          "win_rate": 0.6111,
+          "sharpe": 3.2686,
+          "avg_ret": 0.021378,
+          "pnl_ratio": 1.1059,
+          "n": 180
+        },
+        "lowvol": {
+          "win_rate": 0.3611,
+          "sharpe": -0.1712,
+          "avg_ret": -0.000278,
+          "pnl_ratio": 1.7163,
+          "n": 180
+        }
+      },
+      "2025-03": {
+        "momentum": {
+          "win_rate": 0.181,
+          "sharpe": -13.5773,
+          "avg_ret": -0.133982,
+          "pnl_ratio": 0.5892,
+          "n": 210
+        },
+        "reversal": {
+          "win_rate": 0.2429,
+          "sharpe": -6.9349,
+          "avg_ret": -0.060606,
+          "pnl_ratio": 1.0012,
+          "n": 210
+        },
+        "lowvol": {
+          "win_rate": 0.5857,
+          "sharpe": 0.9471,
+          "avg_ret": 0.001985,
+          "pnl_ratio": 0.82,
+          "n": 210
+        }
+      },
+      "2025-04": {
+        "momentum": {
+          "win_rate": 0.3286,
+          "sharpe": -3.6255,
+          "avg_ret": -0.044209,
+          "pnl_ratio": 1.1634,
+          "n": 210
+        },
+        "reversal": {
+          "win_rate": 0.6714,
+          "sharpe": 5.818,
+          "avg_ret": 0.063137,
+          "pnl_ratio": 1.2979,
+          "n": 210
+        },
+        "lowvol": {
+          "win_rate": 0.6333,
+          "sharpe": 2.0442,
+          "avg_ret": 0.003852,
+          "pnl_ratio": 0.8022,
+          "n": 210
+        }
+      },
+      "2025-05": {
+        "momentum": {
+          "win_rate": 0.3737,
+          "sharpe": -2.1152,
+          "avg_ret": -0.022845,
+          "pnl_ratio": 1.1764,
+          "n": 190
+        },
+        "reversal": {
+          "win_rate": 0.5789,
+          "sharpe": 6.2456,
+          "avg_ret": 0.036537,
+          "pnl_ratio": 2.1858,
+          "n": 190
+        },
+        "lowvol": {
+          "win_rate": 0.6,
+          "sharpe": 6.8738,
+          "avg_ret": 0.008398,
+          "pnl_ratio": 2.3012,
+          "n": 190
+        }
+      },
+      "2025-06": {
+        "momentum": {
+          "win_rate": 0.375,
+          "sharpe": -1.0738,
+          "avg_ret": -0.011577,
+          "pnl_ratio": 1.4136,
+          "n": 200
+        },
+        "reversal": {
+          "win_rate": 0.6,
+          "sharpe": 3.9142,
+          "avg_ret": 0.02225,
+          "pnl_ratio": 1.5056,
+          "n": 200
+        },
+        "lowvol": {
+          "win_rate": 0.67,
+          "sharpe": 6.2429,
+          "avg_ret": 0.009455,
+          "pnl_ratio": 1.4688,
+          "n": 200
+        }
+      },
+      "2025-07": {
+        "momentum": {
+          "win_rate": 0.4522,
+          "sharpe": 2.8661,
+          "avg_ret": 0.100013,
+          "pnl_ratio": 3.0707,
+          "n": 230
+        },
+        "reversal": {
+          "win_rate": 0.5261,
+          "sharpe": 4.4517,
+          "avg_ret": 0.020383,
+          "pnl_ratio": 2.0491,
+          "n": 230
+        },
+        "lowvol": {
+          "win_rate": 0.6522,
+          "sharpe": 7.596,
+          "avg_ret": 0.010643,
+          "pnl_ratio": 2.6839,
+          "n": 230
+        }
+      },
+      "2025-08": {
+        "momentum": {
+          "win_rate": 0.419,
+          "sharpe": 0.4608,
+          "avg_ret": 0.00523,
+          "pnl_ratio": 1.491,
+          "n": 210
+        },
+        "reversal": {
+          "win_rate": 0.5857,
+          "sharpe": 4.1554,
+          "avg_ret": 0.029983,
+          "pnl_ratio": 1.8255,
+          "n": 210
+        },
+        "lowvol": {
+          "win_rate": 0.4714,
+          "sharpe": 0.4747,
+          "avg_ret": 0.000671,
+          "pnl_ratio": 1.214,
+          "n": 210
+        }
+      },
+      "2025-09": {
+        "momentum": {
+          "win_rate": 0.4818,
+          "sharpe": 1.8869,
+          "avg_ret": 0.026562,
+          "pnl_ratio": 1.4564,
+          "n": 220
+        },
+        "reversal": {
+          "win_rate": 0.4545,
+          "sharpe": 0.9527,
+          "avg_ret": 0.006196,
+          "pnl_ratio": 1.4062,
+          "n": 220
+        },
+        "lowvol": {
+          "win_rate": 0.4955,
+          "sharpe": 0.883,
+          "avg_ret": 0.001391,
+          "pnl_ratio": 1.1898,
+          "n": 220
+        }
+      },
+      "2025-10": {
+        "momentum": {
+          "win_rate": 0.5647,
+          "sharpe": 3.9036,
+          "avg_ret": 0.057473,
+          "pnl_ratio": 1.516,
+          "n": 170
+        },
+        "reversal": {
+          "win_rate": 0.5059,
+          "sharpe": 3.7491,
+          "avg_ret": 0.0215,
+          "pnl_ratio": 1.9644,
+          "n": 170
+        },
+        "lowvol": {
+          "win_rate": 0.7235,
+          "sharpe": 4.8599,
+          "avg_ret": 0.008714,
+          "pnl_ratio": 0.9177,
+          "n": 170
+        }
+      },
+      "2025-11": {
+        "momentum": {
+          "win_rate": 0.49,
+          "sharpe": 1.0367,
+          "avg_ret": 0.014672,
+          "pnl_ratio": 1.2244,
+          "n": 200
+        },
+        "reversal": {
+          "win_rate": 0.325,
+          "sharpe": -3.2895,
+          "avg_ret": -0.01312,
+          "pnl_ratio": 1.1867,
+          "n": 200
+        },
+        "lowvol": {
+          "win_rate": 0.305,
+          "sharpe": -7.5369,
+          "avg_ret": -0.011982,
+          "pnl_ratio": 0.7224,
+          "n": 200
+        }
+      },
+      "2025-12": {
+        "momentum": {
+          "win_rate": 0.6174,
+          "sharpe": 7.6205,
+          "avg_ret": 0.131168,
+          "pnl_ratio": 2.6161,
+          "n": 230
+        },
+        "reversal": {
+          "win_rate": 0.6087,
+          "sharpe": 6.4994,
+          "avg_ret": 0.050797,
+          "pnl_ratio": 2.2836,
+          "n": 230
+        },
+        "lowvol": {
+          "win_rate": 0.4435,
+          "sharpe": -1.7693,
+          "avg_ret": -0.002312,
+          "pnl_ratio": 0.9153,
+          "n": 230
+        }
+      },
+      "2026-01": {
+        "momentum": {
+          "win_rate": 0.395,
+          "sharpe": 0.3811,
+          "avg_ret": 0.006751,
+          "pnl_ratio": 1.6345,
+          "n": 200
+        },
+        "reversal": {
+          "win_rate": 0.525,
+          "sharpe": 3.4049,
+          "avg_ret": 0.018105,
+          "pnl_ratio": 1.5819,
+          "n": 200
+        },
+        "lowvol": {
+          "win_rate": 0.515,
+          "sharpe": 3.576,
+          "avg_ret": 0.011468,
+          "pnl_ratio": 2.8018,
+          "n": 200
+        }
+      },
+      "2026-02": {
+        "momentum": {
+          "win_rate": 0.3857,
+          "sharpe": -2.3458,
+          "avg_ret": -0.030613,
+          "pnl_ratio": 1.1101,
+          "n": 140
+        },
+        "reversal": {
+          "win_rate": 0.3071,
+          "sharpe": -5.9659,
+          "avg_ret": -0.030592,
+          "pnl_ratio": 0.8847,
+          "n": 140
+        },
+        "lowvol": {
+          "win_rate": 0.6071,
+          "sharpe": 5.7508,
+          "avg_ret": 0.013306,
+          "pnl_ratio": 2.0985,
+          "n": 140
+        }
+      },
+      "2026-03": {
+        "momentum": {
+          "win_rate": 0.2909,
+          "sharpe": -6.193,
+          "avg_ret": -0.067139,
+          "pnl_ratio": 0.9778,
+          "n": 220
+        },
+        "reversal": {
+          "win_rate": 0.3909,
+          "sharpe": -0.9519,
+          "avg_ret": -0.006282,
+          "pnl_ratio": 1.3149,
+          "n": 220
+        },
+        "lowvol": {
+          "win_rate": 0.4409,
+          "sharpe": -2.9467,
+          "avg_ret": -0.006844,
+          "pnl_ratio": 0.7566,
+          "n": 220
+        }
+      },
+      "2026-04": {
+        "momentum": {
+          "win_rate": 0.5857,
+          "sharpe": 6.5907,
+          "avg_ret": 0.080348,
+          "pnl_ratio": 2.2327,
+          "n": 210
+        },
+        "reversal": {
+          "win_rate": 0.6333,
+          "sharpe": 6.1798,
+          "avg_ret": 0.046375,
+          "pnl_ratio": 1.9192,
+          "n": 210
+        },
+        "lowvol": {
+          "win_rate": 0.5143,
+          "sharpe": 1.8648,
+          "avg_ret": 0.004335,
+          "pnl_ratio": 1.2958,
+          "n": 210
+        }
+      },
+      "2026-05": {
+        "momentum": {
+          "win_rate": 0.5056,
+          "sharpe": 1.4766,
+          "avg_ret": 0.019929,
+          "pnl_ratio": 1.2378,
+          "n": 180
+        },
+        "reversal": {
+          "win_rate": 0.15,
+          "sharpe": -10.9699,
+          "avg_ret": -0.063129,
+          "pnl_ratio": 1.1418,
+          "n": 180
+        },
+        "lowvol": {
+          "win_rate": 0.3444,
+          "sharpe": -5.8971,
+          "avg_ret": -0.013504,
+          "pnl_ratio": 0.7711,
+          "n": 180
+        }
+      },
+      "2026-06": {
+        "momentum": {
+          "win_rate": 0.5143,
+          "sharpe": 1.3416,
+          "avg_ret": 0.020807,
+          "pnl_ratio": 1.1603,
+          "n": 210
+        },
+        "reversal": {
+          "win_rate": 0.381,
+          "sharpe": -1.7282,
+          "avg_ret": -0.013634,
+          "pnl_ratio": 1.1964,
+          "n": 210
+        },
+        "lowvol": {
+          "win_rate": 0.4,
+          "sharpe": -2.5723,
+          "avg_ret": -0.007752,
+          "pnl_ratio": 0.9607,
+          "n": 210
+        }
+      },
+      "2026-07": {
+        "momentum": {
+          "win_rate": 0.12,
+          "sharpe": -23.1532,
+          "avg_ret": -0.244555,
+          "pnl_ratio": 0.4105,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.12,
+          "sharpe": -17.179,
+          "avg_ret": -0.116966,
+          "pnl_ratio": 0.5746,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.92,
+          "sharpe": 10.9238,
+          "avg_ret": 0.0641,
+          "pnl_ratio": 3.2794,
+          "n": 50
+        }
+      }
+    }
+  },
+  "quarter": {
+    "n_periods": 11,
+    "best_counts": {
+      "lowvol": 6,
+      "reversal": 3,
+      "momentum": 2
+    },
+    "periods": {
+      "2024-Q1": {
+        "momentum": {
+          "win_rate": 0.3069,
+          "sharpe": -5.3545,
+          "avg_ret": -0.072599,
+          "pnl_ratio": 0.9232,
+          "n": 580
+        },
+        "reversal": {
+          "win_rate": 0.469,
+          "sharpe": 1.228,
+          "avg_ret": 0.014358,
+          "pnl_ratio": 1.3954,
+          "n": 580
+        },
+        "lowvol": {
+          "win_rate": 0.581,
+          "sharpe": 2.8113,
+          "avg_ret": 0.007307,
+          "pnl_ratio": 1.1565,
+          "n": 580
+        }
+      },
+      "2024-Q2": {
+        "momentum": {
+          "win_rate": 0.2949,
+          "sharpe": -3.4877,
+          "avg_ret": -0.050999,
+          "pnl_ratio": 1.3176,
+          "n": 590
+        },
+        "reversal": {
+          "win_rate": 0.3983,
+          "sharpe": -2.4646,
+          "avg_ret": -0.02861,
+          "pnl_ratio": 1.013,
+          "n": 590
+        },
+        "lowvol": {
+          "win_rate": 0.5475,
+          "sharpe": 0.844,
+          "avg_ret": 0.002944,
+          "pnl_ratio": 0.9733,
+          "n": 590
+        }
+      },
+      "2024-Q3": {
+        "momentum": {
+          "win_rate": 0.3344,
+          "sharpe": 0.2278,
+          "avg_ret": 0.004707,
+          "pnl_ratio": 2.0771,
+          "n": 640
+        },
+        "reversal": {
+          "win_rate": 0.5547,
+          "sharpe": 5.4434,
+          "avg_ret": 0.062165,
+          "pnl_ratio": 2.6566,
+          "n": 640
+        },
+        "lowvol": {
+          "win_rate": 0.5938,
+          "sharpe": 4.3689,
+          "avg_ret": 0.022781,
+          "pnl_ratio": 1.6782,
+          "n": 640
+        }
+      },
+      "2024-Q4": {
+        "momentum": {
+          "win_rate": 0.3361,
+          "sharpe": -1.4417,
+          "avg_ret": -0.02554,
+          "pnl_ratio": 1.5393,
+          "n": 610
+        },
+        "reversal": {
+          "win_rate": 0.4393,
+          "sharpe": 0.8544,
+          "avg_ret": 0.006503,
+          "pnl_ratio": 1.4768,
+          "n": 610
+        },
+        "lowvol": {
+          "win_rate": 0.5311,
+          "sharpe": 3.038,
+          "avg_ret": 0.012751,
+          "pnl_ratio": 1.6487,
+          "n": 610
+        }
+      },
+      "2025-Q1": {
+        "momentum": {
+          "win_rate": 0.314,
+          "sharpe": -2.975,
+          "avg_ret": -0.042245,
+          "pnl_ratio": 1.3297,
+          "n": 570
+        },
+        "reversal": {
+          "win_rate": 0.5298,
+          "sharpe": 0.9472,
+          "avg_ret": 0.007766,
+          "pnl_ratio": 1.0393,
+          "n": 570
+        },
+        "lowvol": {
+          "win_rate": 0.5158,
+          "sharpe": 1.2887,
+          "avg_ret": 0.002395,
+          "pnl_ratio": 1.1634,
+          "n": 570
+        }
+      },
+      "2025-Q2": {
+        "momentum": {
+          "win_rate": 0.3583,
+          "sharpe": -2.3438,
+          "avg_ret": -0.026566,
+          "pnl_ratio": 1.235,
+          "n": 600
+        },
+        "reversal": {
+          "win_rate": 0.6183,
+          "sharpe": 5.1357,
+          "avg_ret": 0.041084,
+          "pnl_ratio": 1.6301,
+          "n": 600
+        },
+        "lowvol": {
+          "win_rate": 0.635,
+          "sharpe": 4.5242,
+          "avg_ret": 0.007159,
+          "pnl_ratio": 1.2417,
+          "n": 600
+        }
+      },
+      "2025-Q3": {
+        "momentum": {
+          "win_rate": 0.4515,
+          "sharpe": 1.956,
+          "avg_ret": 0.045372,
+          "pnl_ratio": 2.0049,
+          "n": 660
+        },
+        "reversal": {
+          "win_rate": 0.5212,
+          "sharpe": 3.0213,
+          "avg_ret": 0.018709,
+          "pnl_ratio": 1.646,
+          "n": 660
+        },
+        "lowvol": {
+          "win_rate": 0.5424,
+          "sharpe": 2.9372,
+          "avg_ret": 0.004386,
+          "pnl_ratio": 1.4354,
+          "n": 660
+        }
+      },
+      "2025-Q4": {
+        "momentum": {
+          "win_rate": 0.56,
+          "sharpe": 4.5043,
+          "avg_ret": 0.071456,
+          "pnl_ratio": 1.7186,
+          "n": 600
+        },
+        "reversal": {
+          "win_rate": 0.485,
+          "sharpe": 3.3123,
+          "avg_ret": 0.02119,
+          "pnl_ratio": 2.005,
+          "n": 600
+        },
+        "lowvol": {
+          "win_rate": 0.4767,
+          "sharpe": -1.4762,
+          "avg_ret": -0.002411,
+          "pnl_ratio": 0.8547,
+          "n": 600
+        }
+      },
+      "2026-Q1": {
+        "momentum": {
+          "win_rate": 0.3518,
+          "sharpe": -2.2089,
+          "avg_ret": -0.031618,
+          "pnl_ratio": 1.289,
+          "n": 560
+        },
+        "reversal": {
+          "win_rate": 0.4179,
+          "sharpe": -0.6154,
+          "avg_ret": -0.00365,
+          "pnl_ratio": 1.2558,
+          "n": 560
+        },
+        "lowvol": {
+          "win_rate": 0.5089,
+          "sharpe": 1.7311,
+          "avg_ret": 0.004733,
+          "pnl_ratio": 1.4117,
+          "n": 560
+        }
+      },
+      "2026-Q2": {
+        "momentum": {
+          "win_rate": 0.5367,
+          "sharpe": 2.9704,
+          "avg_ret": 0.041383,
+          "pnl_ratio": 1.3933,
+          "n": 600
+        },
+        "reversal": {
+          "win_rate": 0.4,
+          "sharpe": -0.9721,
+          "avg_ret": -0.007479,
+          "pnl_ratio": 1.2702,
+          "n": 600
+        },
+        "lowvol": {
+          "win_rate": 0.4233,
+          "sharpe": -2.0031,
+          "avg_ret": -0.005247,
+          "pnl_ratio": 0.9745,
+          "n": 600
+        }
+      },
+      "2026-Q3": {
+        "momentum": {
+          "win_rate": 0.12,
+          "sharpe": -23.1532,
+          "avg_ret": -0.244555,
+          "pnl_ratio": 0.4105,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.12,
+          "sharpe": -17.179,
+          "avg_ret": -0.116966,
+          "pnl_ratio": 0.5746,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.92,
+          "sharpe": 10.9238,
+          "avg_ret": 0.0641,
+          "pnl_ratio": 3.2794,
+          "n": 50
+        }
+      }
+    }
+  },
+  "half": {
+    "n_periods": 6,
+    "best_counts": {
+      "lowvol": 3,
+      "reversal": 2,
+      "momentum": 1
+    },
+    "periods": {
+      "2024-H1": {
+        "momentum": {
+          "win_rate": 0.3009,
+          "sharpe": -4.3697,
+          "avg_ret": -0.061706,
+          "pnl_ratio": 1.1103,
+          "n": 1170
+        },
+        "reversal": {
+          "win_rate": 0.4333,
+          "sharpe": -0.6233,
+          "avg_ret": -0.00731,
+          "pnl_ratio": 1.1793,
+          "n": 1170
+        },
+        "lowvol": {
+          "win_rate": 0.5641,
+          "sharpe": 1.6567,
+          "avg_ret": 0.005107,
+          "pnl_ratio": 1.0474,
+          "n": 1170
+        }
+      },
+      "2024-H2": {
+        "momentum": {
+          "win_rate": 0.3352,
+          "sharpe": -0.5208,
+          "avg_ret": -0.010053,
+          "pnl_ratio": 1.8052,
+          "n": 1250
+        },
+        "reversal": {
+          "win_rate": 0.4984,
+          "sharpe": 3.5337,
+          "avg_ret": 0.035002,
+          "pnl_ratio": 2.0437,
+          "n": 1250
+        },
+        "lowvol": {
+          "win_rate": 0.5632,
+          "sharpe": 3.761,
+          "avg_ret": 0.017886,
+          "pnl_ratio": 1.6882,
+          "n": 1250
+        }
+      },
+      "2025-H1": {
+        "momentum": {
+          "win_rate": 0.3368,
+          "sharpe": -2.668,
+          "avg_ret": -0.034205,
+          "pnl_ratio": 1.2714,
+          "n": 1170
+        },
+        "reversal": {
+          "win_rate": 0.5752,
+          "sharpe": 3.0437,
+          "avg_ret": 0.024853,
+          "pnl_ratio": 1.2636,
+          "n": 1170
+        },
+        "lowvol": {
+          "win_rate": 0.5769,
+          "sharpe": 2.7984,
+          "avg_ret": 0.004838,
+          "pnl_ratio": 1.1746,
+          "n": 1170
+        }
+      },
+      "2025-H2": {
+        "momentum": {
+          "win_rate": 0.5032,
+          "sharpe": 2.8812,
+          "avg_ret": 0.057793,
+          "pnl_ratio": 1.8626,
+          "n": 1260
+        },
+        "reversal": {
+          "win_rate": 0.504,
+          "sharpe": 3.1616,
+          "avg_ret": 0.01989,
+          "pnl_ratio": 1.809,
+          "n": 1260
+        },
+        "lowvol": {
+          "win_rate": 0.5111,
+          "sharpe": 0.7292,
+          "avg_ret": 0.001149,
+          "pnl_ratio": 1.0865,
+          "n": 1260
+        }
+      },
+      "2026-H1": {
+        "momentum": {
+          "win_rate": 0.4474,
+          "sharpe": 0.4293,
+          "avg_ret": 0.006141,
+          "pnl_ratio": 1.3236,
+          "n": 1160
+        },
+        "reversal": {
+          "win_rate": 0.4086,
+          "sharpe": -0.816,
+          "avg_ret": -0.005631,
+          "pnl_ratio": 1.2583,
+          "n": 1160
+        },
+        "lowvol": {
+          "win_rate": 0.4647,
+          "sharpe": -0.1592,
+          "avg_ret": -0.000429,
+          "pnl_ratio": 1.118,
+          "n": 1160
+        }
+      },
+      "2026-H2": {
+        "momentum": {
+          "win_rate": 0.12,
+          "sharpe": -23.1532,
+          "avg_ret": -0.244555,
+          "pnl_ratio": 0.4105,
+          "n": 50
+        },
+        "reversal": {
+          "win_rate": 0.12,
+          "sharpe": -17.179,
+          "avg_ret": -0.116966,
+          "pnl_ratio": 0.5746,
+          "n": 50
+        },
+        "lowvol": {
+          "win_rate": 0.92,
+          "sharpe": 10.9238,
+          "avg_ret": 0.0641,
+          "pnl_ratio": 3.2794,
+          "n": 50
+        }
+      }
+    }
+  },
+  "year": {
+    "n_periods": 3,
+    "best_counts": {
+      "lowvol": 2,
+      "reversal": 1,
+      "momentum": 0
+    },
+    "periods": {
+      "2024": {
+        "momentum": {
+          "win_rate": 0.3186,
+          "sharpe": -2.0514,
+          "avg_ret": -0.035026,
+          "pnl_ratio": 1.4871,
+          "n": 2420
+        },
+        "reversal": {
+          "win_rate": 0.4669,
+          "sharpe": 1.3337,
+          "avg_ret": 0.014546,
+          "pnl_ratio": 1.4518,
+          "n": 2420
+        },
+        "lowvol": {
+          "win_rate": 0.5636,
+          "sharpe": 2.8877,
+          "avg_ret": 0.011708,
+          "pnl_ratio": 1.3868,
+          "n": 2420
+        }
+      },
+      "2025": {
+        "momentum": {
+          "win_rate": 0.423,
+          "sharpe": 0.7843,
+          "avg_ret": 0.013498,
+          "pnl_ratio": 1.5931,
+          "n": 2430
+        },
+        "reversal": {
+          "win_rate": 0.5383,
+          "sharpe": 3.0705,
+          "avg_ret": 0.02228,
+          "pnl_ratio": 1.5137,
+          "n": 2430
+        },
+        "lowvol": {
+          "win_rate": 0.5428,
+          "sharpe": 1.767,
+          "avg_ret": 0.002925,
+          "pnl_ratio": 1.1407,
+          "n": 2430
+        }
+      },
+      "2026": {
+        "momentum": {
+          "win_rate": 0.4339,
+          "sharpe": -0.2907,
+          "avg_ret": -0.004218,
+          "pnl_ratio": 1.2455,
+          "n": 1210
+        },
+        "reversal": {
+          "win_rate": 0.3967,
+          "sharpe": -1.454,
+          "avg_ret": -0.010231,
+          "pnl_ratio": 1.1869,
+          "n": 1210
+        },
+        "lowvol": {
+          "win_rate": 0.4835,
+          "sharpe": 0.7445,
+          "avg_ret": 0.002238,
+          "pnl_ratio": 1.2398,
+          "n": 1210
+        }
+      }
+    }
+  }
+}

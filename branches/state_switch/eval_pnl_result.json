@@ -1,0 +1,18 @@
+{
+  "momentum": {
+    "win_rate": 0.3835,
+    "pnl_ratio": 1.4509,
+    "sharpe": -0.5637,
+    "max_dd": -1.0,
+    "avg_ret": -0.009417,
+    "n": 6060
+  },
+  "reversal": {
+    "win_rate": 0.4815,
+    "pnl_ratio": 1.3995,
+    "sharpe": 1.4279,
+    "max_dd": -1.0,
+    "avg_ret": 0.012698,
+    "n": 6060
+  }
+}

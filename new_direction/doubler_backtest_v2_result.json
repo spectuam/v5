@@ -1,0 +1,6 @@
+{
+  "avg_return_percentile": 0.4754,
+  "v1": 0.5861,
+  "n_picks": 270,
+  "filter": "cum_ret_30 < median"
+}

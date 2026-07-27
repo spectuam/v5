@@ -1,0 +1,19 @@
+{
+  "auc": 0.5428,
+  "precision_top": 0.53,
+  "base_rate": 0.5,
+  "lift": 1.06,
+  "importance": {
+    "cum_ret_10": 162,
+    "mean_ret": 108,
+    "ret_std": 157,
+    "max_up": 206,
+    "max_dn": 189,
+    "up_days_ratio": 55,
+    "amp_mean": 237,
+    "vol_change": 281,
+    "ret_1d": 201,
+    "ret_3d": 253,
+    "vol_price_corr": 259
+  }
+}

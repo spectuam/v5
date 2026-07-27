@@ -1,0 +1,20 @@
+{
+  "strategy": "lowvol_Top10_T20",
+  "n_days": 597,
+  "daily_avg": 0.012870504657869177,
+  "annual": 3.2434,
+  "mkt_annual": 4.5547,
+  "excess_annual": -1.3114,
+  "benchmark_0": {
+    "t_std": 8.1651,
+    "t_nw": 2.8436,
+    "p": 0.005814,
+    "n_eff": 72.4
+  },
+  "benchmark_mkt": {
+    "t_std": -1.8526,
+    "t_nw": -0.6241,
+    "p": 0.534699,
+    "n_eff": 67.7
+  }
+}

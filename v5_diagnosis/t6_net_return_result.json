@@ -1,0 +1,79 @@
+{
+  "run_at": "2026-07-20T19:36:48.459552",
+  "costs_single_bps": [
+    1.0,
+    2.0,
+    3.0,
+    5.0
+  ],
+  "schemes": {
+    "equal_38": {
+      "gross_annual_valid": 0.4062,
+      "gross_annual_test": 0.1796,
+      "avg_turnover_valid": 0.8136,
+      "avg_turnover_test": 0.8499,
+      "n_turns_valid": 1217,
+      "n_turns_test": 1336,
+      "by_cost": {
+        "1.0bps": {
+          "cost_annual_valid": 0.4068,
+          "cost_annual_test": 0.4249,
+          "net_annual_valid": -0.0006,
+          "net_annual_test": -0.2454
+        },
+        "2.0bps": {
+          "cost_annual_valid": 0.8136,
+          "cost_annual_test": 0.8499,
+          "net_annual_valid": -0.4074,
+          "net_annual_test": -0.6703
+        },
+        "3.0bps": {
+          "cost_annual_valid": 1.2205,
+          "cost_annual_test": 1.2748,
+          "net_annual_valid": -0.8142,
+          "net_annual_test": -1.0952
+        },
+        "5.0bps": {
+          "cost_annual_valid": 2.0341,
+          "cost_annual_test": 2.1246,
+          "net_annual_valid": -1.6279,
+          "net_annual_test": -1.9451
+        }
+      }
+    },
+    "equal_29": {
+      "gross_annual_valid": 0.3234,
+      "gross_annual_test": 0.2902,
+      "avg_turnover_valid": 0.8417,
+      "avg_turnover_test": 0.8617,
+      "n_turns_valid": 1217,
+      "n_turns_test": 1336,
+      "by_cost": {
+        "1.0bps": {
+          "cost_annual_valid": 0.4209,
+          "cost_annual_test": 0.4308,
+          "net_annual_valid": -0.0975,
+          "net_annual_test": -0.1407
+        },
+        "2.0bps": {
+          "cost_annual_valid": 0.8417,
+          "cost_annual_test": 0.8617,
+          "net_annual_valid": -0.5184,
+          "net_annual_test": -0.5715
+        },
+        "3.0bps": {
+          "cost_annual_valid": 1.2626,
+          "cost_annual_test": 1.2925,
+          "net_annual_valid": -0.9392,
+          "net_annual_test": -1.0023
+        },
+        "5.0bps": {
+          "cost_annual_valid": 2.1044,
+          "cost_annual_test": 2.1542,
+          "net_annual_valid": -1.781,
+          "net_annual_test": -1.864
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "lowvol": {
+    "n_days": 597,
+    "n_months": 30,
+    "positive_month_prob": 0.5,
+    "positive_months": 15,
+    "month_avg_excess_mean": -0.006021,
+    "month_avg_excess_std": 0.056862,
+    "t_absolute": 2.8436,
+    "p_absolute": 0.005822,
+    "n_eff_absolute": 72.4,
+    "t_excess": -0.6186,
+    "p_excess": 0.53828,
+    "n_eff_excess": 67.7
+  },
+  "reversal": {
+    "n_days": 597,
+    "n_months": 30,
+    "positive_month_prob": 0.4667,
+    "positive_months": 14,
+    "month_avg_excess_mean": 0.008818,
+    "month_avg_excess_std": 0.049683,
+    "t_absolute": 1.6009,
+    "p_absolute": 0.113901,
+    "n_eff_absolute": 71.2,
+    "t_excess": 0.9363,
+    "p_excess": 0.351615,
+    "n_eff_excess": 91.1
+  },
+  "momentum": {
+    "n_days": 597,
+    "n_months": 30,
+    "positive_month_prob": 0.3,
+    "positive_months": 9,
+    "month_avg_excess_mean": -0.026375,
+    "month_avg_excess_std": 0.08498,
+    "t_absolute": -0.3538,
+    "p_absolute": 0.724513,
+    "n_eff_absolute": 73.8,
+    "t_excess": -1.6716,
+    "p_excess": 0.098455,
+    "n_eff_excess": 82.9
+  },
+  "rz_buy_ratio": {
+    "n_days": 597,
+    "n_months": 30,
+    "positive_month_prob": 0.5333,
+    "positive_months": 16,
+    "month_avg_excess_mean": -6e-06,
+    "month_avg_excess_std": 0.027947,
+    "t_absolute": 1.7052,
+    "p_absolute": 0.092135,
+    "n_eff_absolute": 80.0,
+    "t_excess": 0.101,
+    "p_excess": 0.919689,
+    "n_eff_excess": 165.1
+  }
+}

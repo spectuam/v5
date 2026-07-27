@@ -1,0 +1,86 @@
+{
+  "lv_T5_h5": {
+    "prob": 0.3667,
+    "t_abs": 1.5648,
+    "t_exc": -0.9977,
+    "has": false
+  },
+  "lv_T5_h10": {
+    "prob": 0.3667,
+    "t_abs": 1.6655,
+    "t_exc": -0.6228,
+    "has": false
+  },
+  "lv_T5_h20": {
+    "prob": 0.5,
+    "t_abs": 2.9085,
+    "t_exc": 0.8216,
+    "has": true
+  },
+  "lv_T10_h5": {
+    "prob": 0.4,
+    "t_abs": 1.5654,
+    "t_exc": -1.0299,
+    "has": false
+  },
+  "lv_T10_h10": {
+    "prob": 0.3667,
+    "t_abs": 1.8019,
+    "t_exc": -0.5933,
+    "has": false
+  },
+  "lv_T10_h20": {
+    "prob": 0.6,
+    "t_abs": 2.8409,
+    "t_exc": 0.6347,
+    "has": true
+  },
+  "lv_T20_h5": {
+    "prob": 0.3667,
+    "t_abs": 1.5974,
+    "t_exc": -1.0019,
+    "has": false
+  },
+  "lv_T20_h10": {
+    "prob": 0.3333,
+    "t_abs": 1.6758,
+    "t_exc": -0.6182,
+    "has": false
+  },
+  "lv_T20_h20": {
+    "prob": 0.5333,
+    "t_abs": 2.3079,
+    "t_exc": 0.2963,
+    "has": true
+  },
+  "lv_T50_h5": {
+    "prob": 0.3667,
+    "t_abs": 1.2327,
+    "t_exc": -1.1193,
+    "has": false
+  },
+  "lv_T50_h10": {
+    "prob": 0.3,
+    "t_abs": 1.3968,
+    "t_exc": -0.777,
+    "has": false
+  },
+  "lv_T50_h20": {
+    "prob": 0.5333,
+    "t_abs": 1.7894,
+    "t_exc": 0.0321,
+    "has": false
+  },
+  "combo_lv+rev_T10_h10": {
+    "prob": 0.4,
+    "t_abs": 0.905,
+    "t_exc": -0.9505,
+    "has": false
+  },
+  "combo_lv+rev_T10_h20": {
+    "prob": 0.5333,
+    "t_abs": 1.5373,
+    "t_exc": 0.8082,
+    "has": false
+  }
+}

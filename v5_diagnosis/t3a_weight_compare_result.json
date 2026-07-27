@@ -1,0 +1,115 @@
+{
+  "run_at": "2026-07-20T15:54:15.548417",
+  "note": "path B streaming: equal/ic/ir加权 + 剔除9衰减 + 仅21强",
+  "decayed_9": [
+    "alpha101/alpha_024",
+    "gtja191/alpha_008",
+    "gtja191/alpha_037",
+    "alpha101/alpha_084",
+    "alpha101/alpha_067",
+    "gtja191/alpha_026",
+    "alpha101/alpha_080",
+    "qlib158/cntn5",
+    "gtja191/alpha_006"
+  ],
+  "strong21": [
+    "qlib158/min10",
+    "alpha101/alpha_004",
+    "alpha101/alpha_069",
+    "qlib158/vma60",
+    "gtja191/alpha_168",
+    "qlib158/vsumn5",
+    "qlib158/vsumn60",
+    "qlib158/vsumn30",
+    "gtja191/alpha_001",
+    "alpha101/alpha_016",
+    "qlib158/vsumn20",
+    "qlib158/vma10",
+    "alpha101/alpha_088",
+    "gtja191/alpha_016",
+    "alpha101/alpha_015",
+    "alpha101/alpha_044",
+    "alpha101/alpha_055",
+    "alpha101/alpha_026",
+    "gtja191/alpha_090",
+    "alpha101/alpha_002",
+    "alpha101/alpha_027"
+  ],
+  "configs": {
+    "equal_38": {
+      "n_factors": 38,
+      "valid": {
+        "WR": 0.5513,
+        "mean_ret": 0.0016,
+        "mean_rp": 0.5426,
+        "n_trades": 6082
+      },
+      "test": {
+        "WR": 0.5079,
+        "mean_ret": 0.0007,
+        "mean_rp": 0.5142,
+        "n_trades": 6670
+      }
+    },
+    "equal_29": {
+      "n_factors": 29,
+      "valid": {
+        "WR": 0.5332,
+        "mean_ret": 0.0013,
+        "mean_rp": 0.5373,
+        "n_trades": 6084
+      },
+      "test": {
+        "WR": 0.5163,
+        "mean_ret": 0.0011,
+        "mean_rp": 0.5242,
+        "n_trades": 6663
+      }
+    },
+    "equal_21": {
+      "n_factors": 21,
+      "valid": {
+        "WR": 0.5211,
+        "mean_ret": 0.0008,
+        "mean_rp": 0.5313,
+        "n_trades": 6081
+      },
+      "test": {
+        "WR": 0.5154,
+        "mean_ret": 0.001,
+        "mean_rp": 0.5248,
+        "n_trades": 6674
+      }
+    },
+    "ic_38": {
+      "n_factors": 38,
+      "valid": {
+        "WR": 0.5403,
+        "mean_ret": 0.0011,
+        "mean_rp": 0.5383,
+        "n_trades": 6082
+      },
+      "test": {
+        "WR": 0.5063,
+        "mean_ret": 0.0006,
+        "mean_rp": 0.5125,
+        "n_trades": 6674
+      }
+    },
+    "ir_38": {
+      "n_factors": 38,
+      "valid": {
+        "WR": 0.541,
+        "mean_ret": 0.0016,
+        "mean_rp": 0.5399,
+        "n_trades": 6085
+      },
+      "test": {
+        "WR": 0.5136,
+        "mean_ret": 0.0009,
+        "mean_rp": 0.5178,
+        "n_trades": 6670
+      }
+    }
+  }
+}

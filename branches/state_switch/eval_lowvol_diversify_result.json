@@ -1,0 +1,110 @@
+{
+  "lowvol_T10": {
+    "overall": {
+      "win_rate": 0.5585,
+      "pnl_ratio": 1.4079,
+      "sharpe": 2.6535,
+      "max_dd": -13.5053,
+      "avg_ret": 0.012871,
+      "n": 5970
+    },
+    "by_year": {
+      "2024": {
+        "win_rate": 0.6074,
+        "pnl_ratio": 1.5123,
+        "sharpe": 4.0834,
+        "max_dd": -6.1109,
+        "avg_ret": 0.026097,
+        "n": 2420
+      },
+      "2025": {
+        "win_rate": 0.5642,
+        "pnl_ratio": 1.3251,
+        "sharpe": 2.6449,
+        "max_dd": -7.3167,
+        "avg_ret": 0.007892,
+        "n": 2430
+      },
+      "2026": {
+        "win_rate": 0.4402,
+        "pnl_ratio": 0.9864,
+        "sharpe": -1.272,
+        "max_dd": -13.5053,
+        "avg_ret": -0.004906,
+        "n": 1120
+      }
+    }
+  },
+  "lowvol_T50": {
+    "overall": {
+      "win_rate": 0.5243,
+      "pnl_ratio": 1.3365,
+      "sharpe": 1.9487,
+      "max_dd": -123.1021,
+      "avg_ret": 0.009161,
+      "n": 29850
+    },
+    "by_year": {
+      "2024": {
+        "win_rate": 0.5564,
+        "pnl_ratio": 1.54,
+        "sharpe": 3.3097,
+        "max_dd": -59.7476,
+        "avg_ret": 0.020382,
+        "n": 12100
+      },
+      "2025": {
+        "win_rate": 0.5728,
+        "pnl_ratio": 1.3931,
+        "sharpe": 3.4121,
+        "max_dd": -31.3205,
+        "avg_ret": 0.010264,
+        "n": 12150
+      },
+      "2026": {
+        "win_rate": 0.35,
+        "pnl_ratio": 0.7842,
+        "sharpe": -4.9781,
+        "max_dd": -120.4994,
+        "avg_ret": -0.017475,
+        "n": 5600
+      }
+    }
+  },
+  "lowvol_indiv_T10": {
+    "overall": {
+      "win_rate": 0.5492,
+      "pnl_ratio": 1.3851,
+      "sharpe": 2.4065,
+      "max_dd": -15.489,
+      "avg_ret": 0.011698,
+      "n": 5970
+    },
+    "by_year": {
+      "2024": {
+        "win_rate": 0.5938,
+        "pnl_ratio": 1.5004,
+        "sharpe": 3.7561,
+        "max_dd": -6.48,
+        "avg_ret": 0.02406,
+        "n": 2420
+      },
+      "2025": {
+        "win_rate": 0.5626,
+        "pnl_ratio": 1.3347,
+        "sharpe": 2.6463,
+        "max_dd": -6.6941,
+        "avg_ret": 0.007917,
+        "n": 2430
+      },
+      "2026": {
+        "win_rate": 0.4241,
+        "pnl_ratio": 0.9577,
+        "sharpe": -1.7547,
+        "max_dd": -15.489,
+        "avg_ret": -0.006812,
+        "n": 1120
+      }
+    }
+  }
+}

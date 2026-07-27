@@ -1,0 +1,32 @@
+{
+  "auc": 0.8137,
+  "precision_top": 0.7348,
+  "base_rate": 0.5008,
+  "lift": 1.47,
+  "importance": {
+    "mkt_vol": 223,
+    "month": 220,
+    "mkt_ret": 168,
+    "cum_ret_10": 147,
+    "max_up_30": 141,
+    "up_ratio_mkt": 134,
+    "ret_3d": 129,
+    "amp_30": 128,
+    "cum_ret_30": 120,
+    "cum_ret_20": 119,
+    "ret_1d": 111,
+    "vol_change_10": 103,
+    "amp_10": 97,
+    "ret_std_30": 89,
+    "vol_price_corr_10": 82,
+    "max_up_10": 78,
+    "ret_std_10": 70,
+    "max_up_20": 67,
+    "ret_std_20": 59,
+    "amp_20": 50,
+    "up_ratio_30": 45,
+    "weekday": 30,
+    "up_ratio_20": 25,
+    "up_ratio_10": 20
+  }
+}

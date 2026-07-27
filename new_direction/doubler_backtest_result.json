@@ -1,0 +1,6 @@
+{
+  "avg_return_percentile": 0.5861,
+  "n_picks": 270,
+  "horizon": 20,
+  "test_period": "2026-04-01~2026-07-14"
+}
