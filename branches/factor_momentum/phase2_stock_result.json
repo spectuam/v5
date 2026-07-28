@@ -1,0 +1,59 @@
+{
+  "run_at": "2026-07-28T21:55:07.655643",
+  "K": 12,
+  "top_stock": 10,
+  "level": "选股级(Top10合并去重等权)",
+  "train": "2016-2022",
+  "oos": "2023-2026",
+  "strategies": {
+    "TSFM_k1": {
+      "train_sharpe": -0.094,
+      "oos_sharpe": 0.549,
+      "train_n": 72,
+      "oos_n": 42,
+      "train_annual": -0.0274,
+      "oos_annual": 0.183
+    },
+    "TSFM_k3": {
+      "train_sharpe": -0.226,
+      "oos_sharpe": 0.51,
+      "train_n": 72,
+      "oos_n": 42,
+      "train_annual": -0.0544,
+      "oos_annual": 0.1026
+    },
+    "TSFM_k5": {
+      "train_sharpe": -0.023,
+      "oos_sharpe": 0.557,
+      "train_n": 72,
+      "oos_n": 42,
+      "train_annual": -0.0054,
+      "oos_annual": 0.1152
+    },
+    "CSFM_k1": {
+      "train_sharpe": -0.094,
+      "oos_sharpe": 0.549,
+      "train_n": 72,
+      "oos_n": 42,
+      "train_annual": -0.0274,
+      "oos_annual": 0.183
+    },
+    "CSFM_k3": {
+      "train_sharpe": -0.226,
+      "oos_sharpe": 0.51,
+      "train_n": 72,
+      "oos_n": 42,
+      "train_annual": -0.0544,
+      "oos_annual": 0.1026
+    },
+    "CSFM_k5": {
+      "train_sharpe": -0.023,
+      "oos_sharpe": 0.557,
+      "train_n": 72,
+      "oos_n": 42,
+      "train_annual": -0.0054,
+      "oos_annual": 0.1152
+    }
+  },
+  "best": "TSFM_k5"
+}
