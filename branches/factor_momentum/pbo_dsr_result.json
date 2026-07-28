@@ -1,34 +1,40 @@
 {
-  "run_at": "2026-07-28T19:40:23.801582",
-  "n_splits": 6,
-  "n_combos": 20,
-  "pbo": 0.0,
-  "pbo_pass": true,
-  "test_ranks": [
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1
+  "run_at": "2026-07-28T22:10:05.729934",
+  "embargo": 1,
+  "n_splits_list": [
+    6,
+    8,
+    10
   ],
-  "rank_dist": {
-    "1": 20
+  "method": "完整CPCV(purging边界±embargo + embargo隔离 + 多split 6/8/10)",
+  "pbo_multi_split": {
+    "6": {
+      "pbo": 0.0,
+      "n_combos": 20,
+      "rank_dist": {
+        "1": 20
+      }
+    },
+    "8": {
+      "pbo": 0.071,
+      "n_combos": 70,
+      "rank_dist": {
+        "1": 65,
+        "2": 4,
+        "3": 1
+      }
+    },
+    "10": {
+      "pbo": 0.02,
+      "n_combos": 252,
+      "rank_dist": {
+        "1": 247,
+        "2": 2,
+        "3": 3
+      }
+    }
   },
+  "pbo_pass": true,
   "dsr": 0.0935,
   "dsr_pass": true,
   "N": 3,
