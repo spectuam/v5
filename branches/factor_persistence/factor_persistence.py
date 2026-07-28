@@ -51,7 +51,7 @@ def t_return(code, date, db, H):
 def newey_west_t(returns, max_lag=None):
     n = len(returns)
     if n < 10: return 0, 1.0, n
-    if max_lag is None: max_lag = min(int(4 * (n / 100) ** (2 / 9)), n // 4)
+    if max_lag is None: max_lag = max(min(int(4 * (n / 100) ** (2 / 9)), n // 4), HORIZON - 1)  # #7 NW: max(自动, 持有期-1=19)
     mean = np.mean(returns)
     gamma0 = np.var(returns, ddof=0)
     nw_var = gamma0
