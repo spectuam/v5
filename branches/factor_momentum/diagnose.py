@@ -25,13 +25,15 @@ def log(m):
     print(f"[{datetime.now():%H:%M:%S}] {m}", flush=True)
 
 
-def block_bootstrap_ci(series, block=BLOCK, n_boot=2000, seed=42):
-    """block bootstrap 均值的 95% CI"""
+def block_bootstrap_ci(series, block=None, n_boot=2000, seed=42):
+    """block bootstrap 均值的 95% CI（Politis-Romano optimal block，数据驱动）"""
     rng = np.random.default_rng(seed)
     s = np.asarray(series, float)
     n = len(s)
     if n < 2:
         return (float('nan'), float('nan'))
+    if block is None:
+        block = max(1, int(round(2 * n ** (1 / 3))))  # Politis-Romano optimal block 经验公式
     boots = np.empty(n_boot)
     for b in range(n_boot):
         idx = []
