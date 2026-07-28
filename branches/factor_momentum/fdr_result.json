@@ -1,0 +1,238 @@
+{
+  "run_at": "2026-07-28T14:56:46.399419",
+  "q": 0.1,
+  "n": 38,
+  "threshold_i": 0,
+  "n_pass": 0,
+  "note": "#7 NW修复后 t_abs 全<2, 预期 FDR 0 通过; fdr_pass 字段就位待信号阳性接 daily_pick",
+  "factors": {
+    "alpha101/alpha_002": {
+      "t_abs": 1.5737,
+      "p": 0.1161,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "alpha101/alpha_004": {
+      "t_abs": 0.9156,
+      "p": 0.3602,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "alpha101/alpha_015": {
+      "t_abs": 1.5318,
+      "p": 0.1261,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "alpha101/alpha_016": {
+      "t_abs": 0.8958,
+      "p": 0.3707,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "alpha101/alpha_019": {
+      "t_abs": 0.727,
+      "p": 0.4675,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "alpha101/alpha_023": {
+      "t_abs": 0.9931,
+      "p": 0.3211,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "alpha101/alpha_024": {
+      "t_abs": 1.2946,
+      "p": 0.196,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "alpha101/alpha_026": {
+      "t_abs": 1.656,
+      "p": 0.0982,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "alpha101/alpha_027": {
+      "t_abs": 0.9679,
+      "p": 0.3335,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "alpha101/alpha_044": {
+      "t_abs": 1.5443,
+      "p": 0.123,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "alpha101/alpha_055": {
+      "t_abs": 1.5226,
+      "p": 0.1284,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "alpha101/alpha_067": {
+      "t_abs": 1.0388,
+      "p": 0.2993,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "alpha101/alpha_069": {
+      "t_abs": 1.441,
+      "p": 0.1501,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "alpha101/alpha_080": {
+      "t_abs": 1.3864,
+      "p": 0.1661,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "alpha101/alpha_084": {
+      "t_abs": 0.9215,
+      "p": 0.3572,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "alpha101/alpha_088": {
+      "t_abs": 0.9455,
+      "p": 0.3448,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "gtja191/alpha_001": {
+      "t_abs": 1.5654,
+      "p": 0.118,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "gtja191/alpha_006": {
+      "t_abs": 0.9708,
+      "p": 0.332,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "gtja191/alpha_008": {
+      "t_abs": 1.2692,
+      "p": 0.2049,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "gtja191/alpha_016": {
+      "t_abs": 1.7198,
+      "p": 0.086,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "gtja191/alpha_025": {
+      "t_abs": 1.6686,
+      "p": 0.0957,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "gtja191/alpha_026": {
+      "t_abs": 1.4817,
+      "p": 0.1389,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "gtja191/alpha_037": {
+      "t_abs": 1.7696,
+      "p": 0.0773,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "gtja191/alpha_041": {
+      "t_abs": 1.2112,
+      "p": 0.2263,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "gtja191/alpha_048": {
+      "t_abs": 0.8488,
+      "p": 0.3963,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "gtja191/alpha_090": {
+      "t_abs": 1.6121,
+      "p": 0.1075,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "gtja191/alpha_092": {
+      "t_abs": 1.5083,
+      "p": 0.132,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "gtja191/alpha_157": {
+      "t_abs": 1.2389,
+      "p": 0.2159,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "gtja191/alpha_168": {
+      "t_abs": 1.2821,
+      "p": 0.2003,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "qlib158/cntn5": {
+      "t_abs": 0.5575,
+      "p": 0.5774,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "qlib158/ma10": {
+      "t_abs": 0.3181,
+      "p": 0.7505,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "qlib158/min10": {
+      "t_abs": 0.8577,
+      "p": 0.3914,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "qlib158/vma10": {
+      "t_abs": 1.1674,
+      "p": 0.2435,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "qlib158/vma60": {
+      "t_abs": 0.8218,
+      "p": 0.4115,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "qlib158/vsumn20": {
+      "t_abs": 1.2895,
+      "p": 0.1977,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "qlib158/vsumn30": {
+      "t_abs": 1.2562,
+      "p": 0.2095,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "qlib158/vsumn5": {
+      "t_abs": 0.6089,
+      "p": 0.5428,
+      "fdr_pass": false,
+      "n_days": 600
+    },
+    "qlib158/vsumn60": {
+      "t_abs": 1.3266,
+      "p": 0.1851,
+      "fdr_pass": false,
+      "n_days": 600
+    }
+  }
+}
