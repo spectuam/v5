@@ -12,7 +12,7 @@ import pandas as pd
 
 DB = os.path.expanduser('~/ading/db/tdx_stock_data.db')
 PKL_DIR = os.path.expanduser('~/ading/cache/t3a_factors')
-TEST_START = '2024-01-01'
+TEST_START = '2015-01-01'
 TEST_END = '2026-06-30'
 HORIZON = 20
 TOP = 10
