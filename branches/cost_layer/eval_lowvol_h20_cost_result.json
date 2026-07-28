@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-07-28T15:26:34.574906",
+  "run_at": "2026-07-28T21:33:18.930546",
   "gross": {
     "win_rate": 0.5605,
     "pnl_ratio": 1.4118,
@@ -9,11 +9,11 @@
     "n": 6000
   },
   "net": {
-    "win_rate": 0.5568,
-    "pnl_ratio": 1.3626,
-    "sharpe": 2.4825,
-    "max_dd": -14.3446,
-    "avg_ret": 0.012027,
+    "win_rate": 0.555,
+    "pnl_ratio": 1.3593,
+    "sharpe": 2.4375,
+    "max_dd": -14.4517,
+    "avg_ret": 0.011805,
     "n": 6000
   },
   "by_year": {
@@ -27,11 +27,11 @@
         "n": 2420
       },
       "net": {
-        "win_rate": 0.605,
-        "pnl_ratio": 1.4726,
-        "sharpe": 3.9102,
-        "max_dd": -6.3177,
-        "avg_ret": 0.024989,
+        "win_rate": 0.6037,
+        "pnl_ratio": 1.4695,
+        "sharpe": 3.8765,
+        "max_dd": -6.3405,
+        "avg_ret": 0.024763,
         "n": 2420
       }
     },
@@ -45,11 +45,11 @@
         "n": 2430
       },
       "net": {
-        "win_rate": 0.5576,
-        "pnl_ratio": 1.2614,
-        "sharpe": 2.2761,
-        "max_dd": -7.7545,
-        "avg_ret": 0.006791,
+        "win_rate": 0.5547,
+        "pnl_ratio": 1.2557,
+        "sharpe": 2.196,
+        "max_dd": -7.8348,
+        "avg_ret": 0.00655,
         "n": 2430
       }
     },
@@ -63,17 +63,17 @@
         "n": 1150
       },
       "net": {
-        "win_rate": 0.4539,
-        "pnl_ratio": 0.9732,
-        "sharpe": -1.0792,
-        "max_dd": -14.3446,
-        "avg_ret": -0.004184,
+        "win_rate": 0.453,
+        "pnl_ratio": 0.968,
+        "sharpe": -1.1246,
+        "max_dd": -14.4517,
+        "avg_ret": -0.004361,
         "n": 1150
       }
     }
   },
   "round_trip_bp": 11,
   "capital": 1000000,
-  "avg_cost_bp": 11.03,
-  "impact_pct": 1.7
+  "avg_cost_bp": 13.26,
+  "impact_pct": 100.0
 }
