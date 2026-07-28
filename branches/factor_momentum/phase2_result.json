@@ -1,0 +1,69 @@
+{
+  "run_at": "2026-07-28T19:20:26.166446",
+  "K": 12,
+  "train": "2016-2022",
+  "oos": "2023-2026",
+  "strategies": {
+    "TSFM_k1": {
+      "train_sharpe": 0.152,
+      "oos_sharpe": 0.182,
+      "train_n": 72,
+      "oos_n": 42,
+      "train_mean": 0.00255,
+      "oos_mean": 0.00374,
+      "train_annual": 0.0306,
+      "oos_annual": 0.0448
+    },
+    "TSFM_k3": {
+      "train_sharpe": 0.241,
+      "oos_sharpe": 0.469,
+      "train_n": 72,
+      "oos_n": 42,
+      "train_mean": 0.0037,
+      "oos_mean": 0.00768,
+      "train_annual": 0.0444,
+      "oos_annual": 0.0921
+    },
+    "TSFM_k5": {
+      "train_sharpe": 0.318,
+      "oos_sharpe": 0.613,
+      "train_n": 72,
+      "oos_n": 42,
+      "train_mean": 0.00465,
+      "oos_mean": 0.01062,
+      "train_annual": 0.0558,
+      "oos_annual": 0.1274
+    },
+    "CSFM_k1": {
+      "train_sharpe": 0.152,
+      "oos_sharpe": 0.182,
+      "train_n": 72,
+      "oos_n": 42,
+      "train_mean": 0.00255,
+      "oos_mean": 0.00374,
+      "train_annual": 0.0306,
+      "oos_annual": 0.0448
+    },
+    "CSFM_k3": {
+      "train_sharpe": 0.241,
+      "oos_sharpe": 0.469,
+      "train_n": 72,
+      "oos_n": 42,
+      "train_mean": 0.0037,
+      "oos_mean": 0.00768,
+      "train_annual": 0.0444,
+      "oos_annual": 0.0921
+    },
+    "CSFM_k5": {
+      "train_sharpe": 0.318,
+      "oos_sharpe": 0.613,
+      "train_n": 72,
+      "oos_n": 42,
+      "train_mean": 0.00465,
+      "oos_mean": 0.01062,
+      "train_annual": 0.0558,
+      "oos_annual": 0.1274
+    }
+  },
+  "best": "TSFM_k5"
+}
