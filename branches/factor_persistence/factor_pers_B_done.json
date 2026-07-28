@@ -1,304 +1,304 @@
 {
   "alpha101/alpha_002": {
     "prob": 0.6,
-    "t_abs": 2.1469,
-    "t_exc": 1.4348,
-    "has": true,
+    "t_abs": 1.5737,
+    "t_exc": 1.628,
+    "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "alpha101/alpha_004": {
     "prob": 0.4,
-    "t_abs": 1.1851,
-    "t_exc": -1.5891,
+    "t_abs": 0.9156,
+    "t_exc": -1.3101,
     "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "alpha101/alpha_015": {
     "prob": 0.8,
-    "t_abs": 2.1116,
-    "t_exc": 1.0894,
-    "has": true,
+    "t_abs": 1.5318,
+    "t_exc": 0.9704,
+    "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "alpha101/alpha_016": {
     "prob": 0.4333,
-    "t_abs": 1.165,
-    "t_exc": -0.3252,
+    "t_abs": 0.8958,
+    "t_exc": -0.3109,
     "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "alpha101/alpha_019": {
     "prob": 0.3667,
-    "t_abs": 0.968,
-    "t_exc": -0.1718,
+    "t_abs": 0.727,
+    "t_exc": -0.1232,
     "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "alpha101/alpha_023": {
     "prob": 0.4333,
-    "t_abs": 1.321,
-    "t_exc": -0.1423,
+    "t_abs": 0.9931,
+    "t_exc": -0.1063,
     "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "alpha101/alpha_024": {
     "prob": 0.4333,
-    "t_abs": 1.6092,
-    "t_exc": 0.1456,
+    "t_abs": 1.2946,
+    "t_exc": 0.1038,
     "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "alpha101/alpha_026": {
     "prob": 0.5,
-    "t_abs": 2.2588,
-    "t_exc": 1.1957,
-    "has": true,
+    "t_abs": 1.656,
+    "t_exc": 1.1861,
+    "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "alpha101/alpha_027": {
     "prob": 0.3,
-    "t_abs": 1.3018,
-    "t_exc": -1.2497,
+    "t_abs": 0.9679,
+    "t_exc": -0.9395,
     "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "alpha101/alpha_044": {
     "prob": 0.7,
-    "t_abs": 2.1259,
-    "t_exc": 2.3128,
-    "has": true,
+    "t_abs": 1.5443,
+    "t_exc": 2.3026,
+    "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "alpha101/alpha_055": {
     "prob": 0.5,
-    "t_abs": 2.0464,
-    "t_exc": 1.2044,
-    "has": true,
+    "t_abs": 1.5226,
+    "t_exc": 0.943,
+    "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "alpha101/alpha_067": {
     "prob": 0.3,
-    "t_abs": 1.4021,
-    "t_exc": -1.4354,
+    "t_abs": 1.0388,
+    "t_exc": -1.4435,
     "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "alpha101/alpha_069": {
     "prob": 0.4333,
-    "t_abs": 1.8153,
-    "t_exc": 0.7122,
+    "t_abs": 1.441,
+    "t_exc": 0.5961,
     "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "alpha101/alpha_080": {
     "prob": 0.4,
-    "t_abs": 1.8941,
-    "t_exc": -0.7083,
+    "t_abs": 1.3864,
+    "t_exc": -0.5506,
     "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "alpha101/alpha_084": {
     "prob": 0.4333,
-    "t_abs": 1.242,
-    "t_exc": -0.9416,
+    "t_abs": 0.9215,
+    "t_exc": -0.7528,
     "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "alpha101/alpha_088": {
     "prob": 0.3667,
-    "t_abs": 1.334,
-    "t_exc": -1.2026,
+    "t_abs": 0.9455,
+    "t_exc": -1.048,
     "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "gtja191/alpha_001": {
     "prob": 0.5333,
-    "t_abs": 2.0806,
-    "t_exc": 0.9227,
-    "has": true,
+    "t_abs": 1.5654,
+    "t_exc": 0.8402,
+    "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "gtja191/alpha_006": {
     "prob": 0.3333,
-    "t_abs": 1.3867,
-    "t_exc": -1.2251,
+    "t_abs": 0.9708,
+    "t_exc": -0.949,
     "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "gtja191/alpha_008": {
     "prob": 0.4333,
-    "t_abs": 1.7181,
-    "t_exc": 0.1605,
+    "t_abs": 1.2692,
+    "t_exc": 0.1165,
     "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "gtja191/alpha_016": {
     "prob": 0.5333,
-    "t_abs": 2.3366,
-    "t_exc": 2.143,
-    "has": true,
+    "t_abs": 1.7198,
+    "t_exc": 2.0156,
+    "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "gtja191/alpha_025": {
     "prob": 0.4333,
-    "t_abs": 2.2084,
-    "t_exc": 0.9824,
-    "has": true,
+    "t_abs": 1.6686,
+    "t_exc": 0.7297,
+    "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "gtja191/alpha_026": {
     "prob": 0.4667,
-    "t_abs": 1.9965,
-    "t_exc": 0.5281,
+    "t_abs": 1.4817,
+    "t_exc": 0.3777,
     "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "gtja191/alpha_037": {
     "prob": 0.4667,
-    "t_abs": 2.3336,
-    "t_exc": 1.2341,
-    "has": true,
+    "t_abs": 1.7696,
+    "t_exc": 0.8966,
+    "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "gtja191/alpha_041": {
     "prob": 0.4333,
-    "t_abs": 1.5825,
-    "t_exc": 0.3023,
+    "t_abs": 1.2112,
+    "t_exc": 0.2489,
     "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "gtja191/alpha_048": {
     "prob": 0.4333,
-    "t_abs": 1.1835,
-    "t_exc": -1.2601,
+    "t_abs": 0.8488,
+    "t_exc": -1.2293,
     "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "gtja191/alpha_090": {
     "prob": 0.6,
-    "t_abs": 2.1798,
-    "t_exc": 1.9149,
-    "has": true,
+    "t_abs": 1.6121,
+    "t_exc": 1.517,
+    "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "gtja191/alpha_092": {
     "prob": 0.4667,
-    "t_abs": 1.9747,
-    "t_exc": 0.1648,
+    "t_abs": 1.5083,
+    "t_exc": 0.1215,
     "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "gtja191/alpha_157": {
     "prob": 0.4667,
-    "t_abs": 1.7116,
-    "t_exc": 0.3322,
+    "t_abs": 1.2389,
+    "t_exc": 0.2587,
     "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "gtja191/alpha_168": {
     "prob": 0.5,
-    "t_abs": 1.7211,
-    "t_exc": 0.8303,
+    "t_abs": 1.2821,
+    "t_exc": 0.7344,
     "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "qlib158/cntn5": {
     "prob": 0.2333,
-    "t_abs": 0.7929,
-    "t_exc": -2.3653,
+    "t_abs": 0.5575,
+    "t_exc": -2.1171,
     "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "qlib158/ma10": {
     "prob": 0.3667,
-    "t_abs": 0.402,
-    "t_exc": -1.8564,
+    "t_abs": 0.3181,
+    "t_exc": -1.7529,
     "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "qlib158/min10": {
     "prob": 0.3667,
-    "t_abs": 1.2122,
-    "t_exc": -1.4966,
+    "t_abs": 0.8577,
+    "t_exc": -1.4652,
     "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "qlib158/vma10": {
     "prob": 0.4667,
-    "t_abs": 1.6039,
-    "t_exc": 0.5344,
+    "t_abs": 1.1674,
+    "t_exc": 0.5012,
     "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "qlib158/vma60": {
     "prob": 0.4333,
-    "t_abs": 1.1302,
-    "t_exc": -0.649,
+    "t_abs": 0.8218,
+    "t_exc": -0.5679,
     "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "qlib158/vsumn20": {
     "prob": 0.6333,
-    "t_abs": 1.776,
-    "t_exc": 0.9969,
+    "t_abs": 1.2895,
+    "t_exc": 0.8275,
     "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "qlib158/vsumn30": {
     "prob": 0.6,
-    "t_abs": 1.7826,
-    "t_exc": 0.8065,
+    "t_abs": 1.2562,
+    "t_exc": 0.6076,
     "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "qlib158/vsumn5": {
     "prob": 0.2667,
-    "t_abs": 0.8745,
-    "t_exc": -2.3116,
+    "t_abs": 0.6089,
+    "t_exc": -2.1684,
     "has": false,
     "n_days": 600,
     "n_months": 30
   },
   "qlib158/vsumn60": {
     "prob": 0.5667,
-    "t_abs": 1.749,
-    "t_exc": 0.4725,
+    "t_abs": 1.3266,
+    "t_exc": 0.3834,
     "has": false,
     "n_days": 600,
     "n_months": 30
