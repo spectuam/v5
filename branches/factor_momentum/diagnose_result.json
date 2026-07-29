@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-07-28T20:20:03.792459",
+  "run_at": "2026-07-29T14:00:58.980388",
   "train": "2015-2022",
   "orth_size": 38,
   "mintrl": {
@@ -264,6 +264,13 @@
       0.4226657758608897
     ],
     "strong_positive": false,
+    "best_gran": "week",
+    "gran_lift": {
+      "week": 1.81,
+      "month": 1.41,
+      "quarter": 1.43
+    },
+    "caveat": "转移矩阵在week最强(lift 1.81)；但AR(1)/K扫描当前仅month，决策门A口径仍month，待补week下AR(1)后切",
     "prompt": "A.进入阶段二 / B.阴性归档（人判断）"
   }
 }

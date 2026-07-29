@@ -145,6 +145,9 @@ def main():
         pg = tc['TT'] / (tc['TT'] + tc['TF']) if (tc['TT'] + tc['TF']) > 0 else 0
         gran[g] = {'P_TT': pg, 'n': sum(tc.values()), 'ci': block_bootstrap_ci(pser)}
         log(f"  {g}: P_TT={pg:.3f} n={sum(tc.values())} CI=[{gran[g]['ci'][0]:.3f},{gran[g]['ci'][1]:.3f}]")
+    # 数据驱动最优颗粒度（诊断层不预设，不引入成本考量）
+    best_gran = max(gran, key=lambda g: gran[g]['P_TT'])
+    log(f"  数据驱动最优颗粒度: {best_gran} (P_TT={gran[best_gran]['P_TT']:.3f}, lift={gran[best_gran]['P_TT']/base:.2f})")
 
     # 决策门 A
     ar1_pos_pct = pos / nf
@@ -152,10 +155,16 @@ def main():
     verdict = {'ar1_pos_pct': ar1_pos_pct, 'gk_bench': 0.91, 'sig_pos_pct': sigpos / nf,
                'p_tt': p_tt, 'base': base, 'lift': lift, 'chi2_p': float(chi_p), 'ci': ci,
                'strong_positive': bool(strong),
+               'best_gran': best_gran,
+               'gran_lift': {g: round(gran[g]['P_TT']/base, 2) for g in gran},
+               'caveat': f'转移矩阵在{best_gran}最强(lift {gran[best_gran]["P_TT"]/base:.2f})；'
+                         f'但AR(1)/K扫描当前仅month，决策门A口径仍month，待补{best_gran}下AR(1)后切',
                'prompt': 'A.进入阶段二 / B.阴性归档（人判断）'}
     log("--- 决策门 A ---")
     log(f"  AR(1)>0 {ar1_pos_pct:.1%}(GK91%) | 转移 P_TT {p_tt:.3f} lift {lift:.2f} CI[{ci[0]:.3f},{ci[1]:.3f}] vs 基准{base:.3f}")
     log(f"  强阳性(AR(1)>0≥85% 且 转移CI下界>基准): {strong}")
+    log(f"  颗粒度: 数据驱动最优={best_gran}，转移lift week={gran['week']['P_TT']/base:.2f} / month={gran['month']['P_TT']/base:.2f} / quarter={gran['quarter']['P_TT']/base:.2f}")
+    log(f"  诚实标注: 决策门A口径仍month(AR1+转移ci)；{best_gran}下转移更强但AR1未测，K_LOCK=12借自策略层(跨层污染)——均待线1后续")
     log(f"  提示: {verdict['prompt']}")
 
     out = {'run_at': datetime.now().isoformat(), 'train': '2015-2022', 'orth_size': len(orth),
