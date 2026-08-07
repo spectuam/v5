@@ -213,7 +213,7 @@ MarkovRegression(dta, k_regimes=3, trend="n", switching_variance=True)  # 月频
 ### 待办（新 session 接手）
 1. ~~**用 statsmodels MarkovRegression 重写 market_regime**~~ ✅ 已完成（见 §七）
 2. **状态自适应选股**（不同状态激活不同因子，不只择时空仓）
-3. **阶段 1 口径对象化**（strategy_factory.py + daily_pick 改读配置）
+3. ~~**阶段 1 口径对象化**（strategy_factory.py + daily_pick 改读配置）~~ ✅ 已完成 8/8（见 §八，daily_pick 基线 SR0.40 跑输市场等权）
 4. **阶段 4 forward OOS / paper trading**
 5. **路 E**：alpha101/gtja191 公式因子经济含义（老板查公式细化 25 个 formula/weak）
 6. **路 D**：完整 BCH double-selection（两阶段 Lasso + 收益目标，当前简化 PCA）
@@ -286,4 +286,48 @@ MarkovRegression(dta, k_regimes=3, trend="n", switching_variance=True)  # 月频
 
 ### 7.7 下一步
 - 待办#2 状态自适应选股：不同状态激活不同因子（非择时空仓）。但 §7.5 结论提示 long-only 量价天花板下，状态层价值有限，需结合待办#3/#4 或换层（OSAP/Qlib）才有突破空间。
+
+---
+
+## 八、口径对象化：strategy_factory + daily_pick 配置化（待办#3 完成）
+
+> 日期：2026-08-08
+> 范围：daily_pick_v5 策略口径从硬编码抽成 config，生产/验证同口径；首个 daily_pick 策略 in-sample 基线。
+
+### 8.1 产出
+- `branches/strategy_factory/strategy_config.json`：schema + 生产实例（38因子等权复合 pct rank Top5 + 涨停过滤 + 90天面板）
+- `branches/strategy_factory/strategy_factory.py`：`load_config`/`load_factor_ids`/`build_panel_realtime`/`build_panel_history`/`rank_and_pick`/`produce_picks`/`backtest`
+- `branches/strategy_factory/verify_factory.py`：**护栏**--验证 factory.rank_and_pick == daily_pick 原版（MATCH ✓，picks 逐位相同）
+- `daily_pick_v5.py` 重构：常量从 config 读（LOOKBACK/TOP_K/LIMIT_UP/因子源/过滤/排序），config 缺失则回退硬编码保生产稳定；**行为零变更**（重跑 verify 仍 MATCH）。归档 `daily_pick_v5.py.bak`
+
+### 8.2 口径匹配原理
+daily_pick 的 38 因子 = compare 框架 38 因子（同源 `factor_decay_results_tdx.json`）。lookback≤90天的因子在全历史 panel 上 date T 的值 = 生产 90天 panel 上 date T 的值（因子只回看≤90天），故 backtest 一次性预算全历史因子等价于生产逐日 90天 panel。`compute_alpha` 对整段 panel 一次性算（date×code DataFrame），38 因子全历史仅 38 次调用（155s）。
+
+### 8.3 首个 daily_pick in-sample 基线（诚实发现）
+daily_pick_eqcomposite_top5（周度 T+5，526周 2016-2026）进 compare_pool 同口径对比：
+
+| 策略 | SR全 | SR训练(≤2022) | SR-OOS(>2022) | MDD | Calmar | DSR |
+|---|---|---|---|---|---|---|
+| **daily_pick_eqcomposite_top5** | **0.40** | **0.20** | 0.72 | **-50.5%** | **0.27** | **0.891** |
+| market_eq | 0.64 | 0.65 | 0.64 | -33.2% | 0.52 | 0.975 |
+| lowvol_weekly | 0.49 | 0.56 | 0.40 | -31.7% | 0.23 | 0.946 |
+| funnel_top5_eq_long | 0.77 | 0.80 | 0.76 | -31.9% | 0.65 | 0.991 |
+| phase2_ic_weekly | 0.85 | 0.91 | 0.77 | -35.5% | 0.69 | 0.996 |
+
+**核心结论**：
+1. **生产 daily_pick 是候选池里最弱之一**（SR0.40，仅高于 lowvol0.49；MDD -50% 全池最差，次差 -35%；Calmar 0.27、DSR 0.891 均最低）
+2. **跑输全市场等权**（0.40 vs market_eq 0.64），且回撤远更大（-50% vs -33%）
+3. **训练期(2016-2022) SR0.20 极差，OOS(2022+) 0.72 才回暖**--策略近期才像样，早期拖累严重（疑似 factor_decay 因子集对近年数据过拟合）
+4. MCS 集合不变={tsmom_ls, funnel_top5_eq_ls}，daily_pick 明显可区分（更差）
+
+**这是老板最在意的诚实评估**：生产中跑的策略从未被验证过，#3 首次暴露它跑输市场等权且回撤最大。Top5 等权集中持仓 + 涨停过滤推高波动与回撤。
+
+### 8.4 口径标注（诚实）
+- 生产 daily horizon=1（日度），回测 weekly+T+5（compare 约定）。weekly≠daily 口径差，但选股逻辑（因子集/复合/Top5/涨停过滤）完全同口径。
+- 526周（过滤 7 个 Top5 未来收盘缺失的 NaN 周）。已修 backtest NaN 处理（sell NaN 跳过 + SR 用 nan-filter）。
+- 内存：全历史 panel 2546d×4991c×7字段 float32，峰值安全（CLAUDE.md 7GB 红线）。
+
+### 8.5 下一步
+- 待办#4 forward OOS：factory.produce_picks 已就绪可前向产出信号 + 跟踪实盘 returns，对照 §8.3 基线判衰减（文献 backtest1.26 vs live0.31，4.1× 衰减预期）
+- daily_pick 跑输市场等权的事实，需老板定：是否调生产策略（如放宽 TopK / 改等权为分散 / 弃涨停过滤），还是先 #4 forward OOS 看实盘是否也跑输
 

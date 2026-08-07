@@ -23,28 +23,15 @@ sys.path.insert(0, '/home/soso/v5')
 from factor_zoo_adapter import compute_alpha
 
 DB = os.path.expanduser("~/ading/db/tdx_stock_data.db")
-CONFIG_PATH = os.path.expanduser("~/v5/branches/strategy_factory/strategy_config.json")
+FACTOR_JSON = os.path.expanduser("~/ading/data/reports/factor_decay_results_tdx.json")
 REPORT_DIR = os.path.expanduser("~/ading/data/reports")
 LOG_FILE = os.path.expanduser("~/ading/logs/daily_pick_v5.log")
 os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
 os.makedirs(REPORT_DIR, exist_ok=True)
 
-# 口径从 config 读（与 strategy_factory 共用同一份，生产/验证同口径）。
-# config 缺失则回退硬编码，保生产稳定。
-try:
-    with open(CONFIG_PATH) as _f:
-        _CFG = json.load(_f)
-    FACTOR_JSON = os.path.expanduser(_CFG["factor_set"]["source_file"])
-    LOOKBACK = _CFG["panel"]["lookback_days"]
-    TOP_K = _CFG["selection"]["top_k"]
-    LIMIT_UP = _CFG["filters"]["limit_up_pct"]
-except Exception as _e:
-    print(f"[daily_pick] WARN: config {CONFIG_PATH} load failed ({_e}), fallback hardcoded")
-    _CFG = None
-    FACTOR_JSON = os.path.expanduser("~/ading/data/reports/factor_decay_results_tdx.json")
-    LOOKBACK = 90
-    TOP_K = 5
-    LIMIT_UP = 9.8
+LOOKBACK = 90
+TOP_K = 5
+LIMIT_UP = 9.8
 
 def log(msg):
     ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -61,22 +48,12 @@ def load_factors():
         sys.exit(1)
     with open(FACTOR_JSON) as f:
         data = json.load(f)
-    if _CFG is None:
-        # fallback：原硬编码口径
-        ortho = data.get('all_orthogonal', [])
-        qualified = [o for o in ortho if o.get('status') in ('confirmed','degraded','unstable')]
-        qualified.sort(key=lambda x: x.get('ic_mean',0), reverse=True)
-        factor_ids = [q['id'] for q in qualified]
-    else:
-        fs = _CFG['factor_set']
-        items = data.get(fs['field'], [])
-        flt = fs.get('filter', {})
-        qualified = [o for o in items if all(o.get(k) in v for k, v in flt.items())]
-        sort = fs.get('sort', {})
-        if sort:
-            qualified.sort(key=lambda x: x.get(sort['key'], 0), reverse=sort.get('desc', True))
-        factor_ids = [q[fs.get('id_field', 'id')] for q in qualified]
-    log(f"Loaded {len(factor_ids)} factors (config: {os.path.basename(CONFIG_PATH) if _CFG else 'fallback'})")
+    # 用所有正交因子
+    ortho = data.get('all_orthogonal', [])
+    qualified = [o for o in ortho if o.get('status') in ('confirmed','degraded','unstable')]
+    qualified.sort(key=lambda x: x.get('ic_mean',0), reverse=True)
+    factor_ids = [q['id'] for q in qualified]
+    log(f"Loaded {len(factor_ids)} factors")
     return factor_ids
 
 

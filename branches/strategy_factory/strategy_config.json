@@ -1,0 +1,46 @@
+{
+  "name": "daily_pick_v5_eqcomposite_top5",
+  "version": "1",
+  "comment": "生产 daily_pick_v5 口径实例：38因子等权复合 pct rank Top5 + 涨停过滤。strategy_factory 读写此文件，生产与回测共用。",
+
+  "universe": {
+    "class": "stock",
+    "exclude_st": true,
+    "exclude_bj": true
+  },
+
+  "factor_set": {
+    "source_file": "~/ading/data/reports/factor_decay_results_tdx.json",
+    "field": "all_orthogonal",
+    "filter": {"status": ["confirmed", "degraded", "unstable"]},
+    "sort": {"key": "ic_mean", "desc": true},
+    "id_field": "id"
+  },
+
+  "signal": {
+    "type": "eqcomposite_pct_rank",
+    "vote_threshold": 0.5,
+    "composite": "mean_pct_rank"
+  },
+
+  "selection": {
+    "top_k": 5
+  },
+
+  "filters": {
+    "limit_up_pct": 9.8
+  },
+
+  "panel": {
+    "lookback_days": 90,
+    "fields": ["open", "high", "low", "close", "volume", "vwap", "amount"]
+  },
+
+  "rebalance": {
+    "freq": "daily",
+    "time": "14:50",
+    "realtime_source": "sina"
+  },
+
+  "horizon": 1
+}
