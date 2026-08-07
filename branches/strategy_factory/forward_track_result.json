@@ -1,0 +1,198 @@
+{
+  "run_at": "2026-08-08T01:40:50.897929",
+  "method": "daily_pick picks_v5_*.md realized T+5 等权 + market_eq 同期基准",
+  "n_pick_dates": 14,
+  "n_realized": 10,
+  "sharpe": 5.965,
+  "annual": 3.081,
+  "mean": 0.0593,
+  "market_eq_sharpe": 9.513,
+  "market_eq_mean": 0.0364,
+  "excess_daily_vs_market": 0.0229,
+  "vs_baseline_040": 5.965,
+  "per_date": [
+    {
+      "date": "2026-07-20",
+      "n_picks": 5,
+      "n_realized": 5,
+      "realized_t5": 0.0248,
+      "codes": [
+        "sh600226",
+        "sz301528",
+        "sz002631",
+        "sz002947",
+        "sz300905"
+      ]
+    },
+    {
+      "date": "2026-07-21",
+      "n_picks": 5,
+      "n_realized": 5,
+      "realized_t5": -0.0554,
+      "codes": [
+        "sz301529",
+        "sh688052",
+        "sz301397",
+        "sh688813",
+        "sz001696"
+      ]
+    },
+    {
+      "date": "2026-07-22",
+      "n_picks": 5,
+      "n_realized": 5,
+      "realized_t5": 0.1253,
+      "codes": [
+        "sz000668",
+        "sz003041",
+        "sh603389",
+        "sz002169",
+        "sz301397"
+      ]
+    },
+    {
+      "date": "2026-07-23",
+      "n_picks": 5,
+      "n_realized": 5,
+      "realized_t5": -0.0352,
+      "codes": [
+        "sh688193",
+        "sz301077",
+        "sz301269",
+        "sh605186",
+        "sz301068"
+      ]
+    },
+    {
+      "date": "2026-07-24",
+      "n_picks": 5,
+      "n_realized": 5,
+      "realized_t5": 0.1033,
+      "codes": [
+        "sh688790",
+        "sh688692",
+        "sh688615",
+        "sh688083",
+        "sz301269"
+      ]
+    },
+    {
+      "date": "2026-07-27",
+      "n_picks": 5,
+      "n_realized": 5,
+      "realized_t5": -0.0126,
+      "codes": [
+        "sh688615",
+        "sz300969",
+        "sh688765",
+        "sz300685",
+        "sh688798"
+      ]
+    },
+    {
+      "date": "2026-07-28",
+      "n_picks": 5,
+      "n_realized": 5,
+      "realized_t5": 0.0515,
+      "codes": [
+        "sh688790",
+        "sz300969",
+        "sz300206",
+        "sz300877",
+        "sh688813"
+      ]
+    },
+    {
+      "date": "2026-07-29",
+      "n_picks": 5,
+      "n_realized": 5,
+      "realized_t5": 0.1064,
+      "codes": [
+        "sh600999",
+        "sh600906",
+        "sz000593",
+        "sz300969",
+        "sz003009"
+      ]
+    },
+    {
+      "date": "2026-07-30",
+      "n_picks": 5,
+      "n_realized": 5,
+      "realized_t5": 0.1256,
+      "codes": [
+        "sz002980",
+        "sz002050",
+        "sh688981",
+        "sh688163",
+        "sz300109"
+      ]
+    },
+    {
+      "date": "2026-07-31",
+      "n_picks": 5,
+      "n_realized": 5,
+      "realized_t5": 0.1588,
+      "codes": [
+        "sh688669",
+        "sh688802",
+        "sz301232",
+        "sh688218",
+        "sh688068"
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "n_picks": 5,
+      "n_realized": 0,
+      "realized_t5": null,
+      "codes": [
+        "sz002046",
+        "sh688802",
+        "sz000066",
+        "sz300903",
+        "sh603938"
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "n_picks": 5,
+      "n_realized": 0,
+      "realized_t5": null,
+      "codes": [
+        "sh688062",
+        "sh688578",
+        "sz000656",
+        "sh601211",
+        "sh600674"
+      ]
+    },
+    {
+      "date": "2026-08-06",
+      "n_picks": 5,
+      "n_realized": 0,
+      "realized_t5": null,
+      "codes": [
+        "sh600674",
+        "sh600320",
+        "sz300832",
+        "sh600163",
+        "sh600760"
+      ]
+    },
+    {
+      "date": "2026-08-07",
+      "n_picks": 5,
+      "n_realized": 0,
+      "realized_t5": null,
+      "codes": [
+        "sh600760",
+        "sh600163",
+        "sh600422",
+        "sh600478",
+        "sh688819"
+      ]
+    }
+  ],
+  "caveat": "forward=唯一真未来验证; 样本10日极小SR无统计意义; market_eq同期SR9.5亦荒谬=强反弹期; 需数月积累; 建议weekly timer"
+}

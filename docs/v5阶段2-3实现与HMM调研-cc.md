@@ -214,7 +214,7 @@ MarkovRegression(dta, k_regimes=3, trend="n", switching_variance=True)  # 月频
 1. ~~**用 statsmodels MarkovRegression 重写 market_regime**~~ ✅ 已完成（见 §七）
 2. **状态自适应选股**（不同状态激活不同因子，不只择时空仓）
 3. ~~**阶段 1 口径对象化**（strategy_factory.py + daily_pick 改读配置）~~ ✅ 已完成 8/8（见 §八，daily_pick 基线 SR0.40 跑输市场等权）
-4. **阶段 4 forward OOS / paper trading**
+4. ~~**阶段 4 forward OOS / paper trading**~~ ✅ 已完成 8/8（见 §九，walk-forward SR0.444≈0.40 稳健OOS + forward tracker 10日起点）
 5. **路 E**：alpha101/gtja191 公式因子经济含义（老板查公式细化 25 个 formula/weak）
 6. **路 D**：完整 BCH double-selection（两阶段 Lasso + 收益目标，当前简化 PCA）
 
@@ -330,4 +330,52 @@ daily_pick_eqcomposite_top5（周度 T+5，526周 2016-2026）进 compare_pool �
 ### 8.5 下一步
 - 待办#4 forward OOS：factory.produce_picks 已就绪可前向产出信号 + 跟踪实盘 returns，对照 §8.3 基线判衰减（文献 backtest1.26 vs live0.31，4.1× 衰减预期）
 - daily_pick 跑输市场等权的事实，需老板定：是否调生产策略（如放宽 TopK / 改等权为分散 / 弃涨停过滤），还是先 #4 forward OOS 看实盘是否也跑输
+
+---
+
+## 九、forward OOS：walk-forward + paper trading（待办#4 完成）
+
+> 日期：2026-08-08
+> 范围：walk-forward 因子重选 backtest（时序 OOS）+ forward paper trading 跟踪（真未来）。唯一对未来有验证效力的环节（合并方案§四.7）。
+
+### 9.1 诚实层级澄清（重要修正）
+#3 的 daily_pick backtest SR0.40 用的是 38 因子（`factor_decay_results_tdx.json` `data_range=2000-2015`），backtest 在 2016-2026 -> **#3 本身已是因子层 OOS，无因子选择 look-ahead**。#4 非修正 #3 的 look-ahead，而是：
+- walk-forward 测**滚动重选因子是否优于静态 2000-2015 集**（策略改进问题）
+- forward paper trading 给**真未来验证**（CPCV/backtest 都同历史分布内）
+
+| 层 | 方法 | 对未来效力 |
+|---|---|---|
+| CPCV（compare_pool） | 同历史分布 resample | 无 |
+| Backtest（#3） | 因子 2000-2015 选 + 选股前向 2016-2026 | 无（历史） |
+| Walk-forward（#4） | 每年 expanding 重选因子 + 前向选股 | 无（历史但时序 OOS） |
+| Forward paper（#4） | 真实未来 picks + realized | **有（唯一）** |
+
+### 9.2 walk-forward 结果（`walkforward.py`）
+- 每年 expanding [2006, Y-1] 用 `factor_ic_daily` 重选 top-38 因子（IR>0.3/IC>0.02/persistent 准则），该年周度选股 T+5，concat 534 周
+- **walk-forward SR 0.444，年化 15.60%，MDD -46.41%**
+- 对比 #3 静态 2000-2015 集 SR 0.40 -> **相近（0.444 vs 0.40）**
+- **结论**：因子集稳定（persistent），滚动重选 ≈ 静态集 -> daily_pick 的 SR~0.43 是**稳健 OOS 数**（非因子选择 artifact），仍跑输 market_eq(0.58)
+- 口径差：walk-forward top-38 by IR 无正交化 vs 静态 38 正交池；expanding 窗口近似生产全前置
+
+### 9.3 forward paper trading（`forward_tracker.py`）
+- 解析 `picks_v5_*.md`（daily timer 已记 14 个，2026-07-20~08-07），算 realized T+5
+- 10 个已到期（7/20-7/31），4 个未到期
+- daily_pick forward SR **5.965**（10 日，无统计意义）；market_eq 同期 SR **9.513**（同期强反弹，亦荒谬）
+- daily_pick 均值 5.92%/周 > market 3.64%（超额 +2.3%/周），但 SR 6.0 < market 9.5（集中持仓波动大，风险调整后仍跑输市场，与 #3 一致）
+- **10 日样本无任何统计结论**，仅作 forward 起点；需数月积累
+
+### 9.4 MinBTL + 诚实标注
+- AMS MinBTL：N=456, y=10 需 12.3 年；当前有效样本 2016-2026 = 10 年 < 12.3 -> **临界**
+- daily_kline 2000-2026（26yr）/ factor_ic_daily 2006-2026（20yr）可扩到满足，但需重跑因子集（保持 2016+ 与 compare 框架一致）
+- CPCV 标注"同历史分布内、对未来无验证效力"；walk-forward 时序 OOS 仍历史；forward paper 唯一真未来
+
+### 9.5 产出文件
+- `branches/strategy_factory/walkforward.py` + `walkforward_result.json`（SR0.444 vs 0.40）
+- `branches/strategy_factory/forward_tracker.py` + `forward_track_result.json`（10 日 forward + market_eq 基准）
+- 建议加 weekly timer 跑 forward_tracker 持续积累
+
+### 9.6 下一步
+- forward 需数月积累才有意义（weekly timer 持续更新 forward_track_result.json）
+- daily_pick 稳健跑输市场（#3+walk-forward 双重确认），老板需定：调生产策略（放宽 TopK/分散/弃涨停过滤）or 接受现状转 #5/#6 或换层
+- 真"诚实评估器"已就位（walk-forward + forward tracker），换层/新因子可在此框架下诚实评估
 
