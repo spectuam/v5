@@ -1,0 +1,136 @@
+#!/home/soso/v5/.venv/bin/python3
+"""HMM 市场状态层 v2（改进特征+BIC扫描）
+
+改进v1:
+1. 特征用过去4周累计收益+波动(不含当周,防look-ahead泄露)
+2. BIC扫描n_states=3/4/5,选最低BIC
+3. 状态标注按年化收益(bull/sideways/bear)
+4. long-only分状态+最近44周
+
+后续升级: 日频+成交量变化特征+滚动fit(严格防泄露)
+"""
+import os, json
+from datetime import datetime
+import numpy as np
+from hmmlearn.hmm import GaussianHMM
+
+MKT = os.path.expanduser('~/v5/branches/compare/market_benchmark_returns.json')
+TSMOM_LONG = os.path.expanduser('~/v5/branches/compare/candidates_returns.json')
+OUT = os.path.expanduser('~/v5/branches/compare/market_regime_result.json')
+LOOKBACK = 4
+N_STATES_CAND = [3, 4, 5]
+
+
+def log(m):
+    print(f"[{datetime.now():%H:%M:%S}] {m}", flush=True)
+
+
+def main():
+    log("=" * 60); log("HMM 市场状态层 v2 (滚动特征+BIC扫描)"); log("=" * 60)
+    mkt = {w: r for w, r in json.load(open(MKT))['market_eq']}
+    weeks = sorted(mkt.keys())
+    rets = np.array([mkt[w] for w in weeks])
+    n = len(rets)
+
+    # 特征: 过去LOOKBACK周累计收益+波动(不含当周,防泄露)
+    feats = []
+    valid_idx = []
+    for i in range(n):
+        if i < LOOKBACK:
+            continue
+        past = rets[i - LOOKBACK:i]
+        feats.append([past.sum(), past.std()])
+        valid_idx.append(i)
+    X = np.array(feats)
+    valid_weeks = [weeks[i] for i in valid_idx]
+    log(f"样本: {len(X)}周(去前{LOOKBACK}周), 特征: [过去{LOOKBACK}周累计收益, 波动]")
+
+    # BIC扫描
+    log("BIC扫描状态数:")
+    best_bic, best_model, best_n = np.inf, None, 0
+    for n_states in N_STATES_CAND:
+        try:
+            m = GaussianHMM(n_components=n_states, covariance_type="full", n_iter=1000, random_state=42)
+            m.fit(X)
+            bic = m.bic(X)
+            log(f"  n={n_states}: BIC={bic:.0f}, 收敛={m.monitor_.converged}")
+            if bic < best_bic:
+                best_bic, best_model, best_n = bic, m, n_states
+        except Exception as e:
+            log(f"  n={n_states}: 失败 {e}")
+    log(f"最优: n={best_n} (BIC={best_bic:.0f})")
+
+    states = best_model.predict(X)
+
+    # 状态统计
+    valid_rets = rets[valid_idx]
+    state_stats = {}
+    for s in range(best_n):
+        mask = states == s
+        sr = valid_rets[mask]
+        state_stats[s] = {
+            'n_weeks': int(mask.sum()),
+            'annual_ret': round(float(sr.mean() * 52), 4) if len(sr) else 0,
+            'sharpe': round(float(sr.mean() / sr.std() * np.sqrt(52)), 2) if len(sr) > 1 and sr.std() > 0 else 0,
+            'mean_vol': round(float(np.mean([feats[j][1] for j in np.where(mask)[0]])), 4) if mask.sum() else 0,
+        }
+    # 标注: 按年化收益排
+    order = sorted(range(best_n), key=lambda s: -state_stats[s]['annual_ret'])
+    labels_map = {}
+    for i, s in enumerate(order):
+        labels_map[s] = ['bull', 'sideways', 'bear', 'crash', 'recovery'][i] if i < 5 else f's{i}'
+    for s in range(best_n):
+        state_stats[s]['label'] = labels_map[s]
+    log("状态统计:")
+    for s in range(best_n):
+        st = state_stats[s]
+        log(f"  状态{s}({st['label']}): {st['n_weeks']}周, 年化{st['annual_ret']:.2%}, 夏普{st['sharpe']}, 波动{st['mean_vol']:.4f}")
+
+    # long-only分状态
+    log("-" * 40); log("long-only 分状态表现:")
+    cands = json.load(open(TSMOM_LONG))
+    week_state = {valid_weeks[i]: labels_map[int(states[i])] for i in range(len(valid_weeks))}
+
+    for name in ['tsmom_long_K12', 'funnel_top5_eq_long', 'funnel_top5_tsmom_long']:
+        if name not in cands:
+            continue
+        strat = dict(cands[name])
+        by_state = {}
+        for w, r in strat.items():
+            st = week_state.get(w)
+            if st:
+                by_state.setdefault(st, []).append(r)
+        log(f"  {name}:")
+        all_states = sorted(by_state.keys(), key=lambda l: -np.mean(by_state[l]) if by_state[l] else 0)
+        for l in all_states:
+            arr = np.array(by_state[l])
+            if len(arr):
+                sr = arr.mean() / arr.std() * np.sqrt(52) if arr.std() > 0 else 0
+                log(f"    {l}: {len(arr)}周, 年化{arr.mean()*52:.2%}, 夏普{sr:.2f}")
+
+    # 最近44周
+    recent = [w for w in weeks[-44:] if w in week_state]
+    recent_states = [week_state[w] for w in recent]
+    from collections import Counter
+    log(f"最近44周状态分布: {dict(Counter(recent_states))}")
+
+    # 转移矩阵
+    trans = best_model.transmat_
+    log("状态转移矩阵(行=from):")
+    for i in range(best_n):
+        log(f"  {labels_map[i]}: " + " ".join(f"{labels_map[j]}={trans[i][j]:.2f}" for j in range(best_n)))
+
+    out = {
+        'run_at': datetime.now().isoformat(),
+        'method': f'HMM v2 滚动{LOOKBACK}周特征+BIC扫描, 最优n={best_n}',
+        'best_n_states': best_n, 'bic': round(best_bic, 0),
+        'state_stats': state_stats,
+        'transmat': [[round(float(trans[i][j]), 3) for j in range(best_n)] for i in range(best_n)],
+        'week_state': {w: labels_map[int(states[i])] for i, w in enumerate(valid_weeks)},
+    }
+    json.dump(out, open(OUT, 'w'), indent=2, ensure_ascii=False, default=str)
+    log(f"written: {OUT}")
+
+
+if __name__ == '__main__':
+    main()

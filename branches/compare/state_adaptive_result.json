@@ -1,0 +1,87 @@
+{
+  "run_at": "2026-08-08T00:11:05.706070",
+  "regime": "statsmodels k=2, filtered live (一致率95.2%)",
+  "state_stats": {
+    "calm": {
+      "regime": 0,
+      "n_months": 93,
+      "sigma2": 0.00223,
+      "annual": 0.0083,
+      "vol_annual": 0.1559,
+      "sharpe": 0.05,
+      "max_dd": -0.32
+    },
+    "crash": {
+      "regime": 1,
+      "n_months": 33,
+      "sigma2": 0.01457,
+      "annual": 0.5877,
+      "vol_annual": 0.4511,
+      "sharpe": 1.3,
+      "max_dd": -0.29
+    }
+  },
+  "note": "filtered=Hamilton filter 因果 live; 完整三层对比见 market_regime_rolling_result.json",
+  "results": {
+    "tsmom_long_K12": {
+      "原版": {
+        "n": 524,
+        "sharpe": 0.66,
+        "annual": 0.1815,
+        "max_dd": -0.327
+      },
+      "hide_crash(高波动,旧规则)": {
+        "n": 524,
+        "sharpe": 0.07,
+        "annual": 0.013,
+        "max_dd": -0.312
+      },
+      "hide_calm(低SR)": {
+        "n": 524,
+        "sharpe": 0.83,
+        "annual": 0.1685,
+        "max_dd": -0.297
+      }
+    },
+    "funnel_top5_eq_long": {
+      "原版": {
+        "n": 536,
+        "sharpe": 0.72,
+        "annual": 0.2003,
+        "max_dd": -0.319
+      },
+      "hide_crash(高波动,旧规则)": {
+        "n": 536,
+        "sharpe": 0.2,
+        "annual": 0.0355,
+        "max_dd": -0.297
+      },
+      "hide_calm(低SR)": {
+        "n": 536,
+        "sharpe": 0.77,
+        "annual": 0.1648,
+        "max_dd": -0.292
+      }
+    },
+    "funnel_top5_tsmom_long": {
+      "原版": {
+        "n": 514,
+        "sharpe": 0.78,
+        "annual": 0.2066,
+        "max_dd": -0.309
+      },
+      "hide_crash(高波动,旧规则)": {
+        "n": 514,
+        "sharpe": 0.2,
+        "annual": 0.035,
+        "max_dd": -0.292
+      },
+      "hide_calm(低SR)": {
+        "n": 514,
+        "sharpe": 0.87,
+        "annual": 0.1716,
+        "max_dd": -0.277
+      }
+    }
+  }
+}

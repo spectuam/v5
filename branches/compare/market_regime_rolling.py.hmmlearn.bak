@@ -1,0 +1,121 @@
+#!/home/soso/v5/.venv/bin/python3
+"""滚动 fit HMM（防 look-ahead，验证状态识别实盘可达）
+
+每周用过去 N 周(滚动窗口)fit HMM，预测当周状态。
+对比全局HMM(理论上限) vs 滚动fit(实盘可达)，看状态识别+择时的实盘效果。
+
+滚动: 每周 t 用 [t-ROLL, t) 的特征 fit HMM，predict 当周状态。
+"""
+import os, json
+from datetime import datetime
+import numpy as np
+from hmmlearn.hmm import GaussianHMM
+
+MKT = os.path.expanduser('~/v5/branches/compare/market_benchmark_returns.json')
+OUT = os.path.expanduser('~/v5/branches/compare/market_regime_rolling_result.json')
+ROLL = 156  # 滚动窗口3年(156周)
+LOOKBACK = 4
+N_STATES = 5  # 用v2的5状态
+
+
+def log(m):
+    print(f"[{datetime.now():%H:%M:%S}] {m}", flush=True)
+
+
+def feats(rets, i):
+    """过去LOOKBACK周累计收益+波动(不含当周)"""
+    if i < LOOKBACK:
+        return None
+    past = rets[i - LOOKBACK:i]
+    return [past.sum(), past.std()]
+
+
+def main():
+    log("=" * 60); log(f"滚动fit HMM (窗口{ROLL}周, {N_STATES}状态)"); log("=" * 60)
+    mkt = {w: r for w, r in json.load(open(MKT))['market_eq']}
+    weeks = sorted(mkt.keys())
+    rets = np.array([mkt[w] for w in weeks])
+    n = len(rets)
+
+    week_state = {}
+    for i in range(n):
+        if i < ROLL:  # 不够滚动窗口
+            continue
+        # 用 [i-ROLL, i) fit
+        X_train = []
+        for j in range(ROLL, i + 1):
+            f = feats(rets, j - 1)  # 用j-1及之前(不含当周j)
+            if f:
+                X_train.append(f)
+        if len(X_train) < N_STATES * 5:
+            continue
+        X_train = np.array(X_train)
+        # 预测当周(i)状态: 用[i-ROLL, i)的特征fit, predict最后+1个状态
+        # 当周特征
+        f_now = feats(rets, i)
+        if f_now is None:
+            continue
+        try:
+            m = GaussianHMM(n_components=N_STATES, covariance_type="diag", n_iter=200, random_state=42)
+            m.fit(X_train)
+            # predict 全序列最后状态(包含当周特征)
+            X_all = np.array([feats(rets, j) for j in range(ROLL, i + 1) if feats(rets, j)])
+            states = m.predict(X_all)
+            week_state[weeks[i]] = int(states[-1])
+        except Exception as e:
+            continue
+    log(f"滚动fit状态: {len(week_state)}周(去前{ROLL}滚动窗口)")
+
+    # 状态语义对齐(滚动fit的状态编号和全局不同, 按"该状态当周收益均值"标语义)
+    valid_idx = [i for i, w in enumerate(weeks) if w in week_state]
+    state_rets = {}
+    for i in valid_idx:
+        s = week_state[weeks[i]]
+        state_rets.setdefault(s, []).append(rets[i])
+    # 按年化收益排标语义
+    order = sorted(state_rets.keys(), key=lambda s: -np.mean(state_rets[s]))
+    labels = ['bull', 'sideways', 'mid', 'crash', 'recovery']
+    s2label = {s: labels[i] if i < 5 else f's{i}' for i, s in enumerate(order)}
+    for s in state_rets:
+        arr = np.array(state_rets[s])
+        sr = arr.mean() / arr.std() * np.sqrt(52) if arr.std() > 0 else 0
+        log(f"  状态{s}({s2label[s]}): {len(arr)}周, 年化{arr.mean()*52:.2%}, 夏普{sr:.2f}")
+
+    # 滚动fit状态择时 vs 全局HMM理论上限
+    log("-" * 40); log("滚动fit状态择时 vs 全局理论上限:")
+    cands = json.load(open(os.path.expanduser('~/v5/branches/compare/candidates_returns.json')))
+    global_regime = json.load(open(os.path.expanduser('~/v5/branches/compare/market_regime_result.json')))
+    global_state = global_regime['week_state']
+
+    for name in ['tsmom_long_K12', 'funnel_top5_tsmom_long']:
+        if name not in cands:
+            continue
+        strat = dict(cands[name])
+        orig = [r for w, r in strat.items()]
+        # 滚动fit: recovery+crash空仓
+        roll_timed = [0.0 if s2label.get(week_state.get(w)) in ('recovery', 'crash') else r for w, r in strat.items() if w in week_state]
+        # 全局上限: recovery+crash空仓
+        glob_timed = [0.0 if global_state.get(w) in ('recovery', 'crash') else r for w, r in strat.items() if w in global_state]
+
+        def st(arr):
+            arr = np.array(arr)
+            if len(arr) < 2 or arr.std() == 0:
+                return 'SR- 年化- MDD-'
+            sr = arr.mean() / arr.std() * np.sqrt(52)
+            nav = np.cumprod(1 + arr)
+            mdd = ((nav - np.maximum.accumulate(nav)) / np.maximum.accumulate(nav)).min()
+            return f"SR{sr:.2f} 年化{arr.mean()*52:.2%} MDD{mdd:.2%}"
+
+        log(f"  {name}:")
+        log(f"    原版:        {st(orig)}")
+        log(f"    滚动fit择时: {st(roll_timed)} ({len(roll_timed)}周)")
+        log(f"    全局上限:    {st(glob_timed)} ({len(glob_timed)}周)")
+
+    out = {'run_at': datetime.now().isoformat(), 'roll_window': ROLL, 'n_states': N_STATES,
+           'week_state': {w: s2label.get(s, str(s)) for w, s in week_state.items()}}
+    json.dump(out, open(OUT, 'w'), indent=2, ensure_ascii=False, default=str)
+    log(f"written: {OUT}")
+
+
+if __name__ == '__main__':
+    main()

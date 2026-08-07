@@ -1,0 +1,39 @@
+{
+  "run_at": "2026-08-07T22:14:07.047886",
+  "e_pass": 38,
+  "d_keep": 9,
+  "candidates_e_d": [
+    "alpha101/alpha_015",
+    "alpha101/alpha_016",
+    "alpha101/alpha_027",
+    "alpha101/alpha_088",
+    "gtja191/alpha_016",
+    "gtja191/alpha_041",
+    "gtja191/alpha_157",
+    "qlib158/min10",
+    "qlib158/vsumn5"
+  ],
+  "composite_rank": {
+    "alpha101/alpha_015": 2.0,
+    "alpha101/alpha_016": 4.67,
+    "alpha101/alpha_027": 6.0,
+    "alpha101/alpha_088": 6.0,
+    "gtja191/alpha_016": 1.67,
+    "gtja191/alpha_041": 5.33,
+    "gtja191/alpha_157": 4.0,
+    "qlib158/min10": 7.67,
+    "qlib158/vsumn5": 7.67
+  },
+  "top_factors": [
+    "gtja191/alpha_016",
+    "alpha101/alpha_015",
+    "gtja191/alpha_157",
+    "alpha101/alpha_016",
+    "gtja191/alpha_041"
+  ],
+  "strategies": [
+    "funnel_top5_eq_ls",
+    "funnel_top5_eq_long",
+    "funnel_top5_tsmom_long"
+  ]
+}

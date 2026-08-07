@@ -1,0 +1,87 @@
+#!/home/soso/v5/.venv/bin/python3
+"""状态择时验证：下跌状态空仓，看 long-only 改善（HMM状态层价值验证）
+
+读HMM状态标签 + long-only候选returns，
+状态择时: recovery(下跌)状态空仓 / recovery+crash(下跌+横盘)空仓，
+算SR/年化/MDD改善。
+
+注意: 全局HMM的predict用全序列(Viterbi含未来), 这是"理论上限"。
+实盘要滚动fit(每周用过去N周fit预测当周状态), 后续补。
+"""
+import os, json
+from datetime import datetime
+import numpy as np
+
+REGIME = os.path.expanduser('~/v5/branches/compare/market_regime_result.json')
+CAND = os.path.expanduser('~/v5/branches/compare/candidates_returns.json')
+OUT = os.path.expanduser('~/v5/branches/compare/state_adaptive_result.json')
+FREQ = 52
+
+
+def log(m):
+    print(f"[{datetime.now():%H:%M:%S}] {m}", flush=True)
+
+
+def stats(rets):
+    if len(rets) < 2:
+        return {}
+    arr = np.array(rets)
+    sr = float(arr.mean() / arr.std() * np.sqrt(FREQ)) if arr.std() > 0 else 0
+    nav = np.cumprod(1 + arr)
+    mdd = float(((nav - np.maximum.accumulate(nav)) / np.maximum.accumulate(nav)).min()) if len(nav) else 0
+    return {'n': len(arr), 'sharpe': round(sr, 2), 'annual': round(float(arr.mean() * FREQ), 4), 'max_dd': round(mdd, 3)}
+
+
+def timing(strat, week_state, hide_states):
+    """状态择时: hide_states中的状态空仓(ret=0)"""
+    out = []
+    for w, r in strat:
+        if week_state.get(w) in hide_states:
+            out.append([w, 0.0])  # 空仓
+        else:
+            out.append([w, r])
+    return out
+
+
+def main():
+    log("=" * 60); log("状态择时验证 (recovery空仓 / recovery+crash空仓)"); log("=" * 60)
+    regime = json.load(open(REGIME))
+    week_state = regime['week_state']
+    cands = json.load(open(CAND))
+
+    long_names = ['tsmom_long_K12', 'funnel_top5_eq_long', 'funnel_top5_tsmom_long']
+    hide_sets = {
+        '原版': set(),
+        'recovery空仓': {'recovery'},
+        'recovery+crash空仓': {'recovery', 'crash'},
+    }
+
+    for name in long_names:
+        if name not in cands:
+            continue
+        strat = cands[name]
+        log(f"\n{name}:")
+        for label, hide in hide_sets.items():
+            timed = timing(strat, week_state, hide)
+            rets = [r for _, r in timed if r is not None]
+            st = stats(rets)
+            log(f"  {label}: SR{st.get('sharpe',0):.2f} 年化{st.get('annual',0):.2%} MDD{st.get('max_dd',0):.2%}")
+
+    # 结果存
+    out = {'run_at': datetime.now().isoformat(), 'note': '全局HMM理论上限(look-ahead),实盘要滚动fit', 'results': {}}
+    for name in long_names:
+        if name not in cands:
+            continue
+        strat = cands[name]
+        out['results'][name] = {}
+        for label, hide in hide_sets.items():
+            timed = timing(strat, week_state, hide)
+            rets = [r for _, r in timed if r is not None]
+            out['results'][name][label] = stats(rets)
+    json.dump(out, open(OUT, 'w'), indent=2, ensure_ascii=False, default=float)
+    log(f"\nwritten: {OUT}")
+    log("注: 全局HMM理论上限,实盘要滚动fit防look-ahead")
+
+
+if __name__ == '__main__':
+    main()

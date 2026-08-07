@@ -1,0 +1,187 @@
+{
+  "qlib158/ma10": {
+    "ic_mean": 0.042,
+    "ic_std": 0.1368,
+    "ir": 0.307
+  },
+  "qlib158/min10": {
+    "ic_mean": 0.0555,
+    "ic_std": 0.1343,
+    "ir": 0.413
+  },
+  "alpha101/alpha_004": {
+    "ic_mean": 0.0438,
+    "ic_std": 0.1126,
+    "ir": 0.389
+  },
+  "gtja191/alpha_048": {
+    "ic_mean": 0.0218,
+    "ic_std": 0.1058,
+    "ir": 0.206
+  },
+  "gtja191/alpha_008": {
+    "ic_mean": 0.037,
+    "ic_std": 0.1238,
+    "ir": 0.299
+  },
+  "alpha101/alpha_069": {
+    "ic_mean": 0.0483,
+    "ic_std": 0.1045,
+    "ir": 0.463
+  },
+  "gtja191/alpha_041": {
+    "ic_mean": 0.0655,
+    "ic_std": 0.1587,
+    "ir": 0.412
+  },
+  "gtja191/alpha_025": {
+    "ic_mean": 0.0438,
+    "ic_std": 0.1252,
+    "ir": 0.35
+  },
+  "qlib158/vma60": {
+    "ic_mean": 0.0527,
+    "ic_std": 0.1136,
+    "ir": 0.464
+  },
+  "gtja191/alpha_026": {
+    "ic_mean": 0.0449,
+    "ic_std": 0.1218,
+    "ir": 0.368
+  },
+  "gtja191/alpha_006": {
+    "ic_mean": 0.0202,
+    "ic_std": 0.1034,
+    "ir": 0.195
+  },
+  "alpha101/alpha_084": {
+    "ic_mean": 0.037,
+    "ic_std": 0.1158,
+    "ir": 0.319
+  },
+  "qlib158/cntn5": {
+    "ic_mean": 0.0078,
+    "ic_std": 0.1,
+    "ir": 0.078
+  },
+  "alpha101/alpha_023": {
+    "ic_mean": 0.0254,
+    "ic_std": 0.0779,
+    "ir": 0.326
+  },
+  "gtja191/alpha_037": {
+    "ic_mean": 0.0188,
+    "ic_std": 0.1144,
+    "ir": 0.165
+  },
+  "alpha101/alpha_024": {
+    "ic_mean": 0.0321,
+    "ic_std": 0.1188,
+    "ir": 0.27
+  },
+  "gtja191/alpha_157": {
+    "ic_mean": 0.0509,
+    "ic_std": 0.1107,
+    "ir": 0.46
+  },
+  "gtja191/alpha_168": {
+    "ic_mean": 0.0265,
+    "ic_std": 0.0949,
+    "ir": 0.28
+  },
+  "qlib158/vsumn5": {
+    "ic_mean": 0.0176,
+    "ic_std": 0.0803,
+    "ir": 0.22
+  },
+  "qlib158/vsumn60": {
+    "ic_mean": 0.0577,
+    "ic_std": 0.1058,
+    "ir": 0.545
+  },
+  "qlib158/vsumn30": {
+    "ic_mean": 0.0489,
+    "ic_std": 0.0967,
+    "ir": 0.506
+  },
+  "gtja191/alpha_001": {
+    "ic_mean": 0.0333,
+    "ic_std": 0.0658,
+    "ir": 0.506
+  },
+  "alpha101/alpha_016": {
+    "ic_mean": 0.0612,
+    "ic_std": 0.0715,
+    "ir": 0.856
+  },
+  "qlib158/vsumn20": {
+    "ic_mean": 0.0394,
+    "ic_std": 0.0911,
+    "ir": 0.433
+  },
+  "qlib158/vma10": {
+    "ic_mean": 0.0165,
+    "ic_std": 0.0863,
+    "ir": 0.191
+  },
+  "alpha101/alpha_088": {
+    "ic_mean": 0.0723,
+    "ic_std": 0.1155,
+    "ir": 0.626
+  },
+  "gtja191/alpha_092": {
+    "ic_mean": 0.029,
+    "ic_std": 0.093,
+    "ir": 0.312
+  },
+  "gtja191/alpha_016": {
+    "ic_mean": 0.05,
+    "ic_std": 0.0638,
+    "ir": 0.784
+  },
+  "alpha101/alpha_080": {
+    "ic_mean": 0.0198,
+    "ic_std": 0.0847,
+    "ir": 0.234
+  },
+  "alpha101/alpha_015": {
+    "ic_mean": 0.043,
+    "ic_std": 0.0557,
+    "ir": 0.771
+  },
+  "alpha101/alpha_067": {
+    "ic_mean": 0.0234,
+    "ic_std": 0.0842,
+    "ir": 0.278
+  },
+  "alpha101/alpha_044": {
+    "ic_mean": 0.0561,
+    "ic_std": 0.0701,
+    "ir": 0.801
+  },
+  "alpha101/alpha_055": {
+    "ic_mean": 0.0479,
+    "ic_std": 0.0577,
+    "ir": 0.83
+  },
+  "alpha101/alpha_026": {
+    "ic_mean": 0.044,
+    "ic_std": 0.0742,
+    "ir": 0.594
+  },
+  "gtja191/alpha_090": {
+    "ic_mean": 0.0477,
+    "ic_std": 0.0614,
+    "ir": 0.777
+  },
+  "alpha101/alpha_002": {
+    "ic_mean": 0.0236,
+    "ic_std": 0.0539,
+    "ir": 0.438
+  },
+  "alpha101/alpha_027": {
+    "ic_mean": 0.0416,
+    "ic_std": 0.057,
+    "ir": 0.731
+  }
+}
