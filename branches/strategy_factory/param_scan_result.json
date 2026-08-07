@@ -1,0 +1,87 @@
+{
+  "run_at": "2026-08-08T02:17:23.288718",
+  "method": "TopK×涨停 扫描, 38因子静态(2000-2015选OOS), 周度T+5, 2016-2026",
+  "baseline": {
+    "market_eq": {
+      "sharpe": 0.58,
+      "max_dd": -0.332
+    },
+    "daily_pick_orig": {
+      "sharpe": 0.4,
+      "max_dd": -0.5
+    }
+  },
+  "results": {
+    "topk5_limitup_on": {
+      "n": 535,
+      "sharpe": 0.32,
+      "annual": 0.1129,
+      "max_dd": -0.617,
+      "calmar": 0.183
+    },
+    "topk10_limitup_on": {
+      "n": 535,
+      "sharpe": 0.508,
+      "annual": 0.1691,
+      "max_dd": -0.528,
+      "calmar": 0.32
+    },
+    "topk20_limitup_on": {
+      "n": 535,
+      "sharpe": 0.6,
+      "annual": 0.1936,
+      "max_dd": -0.393,
+      "calmar": 0.493
+    },
+    "topk30_limitup_on": {
+      "n": 535,
+      "sharpe": 0.599,
+      "annual": 0.1895,
+      "max_dd": -0.388,
+      "calmar": 0.489
+    },
+    "topk50_limitup_on": {
+      "n": 535,
+      "sharpe": 0.605,
+      "annual": 0.1888,
+      "max_dd": -0.394,
+      "calmar": 0.479
+    },
+    "topk5_limitup_off": {
+      "n": 535,
+      "sharpe": 0.355,
+      "annual": 0.1254,
+      "max_dd": -0.593,
+      "calmar": 0.211
+    },
+    "topk10_limitup_off": {
+      "n": 535,
+      "sharpe": 0.481,
+      "annual": 0.161,
+      "max_dd": -0.526,
+      "calmar": 0.306
+    },
+    "topk20_limitup_off": {
+      "n": 535,
+      "sharpe": 0.622,
+      "annual": 0.2015,
+      "max_dd": -0.384,
+      "calmar": 0.524
+    },
+    "topk30_limitup_off": {
+      "n": 535,
+      "sharpe": 0.597,
+      "annual": 0.1906,
+      "max_dd": -0.384,
+      "calmar": 0.496
+    },
+    "topk50_limitup_off": {
+      "n": 535,
+      "sharpe": 0.608,
+      "annual": 0.1911,
+      "max_dd": -0.399,
+      "calmar": 0.479
+    }
+  },
+  "caveat": "参数人为设定非fit无lookahead; 看趋势不挑单点; 因子集静态OOS; 扫参SR若高仍需forward验证(防walk-forward过拟合)"
+}

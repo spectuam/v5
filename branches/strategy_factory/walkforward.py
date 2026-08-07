@@ -39,6 +39,10 @@ TOP_K = 5
 LIMIT_UP = 9.8
 VOTE_THR = 0.5
 
+# 支持 --topk 参数（验证 TopK 扫参结论在 walk-forward 是否成立）
+if '--topk' in sys.argv:
+    TOP_K = int(sys.argv[sys.argv.index('--topk') + 1])
+
 
 def log(m):
     print(f"[{datetime.now():%H:%M:%S}] {m}", flush=True)
