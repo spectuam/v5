@@ -1,0 +1,125 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "v5 四件套输出 schema",
+  "description": "程序性裁判系统产出. 证伪主义: 淘汰不行的, 不证真最好. 不越权推荐. 四件套=结果/口径/可信度/证伪判定.",
+  "type": "object",
+  "required": ["strategy", "run_at", "result", "caliber", "credibility", "falsification"],
+  "properties": {
+    "strategy": {
+      "type": "string",
+      "description": "策略名(对齐 candidates_returns.json 的 key)"
+    },
+    "run_at": {"type": "string", "description": "产出时间 ISO8601"},
+
+    "result": {
+      "type": "object",
+      "description": "结果: 日资金曲线口径(警惕按笔虚高). 净收益(扣成本).",
+      "required": ["sharpe", "sharpe_gross", "annual_return", "max_dd", "calmar", "turnover", "nav_curve", "cost_model"],
+      "properties": {
+        "sharpe": {"type": "number", "description": "净收益年化夏普(主口径)"},
+        "sharpe_gross": {"type": "number", "description": "毛收益夏普(对照, 不扣成本)"},
+        "annual_return": {"type": "number", "description": "净年化收益"},
+        "max_dd": {"type": "number", "description": "最大回撤(负值)"},
+        "calmar": {"type": "number", "description": "年化收益/|MDD|"},
+        "turnover": {"type": "number", "description": "年换手率(真实撮合层算, candidates层留空)"},
+        "nav_curve": {"type": "array", "description": "周/日净值序列 [[ts, nav], ...], 起点=1"},
+        "cost_model": {"type": "object", "description": "成本口径(见 caliber.cost_model 冗余列出)"}
+      }
+    },
+
+    "caliber": {
+      "type": "object",
+      "description": "口径: 计算假设显式化. 成熟系统口径隐性, v5 显式输出=更进一步.",
+      "required": ["period", "cost_model", "benchmark", "capital", "annualization", "layer"],
+      "properties": {
+        "period": {"type": "string", "description": "调仓周期 weekly/daily"},
+        "cost_model": {
+          "type": "object",
+          "description": "成本模型(两套口径显式列): candidates固定费率 vs RQAlpha真实撮合",
+          "properties": {
+            "candidates_layer": {"type": "string", "description": "固定round_trip 10.2bp/周(满换仓假设上界)"},
+            "rqalpha_layer": {"type": "string", "description": "真实撮合: 最低佣金/印花税/涨跌停/停牌/最小手数/冲击"}
+          }
+        },
+        "benchmark": {"type": "string", "description": "基准(000300.XSHG 或 market_eq)"},
+        "capital": {"type": "number", "description": "资金规模(100万/1亿), 影响佣金阶梯与冲击"},
+        "annualization": {"type": "string", "description": "年化算法(周度×52 / 日度×252)"},
+        "layer": {"type": "string", "description": "产出层: candidates快筛 / RQAlpha终审"}
+      }
+    },
+
+    "credibility": {
+      "type": "object",
+      "description": "可信度: 统计验证(诚实量化, 非赞美). 全部标注 N_eff 校正状态.",
+      "required": ["dsr", "dsr_n_eff", "mcs_set", "pbo", "walk_forward_oos", "forward_decay", "train_valid_r", "n_trials"],
+      "properties": {
+        "dsr": {"type": "number", "description": "Deflated Sharpe(Bailey-Lopez de Prado), 已按N_eff校正选择偏差"},
+        "dsr_n_eff": {"type": "number", "description": "有效独立策略数(特征值法), DSR校正用"},
+        "mcs_set": {"type": "array", "description": "MCS无法区分集合(策略名列表). 策略在其中=没被显著优于."},
+        "pbo": {"type": "number", "description": "PBO: IS最优OOS落下半区概率(高=过拟合)"},
+        "walk_forward_oos": {"type": "object", "description": "walk-forward OOS 表现",
+          "properties": {"sharpe_oos": {"type":"number"}, "sharpe_train": {"type":"number"}, "ratio": {"type":"number","description":"OOS/IS"}}},
+        "forward_decay": {"type": "number", "description": "forward OOS 相对 IS 衰减比例(>0.5=证伪证据)"},
+        "train_valid_r": {"type": "number", "description": "train/valid 时段排名Spearman相关(稳定性)"},
+        "n_trials": {"type": "number", "description": "诚实记账: 名义试验数(已含n_eff校正)"}
+      }
+    },
+
+    "falsification": {
+      "type": "object",
+      "description": "证伪判定: 程序性结论. 证伪只需一条证据, 证真一万条不够.",
+      "required": ["verdict", "evidence"],
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": ["死了", "未死_待forward积累"],
+          "description": "程序性结论. '未死'≠好, 只=没被证伪. 不推荐."
+        },
+        "evidence": {
+          "type": "array",
+          "description": "证伪证据列表(任一非空即'死了')",
+          "items": {"type": "object", "properties": {
+            "rule": {"type": "string", "description": "触发规则名"},
+            "value": {"type": "number", "description": "实际值"},
+            "threshold": {"type": "number", "description": "门槛"},
+            "passed": {"type": "boolean", "description": "true=过此关(未触发证伪), false=触发证伪"}
+          }}
+        }
+      }
+    }
+  },
+
+  "falsification_thresholds": {
+    "_doc": "证伪门槛表(A3定义). 程序性, DSR已按N_eff校正. 修正计划笔误: 'DSR<0.95=未死'写反, DSR高=SR显著=没死.",
+    "rules": [
+      {
+        "id": "F1_DSR",
+        "name": "SR显著性(选择偏差校正)",
+        "pass_condition": "DSR >= 0.95",
+        "fail_meaning": "SR不显著, 可能是运气(选择偏差内)",
+        "correct_logic": "DSR>=0.95=未死(过门槛≠好,只=没死); DSR<0.95=死了(证伪证据). 计划原文'DSR<0.95=未死'为笔误, 此处修正."
+      },
+      {
+        "id": "F2_MC",
+        "name": "MCS无法区分集合成员",
+        "pass_condition": "策略在 MCS 无法区分集合内",
+        "fail_meaning": "策略被其他策略显著优于(被排除MCS集合)"
+      },
+      {
+        "id": "F3_forward_decay",
+        "name": "forward OOS 衰减",
+        "pass_condition": "forward_decay <= 0.50",
+        "fail_meaning": "OOS相对IS衰减超50%(IS表现不可持续)"
+      }
+    ],
+    "verdict_logic": "任一规则 fail = '死了'; 全部 pass = '未死_待forward积累'(证伪主义: 未死不等于好, 只=没被证伪, 仍待forward持续积累)"
+  },
+
+  "example": {
+    "strategy": "daily_pick_eqcomposite_top5",
+    "result": {"sharpe": 0.244, "sharpe_gross": 0.397, "max_dd": -0.599},
+    "caliber": {"period": "weekly", "cost_model": {"candidates_layer": "固定10.2bp/周(满换仓上界)", "rqalpha_layer": "最低佣金/涨跌停/停牌"}, "capital": 1000000, "layer": "candidates快筛"},
+    "credibility": {"dsr": 0.775, "dsr_n_eff": 1.94, "mcs_set": ["...10策略..."], "pbo": 0.25, "forward_decay": 0.4},
+    "falsification": {"verdict": "死了", "evidence": [{"rule": "F1_DSR", "value": 0.775, "threshold": 0.95, "passed": false}]}
+  }
+}
