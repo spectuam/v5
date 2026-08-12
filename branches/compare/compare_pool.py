@@ -9,13 +9,16 @@
 - pbo_dsr.py 的 CPCV(purge+embargo+多split) + DSR公式
 - fdr_correct.py 的特征值法N_eff（这里对策略returns相关矩阵）
 - diagnose.py 的 block_bootstrap_ci 思路（MCS两两比较）
-- cost_utils.py 的 round_trip_cost（扣成本参考，这里口径先用毛收益，成本在阶段4复核）
+- cost_utils.py 的 round_trip_cost（A1已接入：candidates层扣固定round_trip，impact见RQAlpha终审）
 """
-import os, json, math
+import os, json, math, sys
 from datetime import datetime
 from itertools import combinations
 import numpy as np
 from scipy.stats import norm
+
+sys.path.insert(0, os.path.expanduser('~/v5/branches/cost_layer'))
+from cost_utils import round_trip_cost
 
 CAND_P = os.path.expanduser('~/v5/branches/compare/candidates_returns.json')
 OUT = os.path.expanduser('~/v5/branches/compare/compare_pool_result.json')
@@ -26,6 +29,7 @@ EMBARGO = 5  # 周度embargo(≈1月)
 BLOCK = 6  # block bootstrap块长(对齐block_bootstrap.py)
 N_BOOT = 2000
 ALPHA = 0.05  # MCS显著性
+ROUND_TRIP = round_trip_cost()  # 0.00102 周度往返(佣金+印花+过户, 满换仓假设上界)
 
 
 def log(m):
@@ -224,10 +228,12 @@ def main():
     common = sorted(set.intersection(*all_p)) if all_p else []
     log(f"共同period数: {len(common)} ({common[0]} -> {common[-1]})")
     names = list(cands.keys())
-    rets_mat = np.array([[dict(cands[n]).get(p) for p in common] for n in names], float)
-    # 列存策略，行period
-    rets_mat = rets_mat.T  # period × strategy
-    log(f"returns矩阵: {rets_mat.shape}")
+    gross_mat = np.array([[dict(cands[n]).get(p) for p in common] for n in names], float)
+    gross_mat = gross_mat.T  # period × strategy (毛收益原始)
+    # A1成本层: candidates层扣固定round_trip(每周满换仓=保守上界,真实换手率<100%)
+    # impact需trade_value/daily_amount, candidates层无持仓明细 -> 真实冲击在RQAlpha终审层算(A2)
+    rets_mat = np.where(np.isnan(gross_mat), np.nan, gross_mat - ROUND_TRIP)
+    log(f"returns矩阵: {rets_mat.shape} | 净收益口径(毛收益 - 周度round_trip {ROUND_TRIP*1e4:.1f}bp)")
 
     n_eff = effective_n(rets_mat)
     log(f"有效N(策略相关矩阵特征值): {n_eff:.2f} (名义{len(names)})")
@@ -238,13 +244,16 @@ def main():
 
     results = {}
     for si, name in enumerate(names):
-        rets = rets_mat[:, si]
+        rets = rets_mat[:, si]          # 净收益(主口径)
+        gross = gross_mat[:, si]        # 毛收益(对照)
         dsr, sr_obs, e_max, sigma_sr = dsr_adjusted(rets, n_eff)
         cal = calmar(rets)
         mdd = max_dd(rets)
         cpcv = cpcv_oos_dist(rets)
+        sr_gross = sharpe(gross)
         results[name] = {
-            'sharpe_full': round(sr_obs, 3),
+            'sharpe_full': round(sr_obs, 3),                 # 净(主口径)
+            'sharpe_gross_full': round(sr_gross, 3),          # 毛收益对照
             'sharpe_train': round(sharpe(rets[train_idx]), 3),
             'sharpe_oos': round(sharpe(rets[oos_idx]), 3),
             'dsr': round(dsr, 3),
@@ -255,7 +264,7 @@ def main():
             'cpcv_median': round(float(np.median(cpcv)), 3) if cpcv else 0,
             'cpcv_p10': round(float(np.percentile(cpcv, 10)), 3) if cpcv else 0,
         }
-        log(f"  {name}: SR全{sr_obs:.2f}/训练{sharpe(rets[train_idx]):.2f}/OOS{sharpe(rets[oos_idx]):.2f} DSR{dsr:.3f} Calmar{cal:.2f} MDD{mdd:.2%} CPCV中位{np.median(cpcv) if cpcv else 0:.2f}")
+        log(f"  {name}: 净SR{sr_obs:.2f}(毛{sr_gross:.2f})/训练{sharpe(rets[train_idx]):.2f}/OOS{sharpe(rets[oos_idx]):.2f} DSR{dsr:.3f} Calmar{cal:.2f} MDD{mdd:.2%}")
 
     pbo = pbo_in_pool(rets_mat.T)  # pbo_in_pool期望 strategy×period
     mcs, pairwise = mcs_set(rets_mat.T)  # strategy×period
@@ -274,10 +283,17 @@ def main():
         'n_candidates': len(names), 'n_eff': round(n_eff, 2),
         'n_periods': len(common), 'train_end': TRAIN_END,
         'freq': FREQ, 'method': 'CPCV(purge+embargo+多split)+DSR(N_eff)+MCS(block bootstrap)+Calmar硬筛',
+        'cost_model': {
+            'layer': 'candidates固定费率(非真实撮合)',
+            'round_trip_bp': round(ROUND_TRIP * 1e4, 1),
+            'assumption': '每周满换仓=每周一个round_trip(保守上界,真实换手率<100%)',
+            'annual_drag_bp': round(ROUND_TRIP * 1e4 * 52, 0),
+            'impact': 'candidates层无法算(无持仓明细),真实冲击见RQAlpha终审(A2)',
+        },
         'pbo': round(pbo, 3), 'mcs_set': mcs_names, 'pairwise_p': pairwise,
         'spearman_stability': stab,
         'strategies': results,
-        'caveat': 'CPCV-OOS仍在同历史分布内,对未来无验证效力;MCS是Hansen2011精神的简化实现(非正式arch包)',
+        'caveat': '净收益口径(毛收益-固定round_trip);CPCV-OOS仍在同历史分布内对未来无验证效力;MCS是Hansen2011精神简化实现(非正式arch包);真实撮合成本见RQAlpha终审',
     }
     json.dump(out, open(OUT, 'w'), indent=2, ensure_ascii=False, default=float)
     log(f"written: {OUT}")
