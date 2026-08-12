@@ -1,0 +1,16 @@
+{
+  "strategy": "daily_pick_eqcomposite_top5",
+  "caliber": {
+    "layer": "RQAlpha终审",
+    "cost_model": "真实撮合(最低佣金/印花/涨跌停/停牌/最小手数)"
+  },
+  "comparison": {
+    "gross_sharpe": 0.397,
+    "net_candidates_sharpe": 0.244,
+    "rqalpha_sharpe": -0.441,
+    "rqalpha_annual": -0.0994,
+    "rqalpha_max_dd": -0.7902,
+    "dsr": 0.775,
+    "cost_drag_gross_to_rq": 0.838
+  }
+}

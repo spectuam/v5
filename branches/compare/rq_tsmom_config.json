@@ -1,0 +1,22 @@
+{
+  "base": {
+    "start_date": "2016-01-04",
+    "end_date": "2026-06-30",
+    "frequency": "1d",
+    "benchmark": "000300.XSHG",
+    "accounts": {"stock": 1000000}
+  },
+  "extra": {
+    "log_level": "info"
+  },
+  "mod": {
+    "sys_analyser": {
+      "enabled": true,
+      "output_file": "/home/soso/v5/branches/compare/rq_tsmom_ls_result.pkl"
+    },
+    "sys_simulation": {
+      "enabled": true,
+      "matching_type": "current_bar"
+    }
+  }
+}

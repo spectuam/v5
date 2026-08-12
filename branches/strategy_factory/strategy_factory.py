@@ -36,6 +36,13 @@ def log(msg):
         f.write(line + "\n")
 
 
+def code_to_rq(code):
+    """sh600000 -> 600000.XSHG ; sz000001 -> 000001.XSHE (RQAlpha标的格式)"""
+    if code.startswith('sh'):
+        return code[2:] + '.XSHG'
+    return code[2:] + '.XSHE'
+
+
 # ── config ──
 def load_config(path):
     with open(path) as f:
@@ -259,7 +266,7 @@ def produce_picks(config, today_str, realtime=True):
 
 
 # ── backtest（验证）──
-def backtest(config, start, end, freq='weekly'):
+def backtest(config, start, end, freq='weekly', export_holdings=False):
     """历史回测：全历史 panel + 一次性预算因子 + 按 freq 选股 + T+5 持有。
     产出 [(week, ret)]，对齐 candidates_returns.json 格式喂 compare_pool。
     口径注：生产 daily horizon=1，回测 weekly+T+5（compare 约定）；诚实标注。"""
@@ -302,6 +309,7 @@ def backtest(config, start, end, freq='weekly'):
     horizon = 5  # T+5 周度持有（compare 约定）
 
     out = {}
+    holdings_out = {} if export_holdings else None
     t0 = time.time()
     for i, d in enumerate(rebal_dates):
         # 该日因子值
@@ -345,6 +353,11 @@ def backtest(config, start, end, freq='weekly'):
         if len(composite) < top_k:
             continue
         top = composite.nlargest(top_k)
+        if export_holdings:
+            iso_h = d.isocalendar()
+            wk_h = f"{iso_h[0]}-W{iso_h[1]:02d}"
+            # TopK等权多头持仓(生产策略口径), code转RQ格式供rq_executor
+            holdings_out[wk_h] = {code_to_rq(c): round(1.0 / top_k, 6) for c in top.index}
         # T+horizon 等权收益
         rets = []
         for code in top.index:
@@ -368,6 +381,11 @@ def backtest(config, start, end, freq='weekly'):
     arr = arr[~np.isnan(arr)]
     sr = float(arr.mean() / arr.std() * np.sqrt(52)) if len(arr) and arr.std() > 0 else 0
     log(f"backtest: {len(out)}周, SR{sr:.2f}, 年化{arr.mean()*52:.2%}")
+    if export_holdings and holdings_out:
+        hp = os.path.expanduser('~/v5/branches/strategy_factory/daily_pick_holdings.json')
+        json.dump({"strategy": cfg['name'], "note": "daily_pick TopK等权多头(生产策略, RQAlpha终审用)",
+                   "top_k": top_k, "holdings": holdings_out}, open(hp, 'w'), ensure_ascii=False)
+        log(f"holdings written: {hp} ({len(holdings_out)}周)")
     return [[w, out[w]] for w in sorted(out)]
 
 
@@ -377,6 +395,7 @@ if __name__ == '__main__':
     p.add_argument('--config', default=os.path.expanduser('~/v5/branches/strategy_factory/strategy_config.json'))
     p.add_argument('--pick', action='store_true', help='生产选股(需实时或--date)')
     p.add_argument('--backtest', action='store_true', help='历史回测')
+    p.add_argument('--export-holdings', action='store_true', help='回测同时导出周持仓JSON(供RQAlpha终审)')
     p.add_argument('--date', type=str, help='选股日期(测试)')
     p.add_argument('--start', default='2016-01-01')
     p.add_argument('--end', default='2026-06-30')
@@ -387,7 +406,7 @@ if __name__ == '__main__':
         picks = produce_picks(cfg, d, realtime=not args.date)
         print(json.dumps(picks, ensure_ascii=False, indent=2))
     if args.backtest:
-        rets = backtest(cfg, args.start, args.end, freq='weekly')
+        rets = backtest(cfg, args.start, args.end, freq='weekly', export_holdings=args.export_holdings)
         out_p = os.path.expanduser('~/v5/branches/strategy_factory/backtest_result.json')
         json.dump([{'strategy': cfg['name'], 'returns': rets}], open(out_p, 'w'),
                   indent=2, ensure_ascii=False, default=float)
