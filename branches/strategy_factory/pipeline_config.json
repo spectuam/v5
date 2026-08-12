@@ -1,0 +1,29 @@
+{
+  "version": "v5-收尾-0812",
+  "_doc": "口径配置 source of truth, 沿管道流转(C1编排器读此). 改口径改这里, 不改脚本.",
+  "period": "weekly",
+  "freq": 52,
+  "train_end": "2022-W52",
+  "start": "2016-01-04",
+  "end": "2026-06-30",
+  "benchmark": "000300.XSHG",
+  "cost_model": {
+    "candidates_layer": {
+      "round_trip_bp": 10.2,
+      "assumption": "每周满换仓=保守上界(真实换手率<100%)",
+      "annual_drag_bp": 530,
+      "impact": "candidates层无法算(无持仓明细)"
+    },
+    "rqalpha_layer": {
+      "capital": 1000000,
+      "min_commission": 5.0,
+      "price_limit": true,
+      "_doc": "100万下最低佣金主导(DSF实测费占22.3%); 1亿显现冲击"
+    }
+  },
+  "falsification_thresholds": {
+    "F1_dsr": 0.95,
+    "F2_mcs_in_set": true,
+    "F3_forward_decay": 0.50
+  }
+}
