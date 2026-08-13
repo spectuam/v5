@@ -4,3 +4,5 @@ __pycache__/
 hdf5_test.db
 *.pkl
 .memsearch/
+mlruns/
+*.log
