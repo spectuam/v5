@@ -1,0 +1,7 @@
+DEPRECATED (2026-08-08 定论)
+
+HMM 状态切换方向已废弃：HMM 简易版实盘不可达（结论见
+docs/_archive/05_收尾/v5阶段2-3实现与HMM调研-cc.md 与
+docs/_archive/02_分支探索/state_switch_需求.md）。
+
+保留本目录仅为演进史，勿再基于它开发。相关需求文档已归档。
