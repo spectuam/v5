@@ -1,7 +1,7 @@
 # margin_factor 执行记录（融资融券因子分析）
 
 > 起：2026-07-21
-> 需求：桌面 margin_factor_需求.md
+> 需求：桌面 docs/_archive/02_分支探索/margin_factor_需求.md
 > 独立目录：`/home/soso/v5/margin_factor/`（不与其他验证混）
 > 环境：~/v5/.venv，数据 ~/ading/db/tdx_stock_data.db（margin_detail 表）
 > 数据源：akshare（融资融券，独立于 tdx 量价）

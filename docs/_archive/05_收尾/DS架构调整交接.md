@@ -58,14 +58,14 @@ RQAlpha终审(export_holdings -> run_rq/rq_executor -> rq_terminal_review -> rq_
 - `v5引擎对跑验证-cc.md`（RQAlpha对跑/成交现实/14pp，8/11）
 
 **过程24个（归档，按阶段分）**：
-- 架构方案3份：`v5架构方案-cc.md`/`v5架构方案-ds.md`/`v5架构方案-合并版.md`（8/7，已被"系统定位"取代但保留历史）
-- fable5系列：`fable5回复综合讨论.md`/`fable5回复2-逐句分析.md`（7/23-28）
-- 方向讨论：`DS回复-方向对齐.md`/`化学反应方向审查.md`/`v5工程执行复盘建议.md`+`回复.md`/`v5工程执行日志.md`（7/28-29）
-- 阶段调研：`v5阶段2-3实现与HMM调研-cc.md`（8/8）
-- 会话交接：`v5-dsf会话交接-0809-0812.md`
-- 系统认知：`v5系统认知-老板.md`（8/7）
-- 方法论：`GK_方法论逐句分析.md`/`EL_方法论逐句分析.md`/`因子动量方向复盘与复现计划.md`（7/29-31）
-- 其他：`三层尺子表.md`/`数据源梳理.md`/`state_switch_需求.md`/`margin_factor_需求.md`+`执行.md`/`new_direction_执行.md`/`glm0720.md`（7/22-28）
+- 架构方案3份：`docs/_archive/04_重新整理/v5架构方案-cc.md`/`docs/_archive/04_重新整理/v5架构方案-ds.md`/`docs/_archive/04_重新整理/v5架构方案-合并版.md`（8/7，已被"系统定位"取代但保留历史）
+- fable5系列：`docs/_archive/03_fable5回复/fable5回复综合讨论.md`/`docs/_archive/03_fable5回复/fable5回复2-逐句分析.md`（7/23-28）
+- 方向讨论：`docs/_archive/04_重新整理/DS回复-方向对齐.md`/`docs/_archive/04_重新整理/化学反应方向审查.md`/`docs/_archive/04_重新整理/v5工程执行复盘建议.md`+`回复.md`/`docs/_archive/04_重新整理/v5工程执行日志.md`（7/28-29）
+- 阶段调研：`docs/_archive/05_收尾/v5阶段2-3实现与HMM调研-cc.md`（8/8）
+- 会话交接：`docs/_archive/05_收尾/v5-dsf会话交接-0809-0812.md`
+- 系统认知：`docs/_archive/04_重新整理/v5系统认知-老板.md`（8/7）
+- 方法论：`docs/_archive/03_fable5回复/GK_方法论逐句分析.md`/`docs/_archive/03_fable5回复/EL_方法论逐句分析.md`/`因子动量方向复盘与复现计划.md`（7/29-31）
+- 其他：`docs/_archive/02_分支探索/三层尺子表.md`/`docs/_archive/01_初始搭建/数据源梳理.md`/`docs/_archive/02_分支探索/state_switch_需求.md`/`docs/_archive/02_分支探索/margin_factor_需求.md`+`执行.md`/`docs/_archive/02_分支探索/new_direction_执行.md`/`docs/_archive/01_初始搭建/glm0720.md`（7/22-28）
 
 ### 3.2 脚本
 **根目录30+散py（按功能归类）**：
@@ -90,7 +90,7 @@ RQAlpha终审(export_holdings -> run_rq/rq_executor -> rq_terminal_review -> rq_
 - **JSON管道产物**（branches/compare/）：candidates_returns.json/compare_pool_result.json/funnel_result.json/factor_returns_*.json/tsmom_ls_K12_holdings.json(50MB!)/daily_pick_holdings.json/rq_review_*.json
 - **结果JSON**（branches/strategy_factory/）：walkforward_result.json/forward_track_result.json/param_scan_result.json
 - **因子缓存**：`~/ading/cache/t3a_factors/*.pkl`（不在v5 repo）
-- **文献pdf**：`docs/EL_Ehsani_Linnainmaa_Factor_Momentum_NBER_w25551.pdf`
+- **文献pdf**：`docs/_archive/03_fable5回复/EL_Ehsani_Linnainmaa_Factor_Momentum_NBER_w25551.pdf`
 
 ### 3.4 结果文件
 - **pkl**：`branches/compare/rq_*.pkl`（RQAlpha结果，已.gitignore排除）
@@ -185,7 +185,7 @@ PYTHONPATH=/home/soso .venv/bin/python3 branches/compare/compare_pool.py
 每个归档目录配 README（一句话：这是什么/为什么归档/活跃替代在哪）——否则"保留演进史"变"死文件堆"。
 
 **9.6 一个决策点先问老板**
-`v5系统认知-老板.md` 在归档清单（04 阶段）——但老板 8/8 说过**要续写它**（可能回到起点讨论）。归档前先问老板。
+`docs/_archive/04_重新整理/v5系统认知-老板.md` 在归档清单（04 阶段）——但老板 8/8 说过**要续写它**（可能回到起点讨论）。归档前先问老板。
 
 **9.7 仓库健康（决策归老板）**
 `mlruns/`（MLflow 实验记录，可能很大）是否被 git 追踪？50MB holdings + repo 总大小——DS Pro 汇报仓库健康数据，大文件处理（gitignore/git-lfs/移出 repo）由老板定。
@@ -197,7 +197,7 @@ PYTHONPATH=/home/soso .venv/bin/python3 branches/compare/compare_pool.py
 完成时交付三样：① PROJECT.md 更新成一页导航（目录图）② §七 验证清单全部通过 ③ commit 历史清晰（git log 能看出"整理"过程）。无交付物定义，"理顺"就没有完成标准。
 
 **9.10 认知补一份**
-§一 三份必读外加读 `v5-dsf会话交接-0809-0812.md`（管道/对跑/RQAlpha 来历，DSF 侧细节）。
+§一 三份必读外加读 `docs/_archive/05_收尾/v5-dsf会话交接-0809-0812.md`（管道/对跑/RQAlpha 来历，DSF 侧细节）。
 
 ---
 
@@ -206,7 +206,7 @@ PYTHONPATH=/home/soso .venv/bin/python3 branches/compare/compare_pool.py
 > 以下是新 session 开场给 DS Pro 的口头交代，覆盖"文档没写但必须知道"的部分。
 
 ```
-DS，v5 架构理顺工作交给你。先读 docs/DS架构调整交接.md（方案层）+ 本段（执行层）。
+DS，v5 架构理顺工作交给你。先读 docs/_archive/05_收尾/DS架构调整交接.md（方案层）+ 本段（执行层）。
 
 【开工前】
 1. 先跑 git status 清点未提交文件，跑一遍交接文档 §七 验证清单，确认整理前管道是通的（基线）。
@@ -219,7 +219,7 @@ DS，v5 架构理顺工作交给你。先读 docs/DS架构调整交接.md（方�
 6. orchestrator 的 --from/--to 参数先验证存在再依赖它。
 7. 归档不是搬家：每个归档目录写 README 索引（是什么/为什么归档/活跃替代在哪）。
 8. mlruns/、50MB holdings、repo 总大小——仓库健康数据整理完汇报老板，大文件处理老板定。
-9. 老板的 v5系统认知-老板.md 在归档清单里，但老板可能还要续写——先问老板再动。
+9. 老板的 docs/_archive/04_重新整理/v5系统认知-老板.md 在归档清单里，但老板可能还要续写——先问老板再动。
 
 【交付标准】
 10. 完成时交付三样：PROJECT.md 一页导航 + 验证清单全通 + commit 历史清晰。

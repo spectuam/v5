@@ -1,7 +1,7 @@
 # EL (Ehsani & Linnainmaa) "Factor Momentum and the Momentum Factor" 方法论逐句分析
 
 > 论文：NBER Working Paper 25551, February 2019
-> 文件：`EL_Ehsani_Linnainmaa_Factor_Momentum_NBER_w25551.pdf`
+> 文件：`docs/_archive/03_fable5回复/EL_Ehsani_Linnainmaa_Factor_Momentum_NBER_w25551.pdf`
 > 分析日期：2026-07-29
 
 ---

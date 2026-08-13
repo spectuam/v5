@@ -2,7 +2,7 @@
 
 > 作者：cc（glm）
 > 日期：2026-08-07 凌晨
-> 前置：`docs/v5架构方案-合并版.md`（最终融合方案）、`docs/v5系统认知-老板.md`
+> 前置：`docs/_archive/04_重新整理/v5架构方案-合并版.md`（最终融合方案）、`docs/_archive/04_重新整理/v5系统认知-老板.md`
 > 性质：阶段 2（比较框架）+ 阶段 3（五路漏斗）的实现记录 + HMM 状态层调研。含实施、选择理由、结果、结论。
 
 ---
@@ -219,7 +219,7 @@ MarkovRegression(dta, k_regimes=3, trend="n", switching_variance=True)  # 月频
 6. **路 D**：完整 BCH double-selection（两阶段 Lasso + 收益目标，当前简化 PCA）
 
 ### 接手
-新 session 读：`docs/v5架构方案-合并版.md`（最终方案）+ memory `session-state-2026-08-07-cc` + `branches/compare/`（脚本 + result）。
+新 session 读：`docs/_archive/04_重新整理/v5架构方案-合并版.md`（最终方案）+ memory `session-state-2026-08-07-cc` + `branches/compare/`（脚本 + result）。
 脚本入口：`compare_pool.py`（比较框架）/ `funnel.py`（五路漏斗）/ `market_regime.py`（HMM 待重写）。
 
 ---
