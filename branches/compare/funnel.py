@@ -1,16 +1,18 @@
 #!/home/soso/v5/.venv/bin/python3
-"""funnel 五路交集漏斗：E(经济先验) -> D(去冗余) -> B/A/C(增量打分) -> 候选因子集 -> 候选策略
+"""funnel 四路漏斗：D(去冗余) -> A/B/C(增量打分) -> 候选因子集 -> 候选策略
 
-顺序: E硬筛(全过) -> D去冗余(保留9) -> 在D保留集上 A/B/C打分综合排名 -> 选Top-K因子
+顺序: D去冗余(保留9) -> 在D保留集上 A/B/C打分综合排名 -> 选Top-K因子
 -> 构造候选策略(等权多空/TSMOM sign多头/等权多头) -> 算returns -> 喂compare_pool
 
 B路fdr_result全0通过(t_abs全<2), 故B用p值排名而非硬筛(避免交集空)。
+
+注: E路(经济先验)已删(2026-08-15决策): 经济合理性论证是文献的人工作业(AHM前置论证),
+违反"管道运行时无人工判断"原则; 且v5实现为名字规则分类+全True零剔除, 空壳无作用。
 """
 import os, json
 from datetime import datetime
 import numpy as np
 
-ECON = os.path.expanduser('~/v5/branches/compare/economics_prior.json')
 DSEL = os.path.expanduser('~/v5/branches/compare/double_selection_result.json')
 IR = os.path.expanduser('~/v5/branches/compare/ir_result.json')
 FDR = os.path.expanduser('~/v5/branches/factor_momentum/fdr_result.json')
@@ -41,24 +43,20 @@ def strategy_returns(factor_set, ret_source, wks, mode='ls'):
 
 def main():
     log = lambda m: print(f"[{datetime.now():%H:%M:%S}] {m}", flush=True)
-    log("=" * 60); log("funnel 五路交集漏斗"); log("=" * 60)
+    log("=" * 60); log("funnel 四路漏斗"); log("=" * 60)
 
-    econ = json.load(open(ECON))
     dsel = json.load(open(DSEL))
     ir = json.load(open(IR))
     fdr = json.load(open(FDR))
     mono = json.load(open(MONO))
 
-    # E硬筛
-    e_pass = {f for f, v in econ.items() if v.get('economic_pass')}
     # D去冗余
     d_keep = set(dsel.get('keep', []))
-    log(f"E硬筛: {len(e_pass)}因子全过")
     log(f"D去冗余保留: {len(d_keep)}")
 
     # D保留集上 A/B/C打分
-    candidates = sorted(d_keep & e_pass)
-    log(f"E∩D候选: {len(candidates)} -> {candidates}")
+    candidates = sorted(d_keep)
+    log(f"D候选: {len(candidates)} -> {candidates}")
 
     # A路IR排名
     a_rank = rank_dict({f: ir.get(f, {}) for f in candidates}, 'ir', True)
@@ -127,7 +125,7 @@ def main():
     # 存funnel结果
     out = {
         'run_at': datetime.now().isoformat(),
-        'e_pass': len(e_pass), 'd_keep': len(d_keep),
+        'd_keep': len(d_keep),
         'candidates_e_d': candidates,
         'composite_rank': composite, 'top_factors': top_factors,
         'strategies': list(cands.keys()),

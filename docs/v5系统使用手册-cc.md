@@ -108,9 +108,9 @@ for r in db.execute("SELECT substr(datetime,12,5) t,open,high,low,close FROM kli
 
 ### 5.1 阶段1 因子筛选 `funnel.py`
 - **路径**：`branches/compare/funnel.py`
-- **输入**：economics_prior/double_selection_result/ir_result/fdr_result/monotonicity_result/factor_returns_week/factor_returns_top_30
+- **输入**：double_selection_result/ir_result/fdr_result/monotonicity_result/factor_returns_week/factor_returns_top_30
 - **输出**：`funnel_result.json` + 合并候选进 `candidates_returns.json`（funnel_top5_eq_ls/eq_long/tsmom_long）
-- **口径**：E硬筛∩D去冗余 -> A/B/C打分 -> Top5因子 -> 三策略
+- **口径**：D去冗余 -> A/B/C打分 -> Top5因子 -> 三策略（E路经济先验已删，2026-08-15决策：经济合理性论证是文献人工作业，管道运行时无人工判断，且实现为空壳）
 - **跑**：`python3 branches/compare/funnel.py`
 
 ### 5.2 阶段2 候选执行（多脚本，写 candidates_returns.json）

@@ -29,10 +29,11 @@
 ## 阶段1 因子筛选（funnel）
 
 - 脚本：`branches/compare/funnel.py`
-- 输入：economics_prior.json + double_selection_result.json + ir_result.json + fdr_result.json + monotonicity_result.json + factor_returns_week.json + factor_returns_top_30.json
+- 输入：double_selection_result.json + ir_result.json + fdr_result.json + monotonicity_result.json + factor_returns_week.json + factor_returns_top_30.json
 - 输出：`funnel_result.json`(top因子+综合排名) + 合并候选进 `candidates_returns.json`(funnel_top5_eq_ls / funnel_top5_eq_long / funnel_top5_tsmom_long)
-- 口径：E硬筛(全过) -> D去冗余 -> A/B/C打分 -> Top5因子 -> 三种策略(等权多空/等权多头/TSMOM多头)
-- 完整性：五路交集(E∩D∩A∩B∩C)，非单路选
+- 口径：D去冗余 -> A/B/C打分 -> Top5因子 -> 三种策略(等权多空/等权多头/TSMOM多头)
+- 完整性：四路(D∩A∩B∩C，A/B/C非硬筛用排名)，非单路选
+- E路已删(2026-08-15决策)：经济合理性论证是文献人工作业(AHM前置论证)，违反管道运行时无人工判断原则；v5实现是名字规则分类+全True零剔除的空壳
 
 ## 阶段2 候选执行
 
